@@ -35,7 +35,7 @@ export const signup = (user) => {
 export const login = (user)  => {
     return (dispatch) => {
         return APIUtil.login(user) 
-            .then((loggedInUser) => dispatch(receiveCurrentUser(user)))
+            .then((loggedInUser) => dispatch(receiveCurrentUser(loggedInUser)))
             .fail((errors) => dispatch(receiveErrors(errors.resposeJSON)))
     }
 }; 
