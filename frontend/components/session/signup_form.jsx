@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-class SessionForm extends React.Component {
+class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.session 
@@ -18,11 +18,28 @@ class SessionForm extends React.Component {
         }
     }
 
+    // renderErrors() {
+
+    // };
+
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={i}> 
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     render() {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className='login-form'>
                 <h1>{this.props.formType}</h1>
+                    {this.renderErrors()}
                     <label>Username:
                         <input type="text" value={this.state.username} onChange={this.handleChange('username')}/>
                     </label>
@@ -39,4 +56,4 @@ class SessionForm extends React.Component {
     }
 }; 
 
-export default SessionForm;
+export default SignUpForm;
