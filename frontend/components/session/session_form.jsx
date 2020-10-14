@@ -3,7 +3,7 @@ import React from 'react';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.badAtNaming
+        this.state = this.props.session 
         this.handleSubmit = this.handleSubmit.bind(this) 
     }
 

@@ -1,11 +1,11 @@
 import React from 'react'; 
 import { connect } from 'react-redux'; 
 import { signup } from '../../actions/session_actions';
-import Signup from './signup'; 
+import SessionForm from './session_form'; 
 
 const mapStateToProps = (state) => {
     return ({
-        badAtNaming: {
+        session: {
             username: "", 
             email: "", 
             password: ""
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
     })
 }; 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup); 
+export default connect(mapStateToProps, mapDispatchToProps)(SessionForm); 
