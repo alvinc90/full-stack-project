@@ -9,7 +9,6 @@ import LoginContainer from "./session/login_container"
 const App = () => {
     return (
         <div>
-            <h1>react is working =))))))))</h1>
             {/* <Switch> */}
                 <Route path="/" component={NavBarContainer}/>
                 <AuthRoute path="/signup" component={SignUpContainer} />
