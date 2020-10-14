@@ -10,11 +10,11 @@ const App = () => {
     return (
         <div>
             <h1>react is working =))))))))</h1>
-            <Switch>
+            {/* <Switch> */}
                 <Route path="/" component={NavBarContainer}/>
                 <AuthRoute path="/signup" component={SignUpContainer} />
-                <Route path="/login" component={LoginContainer} />
-            </Switch>
+                <AuthRoute path="/login" component={LoginContainer} />
+            {/* </Switch> */}
 
         </div>
     )
