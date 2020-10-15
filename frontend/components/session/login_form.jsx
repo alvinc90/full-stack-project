@@ -4,13 +4,21 @@ class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.session
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this); 
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const formUser = Object.assign({}, this.state) 
         this.props.action(formUser)
+            .then(this.props.closeModal) 
+    
+    }
+
+    handleDemo(e) {
+        e.preventDefault();
+        this.props.action(this.props.demo)
             .then(this.props.closeModal) 
     }
 
@@ -36,24 +44,28 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className='login-form'>
-                    <h1>{this.props.formType} or {this.props.otherForm}</h1>
+            <div>
 
-                    <div onClick={this.props.closeModal}>
-                    </div>
+                <div className="login-form-container">
+                    <form className='login-form'>
+                        <h1>Please Sign In</h1>
 
-                    {this.renderErrors()}
+                        <div onClick={this.props.closeModal}>
+                        </div>
 
-                    <label>
-                        <input type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*" />
-                    </label>
-                    <label>
-                        <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*" />
-                    </label>
+                        {this.renderErrors()}
 
-                    <button className="button-color">{this.props.formType}</button>
-                </form>
+                        <label>
+                            <input type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*" />
+                        </label>
+                        <label>
+                            <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*" />
+                        </label>
+
+                        <button className="button-color" onClick={this.handleSubmit}>Sign In</button>
+                        <button onClick={this.handleDemo}>Sign In As Demo</button> 
+                    </form>
+                </div>
             </div>
         )
     }

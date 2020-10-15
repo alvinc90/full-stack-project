@@ -21,4 +21,10 @@ u2 = User.create!(
     email: "alvin2"
 )
 
+demo = User.create!(
+    username: "demo",
+    password: "password", 
+    email: 'demo@demo.com'
+)
+
 
