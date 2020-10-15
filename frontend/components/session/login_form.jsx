@@ -18,11 +18,26 @@ class LoginForm extends React.Component {
         }
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={i}>{error}</li>
+                ))}
+            </ul>
+        );
+    }
+
+    componentDidMount() {
+        this.props.clear();
+    }
+
     render() {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className='login-form'>
                     <h1>{this.props.formType}</h1>
+                    {this.renderErrors()}
                     <label>Username:
                         <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
                     </label>

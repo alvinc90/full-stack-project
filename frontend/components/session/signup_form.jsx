@@ -3,8 +3,9 @@ import React from 'react';
 class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.session 
-        this.handleSubmit = this.handleSubmit.bind(this) 
+        this.state = this.props.session;
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     handleSubmit(e) {
@@ -18,31 +19,35 @@ class SignUpForm extends React.Component {
         }
     }
 
-    // renderErrors() {
+    componentDidMount() {
+        this.props.clear(); 
+    }
 
-    // };
 
     renderErrors() {
+        
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={i}> 
-                        {error}
-                    </li>
+                    <li key={i}>{error}</li>
                 ))}
             </ul>
         );
     }
 
+
     render() {
+        // const firstNameError = this.props.errors.forEach(() ) ? ("firstNameError") : ("hidden")
+
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className='login-form'>
                 <h1>{this.props.formType}</h1>
-                    {this.renderErrors()}
+                    {this.renderErrors()} 
                     <label>Username:
                         <input type="text" value={this.state.username} onChange={this.handleChange('username')}/>
                     </label>
+                    {/* <span className={firstNameError}>Please enter your first name</span> */}
                     <label>email:
                         <input type="text" value={this.state.email} onChange={this.handleChange('email')}/>
                     </label>
