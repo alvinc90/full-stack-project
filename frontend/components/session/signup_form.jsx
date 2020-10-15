@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';  
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -10,7 +10,9 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state)
+        const formUser = Object.assign({}, this.state)
+        this.props.action(formUser)
+            .then(this.props.closeModal); 
     }
 
     handleChange(type) {
@@ -42,19 +44,25 @@ class SignUpForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className='login-form'>
-                <h1>{this.props.formType}</h1>
+                    <h1>Welcome to OpenStreetTable</h1>
+
+                    <div onClick={this.props.closeModal}>
+                    </div>
+
                     {this.renderErrors()} 
-                    <label>Username:
-                        <input type="text" value={this.state.username} onChange={this.handleChange('username')}/>
+
+                    <label>
+                        <input type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*"/>
                     </label>
                     {/* <span className={firstNameError}>Please enter your first name</span> */}
-                    <label>email:
-                        <input type="text" value={this.state.email} onChange={this.handleChange('email')}/>
+                    <label>
+                        <input type="text" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email*"/>
                     </label>
-                    <label>Password:
-                        <input type="password" value={this.state.password} onChange={this.handleChange('password')}/>
+                    <label>
+                        <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*"/>
                     </label>
-                    <button className="button-color">{this.props.formType}</button>
+
+                    <button className="button-color">Create Account</button>
                 </form>
             </div>
         )

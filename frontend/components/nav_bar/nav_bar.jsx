@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom'; 
+import { openModal } from '../../actions/modal_action'; 
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -9,17 +10,17 @@ class NavBar extends React.Component {
     render() {
         const display = this.props.currentUser ? (
             <div>
-                <p>Hello, {currentUser.username}</p>
+                <p>Hello, {this.props.currentUser.username}</p>
                 <button onClick={this.props.logout}>LogOut</button>
             </div>
 
         ) : (
             <div className = "navbar">
-                <h3>OpenStreetTable</h3>
+                <h3>OpenStreetTable</h3> 
 
                 <div className="signup-login">
-                    <Link className="btn" to="/signup">Sign Up</Link>
-                    <Link className ="btn" to="/login">Login</Link>
+                    <button className="btn-signup" onClick={() => this.props.openModal('signup')}>Sign Up</button>
+                    <button className="btn-login" onClick={() => this.props.openModal('login')}>Sign In</button>
                 </div>
 
             </div>

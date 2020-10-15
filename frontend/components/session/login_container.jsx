@@ -1,7 +1,8 @@
 import React from 'react'; 
 import {connect} from 'react-redux'; 
+import { closeModal, openModal } from '../../actions/modal_action';
 import { login, clearErrors } from '../../actions/session_actions';
-import LoginForm from './login_form'; 
+import LoginForm from './login_form';  
 
 
 const mapStateToProps = (state) => {
@@ -18,7 +19,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return ({
         action: (formUser) => dispatch(login(formUser)),
-        clear: () => dispatch(clearErrors())
+        clear: () => dispatch(clearErrors()),
+        otherForm: (
+            <button onClick={() => dispatch(openModal('signup'))}>
+                Signup
+            </button>
+        ),
+        closeModal: () => dispatch(closeModal()) 
     })
 }
 

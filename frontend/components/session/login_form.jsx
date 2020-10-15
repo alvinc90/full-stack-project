@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -9,7 +9,9 @@ class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state)
+        const formUser = Object.assign({}, this.state) 
+        this.props.action(formUser)
+            .then(this.props.closeModal) 
     }
 
     handleChange(type) {
@@ -36,14 +38,20 @@ class LoginForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className='login-form'>
-                    <h1>{this.props.formType}</h1>
+                    <h1>{this.props.formType} or {this.props.otherForm}</h1>
+
+                    <div onClick={this.props.closeModal}>
+                    </div>
+
                     {this.renderErrors()}
-                    <label>Username:
-                        <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
+
+                    <label>
+                        <input type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*" />
                     </label>
-                    <label>Password:
-                        <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
+                    <label>
+                        <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*" />
                     </label>
+
                     <button className="button-color">{this.props.formType}</button>
                 </form>
             </div>
