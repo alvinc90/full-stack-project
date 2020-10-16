@@ -18,7 +18,8 @@ class LoginForm extends React.Component {
 
     handleDemo(e) {
         e.preventDefault();
-        this.props.action(this.props.demo)
+        const demoUser = this.props.demo 
+        this.props.action(demoUser)
             .then(this.props.closeModal) 
     }
 
