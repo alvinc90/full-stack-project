@@ -16,7 +16,7 @@ class NavBar extends React.Component {
 
         ) : (
             <div className = "navbar">
-                <h3>OpenStreetTable</h3> 
+                    <img src={window.brentURL} alt="open street table logo" />
 
                 <div className="signup-login">
                     <button className="btn-signup" onClick={() => this.props.openModal('signup')}>Sign Up</button>
