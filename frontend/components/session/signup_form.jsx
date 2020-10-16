@@ -62,27 +62,13 @@ class SignUpForm extends React.Component {
                         <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*"/>
                     </label>
                     <label> 
-                        <select>
-                            <option disabled selected>Dining Location*</option>
+                        <select defaultValue="Dining Location">
+                            <option disabled value="Dining Location">Dining Location*</option>
                             <option value={this.state.diningLocation}>San Francisco</option>
                             <option value={this.state.diningLocation}>New York</option>
                             <option value={this.state.diningLocation}>Chicago</option>
                             <option value={this.state.diningLocation}>Los Angeles</option>
                         </select>
-
-                        {/* <select
-                            className="form-control"
-                            name="period"
-                            id="period"
-                            defaultValue="1"
-                            onChange={this.handlePeriodChange}
-                            value={this.state.period}
-                        >
-                            <option value="1">1</option>
-                            <option value="3">3</option>
-                            <option value="7">7</option>
-                            <option value="30">30</option>
-                         </select> */}
                     </label>
 
                     <button className="button-color">Create Account</button>

@@ -10,11 +10,10 @@ const mapStateToProps = (state) => {
             username: "", 
             email: "", 
             password: "",
-            diningLocation: "",
-            blah: ""
+            diningLocation: ""
         },
         formType: "Sign Up",
-        errors: state.errors.session 
+        errors: state.errors.sessionErrors
     })
 }
 

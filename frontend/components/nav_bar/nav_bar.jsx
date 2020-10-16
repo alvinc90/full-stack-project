@@ -11,11 +11,20 @@ class NavBar extends React.Component {
         const display = this.props.currentUser ? (
             <div className="navbar">
                 <Link to={"/"}><img src={window.brentURL} alt="open street table logo" /></Link>
-                <p>Hello, {this.props.currentUser.username}</p>
-                <button onClick={this.props.logout}>LogOut</button>
-            </div>
 
+                <div className="signed-in-nav">
+                    <ul className="signed-in-nav2">
+                        <li>
+                            <p className="this">Hello, {this.props.currentUser.username}</p>
+                            <ul className="list-items">
+                                <li onClick={this.props.logout}>Sign Out</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         ) : (
+
             <div className = "navbar">
                 <Link to={"/"}><img src={window.brentURL} alt="open street table logo" /></Link>
 

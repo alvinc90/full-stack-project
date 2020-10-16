@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
             username: "",
             password: ""
         },
-        errors: state.errors.session,
+        errors: state.errors.sessionErrors,
         demo: {
             username: "demo",
             password: "password"

@@ -10,6 +10,35 @@
      align-items: center;
  }
 
+ .signed-in-nav {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .signed-in-nav2 {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ .this {
+     cursor: pointer; 
+ }
+
+ .list-items {
+     display: none;
+     position: absolute; 
+ }
+
+ .signed-in-nav2:hover .list-items {
+     display: block; 
+ }
+
+ .list-items li:hover {
+     background-color: lightgray;
+     cursor: pointer;
+ }
+
  .btn-login {
      border-color: silver;
      border-radius: 4px;
