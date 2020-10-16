@@ -9,14 +9,15 @@ class NavBar extends React.Component {
 
     render() {
         const display = this.props.currentUser ? (
-            <div>
+            <div className="navbar">
+                <Link to={"/"}><img src={window.brentURL} alt="open street table logo" /></Link>
                 <p>Hello, {this.props.currentUser.username}</p>
                 <button onClick={this.props.logout}>LogOut</button>
             </div>
 
         ) : (
             <div className = "navbar">
-                    <img src={window.brentURL} alt="open street table logo" />
+                <Link to={"/"}><img src={window.brentURL} alt="open street table logo" /></Link>
 
                 <div className="signup-login">
                     <button className="btn-signup" onClick={() => this.props.openModal('signup')}>Sign Up</button>

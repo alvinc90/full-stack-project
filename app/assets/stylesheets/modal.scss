@@ -9,8 +9,12 @@
 }
 
 .modal-child {
+  background-color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 70%;
+  width: 34%; 
+  border-radius: 4px;
 }

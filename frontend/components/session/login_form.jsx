@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
 
                 <div className="login-form-container">
                     <form className='login-form'>
-                        <h1>Please Sign In</h1>
+                        <h1 className="form-heading">Please Sign In</h1>
 
                         <div onClick={this.props.closeModal}>
                         </div>
@@ -63,7 +63,7 @@ class LoginForm extends React.Component {
                         </label>
 
                         <button className="button-color" onClick={this.handleSubmit}>Sign In</button>
-                        <button onClick={this.handleDemo}>Sign In As Demo</button> 
+                        <button className="button-demo" onClick ={this.handleDemo}>Sign In As Demo</button> 
                     </form>
                 </div>
             </div>

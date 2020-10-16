@@ -1,19 +1,71 @@
  .button-color {
      background-color: rgb(220, 20, 60);
      border-radius: 4px;
+     color: white;
+     font: inherit;
+     height: 40px; 
+     width: 250px;
+     margin-top: 12px;  
  }
+
+  .button-color:hover {
+   background-color: darkred;
+  }
+
+ .button-demo {
+     border-radius: 4px;
+     color: rgba(113, 143, 97, 0.972);
+     font: inherit;
+     height: 40px; 
+     width: 250px;
+     margin-top: 12px; 
+ }
+
+  .button-demo:hover {
+    background-color: darkgray;
+  }
 
   .login-form {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background-color: whitesmoke;
-    padding: 100px; 
+    // background-color: whitesmoke;
+    // padding: 100px; 
     align-items: center;
 }
 
 .login-form-container {
    display: flex;
    justify-content: center;
-   margin-top: 50px;
+  //  margin-top: 50px;
  }
+
+ .form-heading {
+   font-size: 25px;
+   margin-top: 20px;
+   border-bottom: solid;
+   border-color: lightgray;
+ }
+
+ input[type=text] {
+  margin: 12px;
+  height: 40px;
+  width: 250px; 
+  border-style: solid;
+  border-color: lightgray;
+ }
+
+ input[type=password] {
+   margin: 12px;
+   height: 40px; 
+   width: 250px; 
+   border-style: solid;
+   border-color: lightgray;
+  }
+
+  select {
+    cursor: pointer; 
+    margin: 12px;
+   height: 40px; 
+   width: 250px; 
+  }

@@ -44,7 +44,7 @@ class SignUpForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className='login-form'>
-                    <h1>Welcome to OpenStreetTable</h1>
+                    <h1 className="form-heading">Welcome to OpenStreetTable!</h1>
 
                     <div onClick={this.props.closeModal}>
                     </div>
@@ -61,10 +61,34 @@ class SignUpForm extends React.Component {
                     <label>
                         <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*"/>
                     </label>
+                    <label> 
+                        <select>
+                            <option disabled selected>Dining Location*</option>
+                            <option value={this.state.diningLocation}>San Francisco</option>
+                            <option value={this.state.diningLocation}>New York</option>
+                            <option value={this.state.diningLocation}>Chicago</option>
+                            <option value={this.state.diningLocation}>Los Angeles</option>
+                        </select>
+
+                        {/* <select
+                            className="form-control"
+                            name="period"
+                            id="period"
+                            defaultValue="1"
+                            onChange={this.handlePeriodChange}
+                            value={this.state.period}
+                        >
+                            <option value="1">1</option>
+                            <option value="3">3</option>
+                            <option value="7">7</option>
+                            <option value="30">30</option>
+                         </select> */}
+                    </label>
 
                     <button className="button-color">Create Account</button>
                 </form>
             </div>
+
         )
     }
 }; 

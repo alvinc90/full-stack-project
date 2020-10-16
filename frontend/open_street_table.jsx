@@ -19,11 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore(preloadedState); 
     ReactDOM.render(<Root store={store} />, root) 
 
-    const u1 = {
-        username: "alvin1",
-        password: "password",
-        email: "alvin1@alvin.com"}
-
     window.store = configureStore(); 
     window.getState = store.getState; 
     window.dispatch = store.dispatch;
