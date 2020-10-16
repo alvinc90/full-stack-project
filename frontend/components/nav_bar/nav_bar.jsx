@@ -28,8 +28,13 @@ class NavBar extends React.Component {
 
         return (
             <div>
-                {display}
+                {display} 
             </div>
+
+
+
+
+            
         )
     }
 }
