@@ -26,16 +26,30 @@ class SignUpForm extends React.Component {
     }
 
 
-    renderErrors() {
+    renderErrors() { 
         
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={i}>{error}</li>
-                ))}
-            </ul>
-        );
+        // return (
+        //     <ul>
+        //         {this.props.errors.map((error, i) => (
+        //             <li key={i}>{error}</li>
+        //         ))}
+        //     </ul>
+        // );
+
+        let arr = [];
+        this.props.errors.forEach((error) => arr.push(error))
+
+        let errorObject = {};
+        arr.forEach((errMsg) => {
+            if (errMsg.includes("Username")) { errorObject["username"] = errMsg }
+            else if (errMsg.includes("Password")) { errorObject["password"] = errMsg }
+            else if (errMsg.includes("Email")) { errorObject["email"] = errMsg }
+        })
+
+        return errorObject; 
     }
+
+
 
 
     render() {
@@ -49,17 +63,20 @@ class SignUpForm extends React.Component {
                     <div onClick={this.props.closeModal}>
                     </div>
 
-                    {this.renderErrors()} 
+                    {/* {this.renderErrors()}  */}
 
                     <label>
                         <input type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*"/>
+                        <div className="error-font">{this.renderErrors().username}</div>
                     </label>
                     {/* <span className={firstNameError}>Please enter your first name</span> */}
                     <label>
                         <input type="text" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email*"/>
+                        <div className="error-font">{this.renderErrors().email}</div>
                     </label>
                     <label>
                         <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*"/>
+                        <div className="error-font">{this.renderErrors().password}</div>
                     </label>
                     <label> 
                         <select defaultValue="Dining Location">

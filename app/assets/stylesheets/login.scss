@@ -5,7 +5,7 @@
      font: inherit;
      height: 40px; 
      width: 250px;
-     margin-top: 12px;  
+     margin-top: 12px; 
  }
 
   .button-color:hover {
@@ -41,8 +41,8 @@
  }
 
  .form-heading {
-   font-size: 25px;
-   margin-top: 20px;
+   font-size: 20px;
+   margin-top: 40px;
    border-bottom: solid;
    border-color: lightgray;
  }
@@ -50,7 +50,7 @@
  input[type=text] {
   margin: 12px;
   height: 40px;
-  width: 250px; 
+  width: 350px; 
   border-style: solid;
   border-color: lightgray;
  }
@@ -58,7 +58,7 @@
  input[type=password] {
    margin: 12px;
    height: 40px; 
-   width: 250px; 
+   width: 350px; 
    border-style: solid;
    border-color: lightgray;
   }
@@ -67,5 +67,9 @@
     cursor: pointer; 
     margin: 12px;
    height: 40px; 
-   width: 250px; 
+   width: 350px; 
+  }
+
+  .error-font {
+    color: red; 
   }

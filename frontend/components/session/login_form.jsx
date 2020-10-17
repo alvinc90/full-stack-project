@@ -8,7 +8,7 @@ class LoginForm extends React.Component {
         this.handleDemo = this.handleDemo.bind(this); 
     }
 
-    handleSubmit(e) {
+    handleSubmit(e) { 
         e.preventDefault();
         const formUser = Object.assign({}, this.state) 
         this.props.action(formUser)
@@ -30,13 +30,23 @@ class LoginForm extends React.Component {
     }
 
     renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={i}>{error}</li>
-                ))}
-            </ul>
-        );
+        // return (
+        //     <ul>
+        //         {this.props.errors.map((error, i) => (
+        //             <li key={i}>{error}</li>
+        //         ))}
+        //     </ul>
+        // );
+
+        let arr = [];
+        this.props.errors.forEach((error) => arr.push(error))
+
+        let errorObject = {
+            username: arr[0],
+            password: arr[1]
+        };
+
+        return errorObject; 
     }
 
     componentDidMount() {
@@ -54,13 +64,15 @@ class LoginForm extends React.Component {
                         <div onClick={this.props.closeModal}>
                         </div>
 
-                        {this.renderErrors()}
+                        {/* {this.renderErrors()} */}
 
                         <label>
                             <input type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*" />
+                            <div className="error-font">{this.renderErrors().username}</div>
                         </label>
                         <label>
                             <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*" />
+                            <div className="error-font">{this.renderErrors().password}</div>
                         </label>
 
                         <button className="button-color" onClick={this.handleSubmit}>Sign In</button>
