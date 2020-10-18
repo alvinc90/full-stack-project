@@ -2,12 +2,15 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div className="food">
-            <img className="food" src={window.foodURL} alt="food"/>
-            
-            <h1>Find your table for any occasion</h1>
+        <div>
+            <div>
+                <img className="food" src={window.foodURL} alt="food"/>
+                 <h1 className="home-heading">Find your table for any occasion</h1>
+            </div>
+   
+
         </div>
     )
 };
 
-export default Home; 
+export default Home;

@@ -79,7 +79,7 @@ class SignUpForm extends React.Component {
                         <div className="error-font">{this.renderErrors().password}</div>
                     </label>
                     <label> 
-                        <select defaultValue="Dining Location">
+                        <select className="selector" defaultValue="Dining Location">
                             <option disabled value="Dining Location">Dining Location*</option>
                             <option value={this.state.diningLocation}>San Francisco</option>
                             <option value={this.state.diningLocation}>New York</option>

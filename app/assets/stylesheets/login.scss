@@ -41,7 +41,7 @@
  }
 
  .form-heading {
-   font-size: 20px;
+   font-size: 24px;
    margin-top: 40px;
    border-bottom: solid;
    border-color: lightgray;
@@ -54,6 +54,10 @@
   border-style: solid;
   border-color: lightgray;
  }
+ 
+ input[type=text]:hover {
+   border-color: darkgray;
+ }
 
  input[type=password] {
    margin: 12px;
@@ -63,12 +67,23 @@
    border-color: lightgray;
   }
 
-  select {
+  input[type=password]:hover {
+   border-color: darkgray;
+ }
+
+  .selector {
     cursor: pointer; 
     margin: 12px;
-   height: 40px; 
-   width: 350px; 
+   height: 45px; 
+   width: 360px; 
+  //  border-style: solid;
+  //  border-color: lightgray;
+   border: 2px solid lightgray
   }
+
+  .selector:hover {
+   border-color: darkgray;
+ }
 
   .error-font {
     color: red; 
