@@ -59,7 +59,7 @@ class LoginForm extends React.Component {
 
                 <div className="login-form-container">
                     <form className='login-form'>
-                        <h1 className="form-heading">Please Sign In</h1>
+                        <h1 className="form-heading2">Please Sign In</h1>
 
                         <div onClick={this.props.closeModal}>
                         </div>
@@ -71,7 +71,7 @@ class LoginForm extends React.Component {
                             <div className="error-font">{this.renderErrors().username}</div>
                         </label>
                         <label>
-                            <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*" />
+                            <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password*" />
                             <div className="error-font">{this.renderErrors().password}</div>
                         </label>
 

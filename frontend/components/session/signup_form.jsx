@@ -32,7 +32,7 @@ class SignUpForm extends React.Component {
         //     <ul>
         //         {this.props.errors.map((error, i) => (
         //             <li key={i}>{error}</li>
-        //         ))}
+        //         ))} 
         //     </ul>
         // );
 
@@ -94,6 +94,6 @@ class SignUpForm extends React.Component {
 
         )
     }
-}; 
+};  
 
 export default SignUpForm;

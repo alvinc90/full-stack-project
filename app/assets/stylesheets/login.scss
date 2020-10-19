@@ -6,6 +6,8 @@
      height: 40px; 
      width: 250px;
      margin-top: 12px; 
+     cursor: pointer;
+     font-family: 'Commissioner', sans-serif;
  }
 
   .button-color:hover {
@@ -19,6 +21,8 @@
      height: 40px; 
      width: 250px;
      margin-top: 12px; 
+     cursor: pointer;
+     font-family: 'Commissioner', sans-serif;
  }
 
   .button-demo:hover {
@@ -27,24 +31,34 @@
 
   .login-form {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
-    // background-color: whitesmoke;
-    // padding: 100px; 
     align-items: center;
 }
 
 .login-form-container {
-   display: flex;
-   justify-content: center;
+  //  display: flex;
+  //  justify-content: center;
+   font-family: 'Commissioner', sans-serif;
+  //  position: absolute;
   //  margin-top: 50px;
  }
 
  .form-heading {
    font-size: 24px;
    margin-top: 40px;
-   border-bottom: solid;
-   border-color: lightgray;
+   margin-bottom: 20px;
+   font-family: 'Commissioner', sans-serif;
+  //  border-bottom: solid;
+  //  border-color: lightgray;
+ }
+
+ .form-heading2 {
+   font-size: 24px;
+   margin-top: 80px;
+   font-family: 'Commissioner', sans-serif;
+  //  border-bottom: solid;
+  //  border-color: lightgray;
  }
 
  input[type=text] {
@@ -76,7 +90,7 @@
     margin: 12px;
    height: 45px; 
    width: 360px; 
-  //  border-style: solid;
+  //  border-style: solid; 
   //  border-color: lightgray;
    border: 2px solid lightgray
   }
@@ -86,5 +100,6 @@
  }
 
   .error-font {
-    color: red; 
+    color: red;
+    margin-left: 12px;
   }
