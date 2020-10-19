@@ -1,10 +1,17 @@
-.error {
+.error-page {
+    position: absolute;
     border: 1px solid silver;
     background-color: whitesmoke;
     font-size: 20px;
     width: 200px; 
     height: 75px;
     padding: 50px;
-    margin: 20px; 
+    margin: 20px;
+    left: 37%; 
+    bottom: 37%;
+    background-color:lightblue;
+    color: red; 
+    font-family: 'Commissioner', sans-serif;
+    border-radius: 50px;
 }
 
