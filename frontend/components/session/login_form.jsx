@@ -66,16 +66,16 @@ class LoginForm extends React.Component {
 
                         {/* {this.renderErrors()} */}
 
-                        <label>
-                            <input type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*" />
-                            <div className="error-font">{this.renderErrors().username}</div>
+                        <label className="labels">
+                            <input className="input-username" type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*" />
+                            <div className="error-form">{this.renderErrors().username}</div>
                         </label>
-                        <label>
-                            <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password*" />
-                            <div className="error-font">{this.renderErrors().password}</div>
+                        <label className="labels">
+                            <input className="input-password" type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password*" />
+                            <div className="error-form">{this.renderErrors().password}</div>
                         </label>
 
-                        <button className="button-color" onClick={this.handleSubmit}>Sign In</button>
+                        <button className="button-login" onClick={this.handleSubmit}>Sign In</button>
                         <button className="button-demo" onClick ={this.handleDemo}>Sign In As Demo</button> 
                     </form>
                 </div>

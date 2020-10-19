@@ -1,4 +1,4 @@
- .button-color {
+ .button-login {
      background-color: rgb(220, 20, 60);
      border-radius: 4px;
      color: white;
@@ -8,6 +8,20 @@
      margin-top: 12px; 
      cursor: pointer;
      font-family: 'Commissioner', sans-serif;
+     margin-top: 30px;
+ }
+
+ .button-signup {
+     background-color: rgb(220, 20, 60);
+     border-radius: 4px;
+     color: white;
+     font: inherit;
+     height: 40px; 
+     width: 250px;
+     margin-top: 12px; 
+     cursor: pointer;
+     font-family: 'Commissioner', sans-serif;
+     margin-top: 20px;
  }
 
   .button-color:hover {
@@ -37,11 +51,7 @@
 }
 
 .login-form-container {
-  //  display: flex;
-  //  justify-content: center;
    font-family: 'Commissioner', sans-serif;
-  //  position: absolute;
-  //  margin-top: 50px;
  }
 
  .form-heading {
@@ -49,49 +59,42 @@
    margin-top: 40px;
    margin-bottom: 20px;
    font-family: 'Commissioner', sans-serif;
-  //  border-bottom: solid;
-  //  border-color: lightgray;
  }
 
  .form-heading2 {
    font-size: 24px;
    margin-top: 80px;
    font-family: 'Commissioner', sans-serif;
-  //  border-bottom: solid;
-  //  border-color: lightgray;
  }
 
- input[type=text] {
-  margin: 12px;
-  height: 40px;
-  width: 350px; 
-  border-style: solid;
-  border-color: lightgray;
- }
+//  input[type=text] {
+//   height: 40px;
+//   width: 350px; 
+//   border-style: solid;
+//   border-color: lightgray;
+//   margin-bottom: 20px;
+  // }
  
  input[type=text]:hover {
    border-color: darkgray;
  }
 
- input[type=password] {
-   margin: 12px;
-   height: 40px; 
-   width: 350px; 
-   border-style: solid;
-   border-color: lightgray;
-  }
+//  input[type=password] {
+//    height: 40px; 
+//    width: 350px; 
+//    border-style: solid;
+//    border-color: lightgray;
+//   }
 
   input[type=password]:hover {
-   border-color: darkgray;
+    border-color: darkgray;
  }
 
   .selector {
+    margin-top: 20px;
     cursor: pointer; 
-    margin: 12px;
    height: 45px; 
    width: 360px; 
-  //  border-style: solid; 
-  //  border-color: lightgray;
    border: 2px solid lightgray
   }
 
@@ -99,7 +102,40 @@
    border-color: darkgray;
  }
 
-  .error-font {
+  .error-form {
     color: red;
-    margin-left: 12px;
+    margin-left: 3px;
+    font-size: 14px;
+    position: absolute;
+  }
+
+  .labels {
+    position: relative; 
+  }
+
+  .input-username {
+    height: 40px;
+    width: 350px; 
+    border-style: solid;
+    border-color: lightgray;
+    margin-bottom: 8px;
+    margin-top: 20px;
+  }
+
+  .input-email {
+    height: 40px;
+    width: 350px; 
+    border-style: solid;
+    border-color: lightgray;
+    margin-bottom: 8px;
+    margin-top: 20px;
+  }
+
+  .input-password {
+    height: 40px; 
+    width: 350px; 
+    border-style: solid;
+    border-color: lightgray;
+    margin-bottom: 8px; 
+    margin-top: 20px;
   }

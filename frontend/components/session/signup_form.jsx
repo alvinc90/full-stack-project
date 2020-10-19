@@ -65,18 +65,18 @@ class SignUpForm extends React.Component {
 
                     {/* {this.renderErrors()}  */}
 
-                    <label>
-                        <input type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*"/>
-                        <div className="error-font">{this.renderErrors().username}</div>
+                    <label className="labels">
+                        <input className="input-username" type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*"/>
+                        <div className="error-form">{this.renderErrors().username}</div>
                     </label>
                     {/* <span className={firstNameError}>Please enter your first name</span> */}
-                    <label>
-                        <input type="text" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email*"/>
-                        <div className="error-font">{this.renderErrors().email}</div>
+                    <label className="labels">
+                        <input className="input-email" type="text" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email*"/>
+                        <div className="error-form">{this.renderErrors().email}</div>
                     </label>
-                    <label>
-                        <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password*"/>
-                        <div className="error-font">{this.renderErrors().password}</div>
+                    <label className="labels">
+                        <input className="input-password" type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password*"/>
+                        <div className="error-form">{this.renderErrors().password}</div>
                     </label>
                     <label> 
                         <select className="selector" defaultValue="Dining Location">
@@ -88,7 +88,7 @@ class SignUpForm extends React.Component {
                         </select>
                     </label>
 
-                    <button className="button-color">Create Account</button>
+                    <button className="button-signup">Create Account</button>
                 </form>
             </div>
 
