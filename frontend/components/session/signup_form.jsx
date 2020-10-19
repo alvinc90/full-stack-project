@@ -53,7 +53,7 @@ class SignUpForm extends React.Component {
 
 
     render() {
-        // const firstNameError = this.props.errors.forEach(() ) ? ("firstNameError") : ("hidden")
+        // const firstNameError = this.props.errors.forEach(() ) ? ("firstNameError") : ("hidden") 
 
         return (
             <div className="login-form-container">
@@ -75,7 +75,7 @@ class SignUpForm extends React.Component {
                         <div className="error-font">{this.renderErrors().email}</div>
                     </label>
                     <label>
-                        <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password*"/>
+                        <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password*"/>
                         <div className="error-font">{this.renderErrors().password}</div>
                     </label>
                     <label> 

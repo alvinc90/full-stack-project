@@ -6,9 +6,19 @@ class RestaurantShow extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchRestaurant(this.props.restaurant.id)
+    }
+
     render() {
         return (
-            <div>Hello World</div>
+            <div>
+                Hello World
+                {this.props.restaurant.name}
+                {this.props.restaurant.address}
+            </div>
+
+
         )
     }
 
