@@ -9,10 +9,10 @@
 #  hours          :string           not null
 #  payment_option :string           not null
 #  cuisine        :string           not null
-#  dress_code     :string           not null
 #  city_id        :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  description    :text             not null
 #
 require 'test_helper'
 

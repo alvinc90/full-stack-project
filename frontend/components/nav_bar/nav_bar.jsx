@@ -8,7 +8,7 @@ class NavBar extends React.Component {
     }; 
 
     render() {
-        const display = this.props.currentUser ? (
+        const display = this.props.currentUserId ? (
             <div className="navbar">
                 <Link to={"/"}><img src={window.brentURL} alt="open street table logo" /></Link>
 
