@@ -29,14 +29,6 @@ class SignUpForm extends React.Component {
 
     renderErrors() { 
         
-        // return (
-        //     <ul>
-        //         {this.props.errors.map((error, i) => (
-        //             <li key={i}>{error}</li>
-        //         ))} 
-        //     </ul>
-        // );
-
         let arr = [];
         this.props.errors.forEach((error) => arr.push(error))
 

@@ -3,14 +3,134 @@
     height: 370px; 
     filter: brightness(75%);
     object-fit: cover;
+    position: absolute;
     z-index: -5;
 }
 
 .home-heading {
-    // margin-top: -30px;
     margin: auto;
     font-size: 50px;
     color: black;
     font-family: 'Commissioner', sans-serif;
-    z-index: 50;
+    color: white; 
+    position: relative;
+    left: 310px;
+    top: 150px;
+}
+
+// .city-container {
+//     display: flex; 
+//     justify-content: space-evenly;
+// }
+
+// .first-container {
+//     display: flex; 
+//     flex-direction: column;
+// }
+
+// .second-container {
+//     display: flex; 
+//     flex-direction: column;
+// }
+
+.sf {
+    background-color: hotpink;
+    display: block; 
+    width: 375px;
+    height: 300px;
+    border: 1px solid gray;
+    margin-bottom: 70px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.ny {
+    background-color: darkblue;
+    display: block;
+    width: 375px;
+    height: 300px;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+.la {
+    background-color: yellow;
+    display: block; 
+    width: 375px;
+    height: 300px;
+    border: 1px solid gray;
+    margin-bottom: 70px;
+    cursor: pointer; 
+    font-size: 30px;
+}
+
+.deep-dish {
+    background-color: darkgreen;
+    display: block; 
+    width: 375px;
+    height: 300px;
+    border: 1px solid gray;
+    cursor: pointer; 
+    font-size: 30px;
+    color: white;
+}
+
+.sf:hover {
+    filter: brightness(120%);
+}
+
+.ny:hover {
+    filter: brightness(160%);
+}
+
+.la:hover {
+    filter: brightness(140%);
+}
+
+.deep-dish:hover {
+    filter: brightness(160%);
+}
+
+.city-container2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.city-container3 {
+    margin-top: 500px;
+}
+
+.city-component {
+    flex: 0 0 40%
+}
+
+.city-component2 {
+    margin-top: 40px; 
+    margin-bottom: 40px; 
+    margin-left: 30px;
+    border: 1px solid pink; 
+    height: 250px; 
+    width: 475px; 
+    // width: 450px; 
+    font-size: 50px;
+    color: lightblue;
+    font-family: 'Commissioner', sans-serif;
+}
+
+
+.city-component2:hover {
+    filter: brightness(120%);
+}
+
+.link-style {
+    list-style: none;
+    text-decoration: none;
+}
+
+.footer {
+    background-color: gray;
+    height: 150px;
 }

@@ -27,6 +27,19 @@ demo = User.create!(
     email: 'demo@demo.com'
 )
 
+c1 = City.create!(
+    name: "San Francisco"
+)
+c2 = City.create!(
+    name: "New York"
+)
+c3 = City.create!(
+    name: "Chicago"
+)
+c4 = City.create!(
+    name: "Los Angeles" 
+)
+
 
 
 

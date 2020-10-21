@@ -17,9 +17,9 @@ const receiveRestaurant = (restaurant) => {
     })
 };
 
-export const fetchAllRestaurants = () => {
+export const fetchAllRestaurants = (cityId) => {
     return (dispatch) => {
-        return APIUtil.fetchAllRestaurants()
+        return APIUtil.fetchAllRestaurants(cityid)
             .then((newRestaurants) => dispatch(receiveAllRestaurants(newRestaurants)))
     }
 }; 
