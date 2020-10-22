@@ -5,10 +5,12 @@ const RestaurantIndexItem = ({ restaurant }) => {
     return (
         <div className="restaurant-index-outer-container">
             <Link to={`/restaurants/${restaurant.id}`}><div className="restaurant-index-container">
-                {restaurant.name}
-                {restaurant.cuisine} 
+                <h1>{restaurant.name}</h1>
+                <span>{restaurant.cuisine}</span>
             </div></Link>
+
         </div>
+
 
 
     )
