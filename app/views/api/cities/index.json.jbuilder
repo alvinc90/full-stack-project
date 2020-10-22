@@ -3,6 +3,4 @@
         json.extract! city, :id, :name
     end
 end
-
-# json.extract! @cities, :id, :name
  

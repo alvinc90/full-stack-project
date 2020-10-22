@@ -10,3 +10,4 @@ class Api::RestaurantsController < ApplicationController
         render :show 
     end
 end
+ 

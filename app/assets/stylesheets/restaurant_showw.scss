@@ -1,0 +1,60 @@
+.outer-show-div {
+    background-color: whitesmoke;
+}
+
+.inner-show-container {
+    margin-left: 200px;
+    width: 700px;
+    height: 800px;
+    border: 1px solid white; 
+    background-color: white;
+}
+
+.show-nav {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 23px;
+    margin-bottom: 50px;
+}
+
+.show-nav > li:hover {
+    color: darkred;
+    cursor: pointer;
+}
+
+.show-h1 {
+    font-size: 30px;
+    font-family: 'Commissioner', sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.show-ul {
+    margin-bottom: 50px; 
+}
+
+.show-heading-list {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.show-description {
+    font-weight: light;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.show-aside-heading {
+    font-size: 16px;
+    font-family: 'Commissioner', sans-serif;
+    margin: 7px 0px; 
+}
+
+.show-aside-container {
+    width: 330px;
+    height: 270px; 
+    border: 1px solid white; 
+    margin-left: 700px;
+    background-color: white;
+}

@@ -1,5 +1,6 @@
 import React from 'react'; 
 import CityContainer from '../city/city_container'
+import RestaurantIndex from '../../components/restaurant/restaurant_index_container'
 
 const Home = () => {
     return (
@@ -11,7 +12,8 @@ const Home = () => {
             <div className="city-container3">
                 <CityContainer />
             </div>
-
+            
+                
             <footer>
                 <p className="footer">I am a footer</p>
             </footer>

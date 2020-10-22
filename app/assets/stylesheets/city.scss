@@ -1,0 +1,88 @@
+.city-container2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.link-style {
+    text-decoration: none;
+}
+
+.city-component2 {
+    // margin-top: 40px; 
+    // margin-bottom: 40px; 
+    // margin-left: 30px;
+    // border: 1px solid pink; 
+    // height: 250px; 
+    // width: 475px; 
+    // width: 450px; 
+    font-size: 50px;
+    color: lightblue;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.city-component2:hover {
+    filter: brightness(120%);
+}
+
+.sf:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+.ny:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+.la:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+.chicago:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+.sf {
+    width: 475px;
+    height: 250px;
+    // margin-top: 40px; 
+    // margin-bottom: 40px; 
+    // margin-left: 30px
+}
+
+.ny {
+    // margin-bottom: 40px; 
+    // margin-left: 30px;
+    width: 475px;
+    height: 250px;
+}
+
+.la {
+    // margin-top: 40px; 
+    // margin-bottom: 40px; 
+    // margin-left: 30px;
+    width: 475px;
+    height: 250px;
+
+}
+
+.chicago {
+    // margin-top: 40px; 
+    // margin-left: 30px;
+    width: 475px;
+    height: 250px;
+}
+
+.outer-image-container  {
+    display: flex; 
+    // margin-left: 150px;
+}
+
+.inner-image-container {
+    display: flex;
+    flex-direction: column;
+}
+

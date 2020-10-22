@@ -4,4 +4,7 @@ class Api::CitiesController < ApplicationController
         render :index 
         # render json: @cities 
     end
+
+    def show 
+    end
 end
