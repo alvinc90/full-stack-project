@@ -1,17 +1,16 @@
 import { connect } from 'react-redux'; 
-import { fetchAllRestaurants } from '../../util/restaurant_api_util';
+import { fetchAllRestaurants } from '../../actions/restaurant_action';
 import RestaurantIndex from './restaurant_index'; 
 
 const mapStateToProps = (state) => {
     return ({
-        cities: Object.values(state.entities.cities), 
-        restaurants: Object.values(state.entities.restaurants) 
+        restaurants: Object.values(state.entities.restaurants)
     })
 }; 
 
 const mapDispatchToProps = (dispatch) => {
     return ({
-        fetctAllRestaurants: (cityId) => dispatch(fetchAllRestaurants(cityId))
+        fetchAllRestaurants: () => dispatch(fetchAllRestaurants())
     })
 }; 
 

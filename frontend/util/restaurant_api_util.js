@@ -1,8 +1,8 @@
-export const fetchAllRestaurants = (cityId) => {
+export const fetchAllRestaurants = () => {
     return (
         $.ajax({
             method: 'GET',
-            url: `/api/cities/${cityId}/restaurants`
+            url: `/api/restaurants`
         })
     )
 }; 

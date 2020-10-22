@@ -66,6 +66,30 @@ r2 = Restaurant.create!(
     city_id: City.find_by(name: "San Francisco").id 
 )
 
+r3 = Restaurant.create!(
+    name: "Angler",
+    address: "132 The Embarcadero, San Francisco, CA 94105",
+    description: "Angler is a sea-life focused restaurant with views of the expansive wood burning hearth as well of the San Francisco Bay from Chef Joshua Skenes and Saison Hospitality. Each day’s inspiration is drawn from the products themselves and is an articulation of their natural flavors, served at their peak taste. We work with a small group of fishermen, hunters, gatherers, ranchers, and farmers to find and follow microclimates that produce the highest quality products in local existence. All of the cooking revolves around open wood fire and a fireplace designed for Chef Skenes's unique methodology, techniques, and tools for extracting the best tastes in our products. The expansive cellar features a particular emphasis on the wines of Burgundy as well as benchmark producers from our backyard in Napa and Sonoma. The bar program features carefully curated spirits from well-known and small-batched distillers, to specially sourced selections that date back sev",
+    phone_num: "(415) 872-9442", 
+    hours: "Lunch 11:00am - 2:00pm
+            Dinner 5:30pm - 9:30pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "American, Seafood",
+    city_id: City.find_by(name: "San Francisco").id 
+)
+
+r4 = Restaurant.create!(
+    name: "Fogo de Chao",
+    address: "201 S, 3rd St Suite 100, San Francisco, CA 94103",
+    description: "Fogo de Chao is the leading Brazilian steakhouse specializing in fire-roasting high-quality meats since 1979 utilizing the centuries-old Southern Brazilian cooking technique of churrasco",
+    phone_num: "(415) 427-0004", 
+    hours: "Lunch 11:30am - 2:00pm
+            Dinner 4:30pm - 10:30pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Brazillian Steakhouse",
+    city_id: City.find_by(name: "San Francisco").id 
+)
+
 
 
 

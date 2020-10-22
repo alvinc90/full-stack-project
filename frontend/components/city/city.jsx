@@ -18,7 +18,7 @@ class City extends React.Component {
                     {this.props.cities.map((city, i) => {
                         return (
                             // <CityItem  city={city} key={i}/>
-                            <div>
+                            <div key ={i}> 
                                 <li className="city-component2" key={i} >{city.name}</li>
 
                                 <div className="outer-image-container">
