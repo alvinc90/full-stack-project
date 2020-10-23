@@ -3,4 +3,3 @@
         json.extract! city, :id, :name
     end
 end
- 

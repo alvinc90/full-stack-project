@@ -6,3 +6,14 @@ export const fetchCities = () => {
         })
     )
 }; 
+
+export const fetchCity = (cityId) => {
+    // debugger 
+    return (
+        $.ajax({
+            method: 'GET',
+            url: `/api/cities/${cityId}`
+        })
+    )
+}; 
+

@@ -16,6 +16,7 @@ class RestaurantShow extends React.Component {
         // console.log(this.props);
         return (
             <div className="outer-show-div">
+                <img className="dining" src={window.diningURL} alt="dining" />
                 <div className="inner-show-container">
 
                     <ul className="show-nav">
