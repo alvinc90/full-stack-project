@@ -10,7 +10,9 @@ const Home = () => {
                 <h1 className="home-heading">Find your table for any occasion</h1>
             </div>
             <div className="city-container3">
+                <h1 className="home-header-res">Popular in San Francisco</h1>
                 <RestaurantIndexContainer />
+                <h1 className="home-header-city">Featured Areas</h1>
                 <CityContainer />
             </div>
             

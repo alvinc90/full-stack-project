@@ -6,10 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
 
 User.delete_all 
 City.delete_all
 Restaurant.delete_all
+
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
 
 u1 = User.create!(
     username: "alvin1",
@@ -90,7 +95,17 @@ r4 = Restaurant.create!(
     city_id: City.find_by(name: "San Francisco").id 
 )
 
+f1 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/lamar1.jpg")
+r1.photo.attach(io: f1, filename: "lamar1.jpg")
 
+f2 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/ozumo.jpg")
+r2.photo.attach(io: f2, filename: "ozumo.jpg")
+
+f3 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/angler.jpg")
+r3.photo.attach(io: f3, filename: "angler.jpg")
+
+f4 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/fogo.jpg")
+r4.photo.attach(io: f4, filename: "fogo.jpg") 
 
 
 

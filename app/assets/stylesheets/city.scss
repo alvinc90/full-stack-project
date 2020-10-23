@@ -26,30 +26,31 @@
 }
 
 .sf:hover {
-    filter: brightness(120%);
+    filter: brightness(90%);
     cursor: pointer;
-    border: 3px solid lightgray;
+    border: 2px solid lightgray;
 }
 
 .ny:hover {
-    filter: brightness(120%);
+    filter: brightness(100%);
     cursor: pointer;
-    border: 3px solid lightgray;
+    border: 2px solid lightgray;
 }
 
 .la:hover {
-    filter: brightness(120%);
+    filter: brightness(100%);
     cursor: pointer;
-    border: 3px solid lightgray;
+    border: 2px solid lightgray;
 }
 
 .chicago:hover {
-    filter: brightness(120%);
+    filter: brightness(75%);
     cursor: pointer;
-    border: 3px solid lightgray;
+    border: 2px solid lightgray;
 }
 
 .sf {
+    filter: brightness(40%);
     width: 475px;
     height: 250px;
     // margin-top: 40px; 
@@ -58,6 +59,7 @@
 }
 
 .ny {
+    filter: brightness(70%);
     // margin-bottom: 40px; 
     // margin-left: 30px;
     width: 475px;
@@ -65,6 +67,7 @@
 }
 
 .la {
+    filter: brightness(70%);
     // margin-top: 40px; 
     // margin-bottom: 40px; 
     // margin-left: 30px;
@@ -74,6 +77,7 @@
 }
 
 .chicago {
+    filter: brightness(40%);
     // margin-top: 40px; 
     // margin-left: 30px;
     width: 475px;
@@ -82,11 +86,23 @@
 
 .outer-image-container  {
     display: flex; 
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     // margin-left: 150px;
 }
 
 .inner-image-container {
     display: flex;
     flex-direction: column;
+}
+
+.city-heading {
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 140px;
+    font-size: 35px;
+    font-family: 'Commissioner', sans-serif;
+    color: white; 
+    z-index: 10; 
 }
 

@@ -1,22 +1,41 @@
 .restaurant-index-outer-container {
     display: flex; 
+    justify-content: space-evenly;
 }
 
 .restaurant-index-container {
+    text-decoration: none;
+    list-style: none;
     border: 1px solid lightgray;
-    width: 200px; 
-    height: 200px; 
+    width: 260px; 
+    height: 260px; 
     text-align: center;
-    font-family: 'Commissioner', sans-serif;
-    border-radius: 5px;
-    background-color: lightgreen;
+    // font-family: 'Commissioner', sans-serif;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
 .restaurant-index-container:hover {
-    cursor: pointer;
-    filter: brightness(120%);
     opacity: 70%;
-    // box-shadow: 1px 1px 1px gray;
-    border: 3px solid lightgray;
+    cursor: pointer;
+    border: 2px solid lightgray;
+}
+
+.restaurant-index-picture {
+    width: 260px;
+    height: 130px;
+    object-fit: cover;
+}
+
+.restaurant-index-header {
+    margin-top: 5px;
+    font-size: 25px;
+    color: black;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.restaurant-index-info {
+    margin-top: 10px;
+    color: black;
+    
 }
