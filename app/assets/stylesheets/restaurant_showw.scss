@@ -21,6 +21,7 @@
 .show-nav > li:hover {
     color: darkred;
     cursor: pointer;
+    border-bottom: 3px solid darkred;
 }
 
 .show-h1 {
@@ -37,12 +38,15 @@
 .show-heading-list {
     font-size: 25px;
     margin-bottom: 10px;
-    font-weight: bold;
+    font-family: 'Commissioner', sans-serif;
+    // font-weight: bold;
 }
 
 .show-description {
     font-weight: light;
     font-family: 'Commissioner', sans-serif;
+    line-height: 30px;
+    color: gray;
 }
 
 .show-aside-heading {
@@ -56,5 +60,6 @@
     height: 270px; 
     border: 1px solid white; 
     margin-left: 700px;
+    margin-bottom: 2000px;
     background-color: white;
 }

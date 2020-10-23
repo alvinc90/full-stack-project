@@ -17,16 +17,19 @@ class RestaurantShow extends React.Component {
         return (
             <div className="outer-show-div">
                 <div className="inner-show-container">
+
                     <ul className="show-nav">
                         <li>Overview</li>
                         <li>Photos</li>
                         <li>Menu</li>
                         <li>Reviews</li>
                     </ul>
+
                     {(this.props.restaurant) ? <h1 className="show-h1">{this.props.restaurant.name}</h1> : console.log("")}
-                    {(this.props.restaurant) ? <ul className="show-ul"><li>{this.props.restaurant.cuisine}</li></ul> : console.log("")}
+                    {/* {(this.props.restaurant) ? <ul className="show-ul"><li>{this.props.restaurant.cuisine}</li></ul> : console.log("")} */}
                     <h3 className="show-heading-list">Overview</h3>
                     {(this.props.restaurant) ? <p className="show-description">{this.props.restaurant.description}</p> : console.log("")}
+
                     <aside className="show-aside-container">
                         <label> <h5 className="show-aside-heading">Address</h5>
                             {(this.props.restaurant) ? <p className="">{this.props.restaurant.address}</p> : console.log("")}
@@ -47,8 +50,8 @@ class RestaurantShow extends React.Component {
                         <label> <h5 className="show-aside-heading">Cuisines</h5> 
                             {(this.props.restaurant) ? <p className="">{this.props.restaurant.cuisine}</p> : console.log("")}
                         </label>
-
                     </aside>
+
 
                 </div>
 
