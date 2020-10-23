@@ -1,4 +1,4 @@
-# OpenStreetTable [link to livesite](https://fullsteakproject.herokuapp.com/#/)
+[# OpenStreetTable](https://fullsteakproject.herokuapp.com/#/)
 
 
 ## Description
