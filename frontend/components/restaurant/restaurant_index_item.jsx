@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const RestaurantIndexItem = ({ restaurant }) => {
-    // debugger
+    
     return (
         <div>
             <Link to={`/restaurants/${restaurant.id}`}><div className="restaurant-index-container">

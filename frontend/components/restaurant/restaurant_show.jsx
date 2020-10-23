@@ -3,7 +3,7 @@ import React from 'react';
 class RestaurantShow extends React.Component {
 
     constructor(props) {
-        // console.log(props) 
+        
         super(props)
     }
 
@@ -12,8 +12,7 @@ class RestaurantShow extends React.Component {
     }
 
     render() {
-        // debugger
-        // console.log(this.props);
+
         return (
             <div className="outer-show-div">
                 <img className="dining" src={window.diningURL} alt="dining" />

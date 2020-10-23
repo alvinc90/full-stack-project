@@ -11,8 +11,7 @@ class CityShow extends React.Component {
     }
 
     render() {
-        // console.log(this.props)
-        // debugger 
+   
         return (
             <div>
                 {/* {this.props.city.name}  */}

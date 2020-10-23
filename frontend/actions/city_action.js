@@ -23,11 +23,11 @@ export const fetchCities = () => {
             .then((newCities) => dispatch(receiveAllCities(newCities)))
     }
 };
-// debugger 
+
 export const fetchCity = (cityId) => {
-    // debugger 
+   
     return (dispatch) => {
-        // debugger 
+       
         return APIUtil.fetchCity(cityId)
             .then((newCity) => {
                 return dispatch(receiveCity(newCity))
