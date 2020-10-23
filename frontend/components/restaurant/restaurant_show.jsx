@@ -32,23 +32,23 @@ class RestaurantShow extends React.Component {
 
                     <aside className="show-aside-container">
                         <label> <h5 className="show-aside-heading">Address</h5>
-                            {(this.props.restaurant) ? <p className="">{this.props.restaurant.address}</p> : console.log("")}
+                            {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.address}</p> : console.log("")}
                         </label>
 
                         <label> <h5 className="show-aside-heading">Phone Number</h5>
-                            {(this.props.restaurant) ? <p className="">{this.props.restaurant.phone_num}</p> : console.log("")}
+                            {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.phone_num}</p> : console.log("")}
                         </label>
 
                         <label> <h5 className="show-aside-heading">Hours of Operation</h5>
-                            {(this.props.restaurant) ? <p className="">{this.props.restaurant.hours}</p> : console.log("")}
+                            {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.hours}</p> : console.log("")}
                         </label>
 
                         <label> <h5 className="show-aside-heading">Payment Option</h5>
-                            {(this.props.restaurant) ? <p className="">{this.props.restaurant.payment_option}</p> : console.log("")}
+                            {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.payment_option}</p> : console.log("")}
                         </label>
                         
                         <label> <h5 className="show-aside-heading">Cuisines</h5> 
-                            {(this.props.restaurant) ? <p className="">{this.props.restaurant.cuisine}</p> : console.log("")}
+                            {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.cuisine}</p> : console.log("")}
                         </label>
                     </aside>
 
