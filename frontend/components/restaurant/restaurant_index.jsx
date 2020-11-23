@@ -14,7 +14,6 @@ class RestaurantIndex extends React.Component {
     }
 
     render() {
-        
         return (
             <div className="restaurant-index-outer-container">
                 {this.props.restaurants.map((restaurant, i) => {

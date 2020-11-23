@@ -27,3 +27,39 @@
     z-index: 10; 
 }
 
+.city-show-restaurant-image {
+    width: 200px;
+    height:200px;
+    object-fit: cover;
+    border-radius: 5px;
+    position: relative;
+}
+
+.city-show-restaurant-image:hover {
+    top: -2px;
+    opacity: 70%;
+}
+
+.city-show-item-container {
+    display: flex;
+    padding: 10px 0px;
+    border-bottom: 1px solid lightgray;
+}
+
+.city-show-item-link {
+    text-decoration: none;
+}
+
+.city-show-item-heading {
+    color: #247f9e;
+    font-size: 25px;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.city-show-item-heading:hover {
+    text-decoration: underline;
+}
+
+.city-show-item-div {
+    padding-left: 30px;
+}
