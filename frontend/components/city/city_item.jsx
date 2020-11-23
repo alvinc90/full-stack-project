@@ -20,8 +20,6 @@ const CityItem = ({city}) => {
             </div></Link>
 
         </div>
-
-
     )
 }; 
 

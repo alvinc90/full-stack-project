@@ -15,12 +15,14 @@
     // font-family: 'Commissioner', sans-serif;
     border-radius: 10px;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .restaurant-index-container:hover {
     opacity: 70%;
     cursor: pointer;
-    border: 2px solid lightgray;
+    top: -3px;
+    // border: 2px solid lightgray;
 }
 
 .restaurant-index-picture {

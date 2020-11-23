@@ -1,6 +1,5 @@
 import React from 'react';
 import CityItem from './city_item';
-import { Link } from 'react-router-dom'
 
 class City extends React.Component {
     constructor(props) {

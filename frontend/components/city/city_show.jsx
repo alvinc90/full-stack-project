@@ -16,9 +16,7 @@ class CityShow extends React.Component {
         // debugger
         return (
             <div>
-                <h1>HOOOOLLLALLAJLKSPOSHDIJSD</h1>
                 {this.props.city ? this.props.city.name : null}
-                {/* <h1>hello world</h1> */}
                 {/* <RestaurantIndexContainer /> */}
             </div>
         )

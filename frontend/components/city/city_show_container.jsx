@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'; 
-import { fetchCity } from '../../util/city_api_util';
+import { fetchCity } from '../../actions/city_action';
 import CityShow from './city_show'; 
 
 const mapStateToProps = (state, ownProps) => {
