@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import StarRating from '../star_rating';
 
 const RestaurantIndexItem = ({ restaurant }) => {
     
@@ -11,7 +12,7 @@ const RestaurantIndexItem = ({ restaurant }) => {
                 </div>
                 <h1 className="restaurant-index-header">{restaurant.name}</h1>
                 <div className="restaurant-index-info">{restaurant.cuisine}</div>
-
+                <StarRating />
             </div></Link>
 
         </div>

@@ -1,4 +1,5 @@
-import React from 'react'; 
+import React from 'react';
+import StarRating from '../star_rating';
 
 class RestaurantShow extends React.Component {
 
@@ -32,6 +33,7 @@ class RestaurantShow extends React.Component {
                     {(this.props.restaurant) ? <p className="show-description">{this.props.restaurant.description}</p> : console.log("")}
 
                     <aside className="show-aside-container">
+                        < StarRating />
                         <label> <h5 className="show-aside-heading">Address</h5>
                             {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.address}</p> : console.log("")}
                         </label>

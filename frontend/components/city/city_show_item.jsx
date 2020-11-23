@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import StarRating from '../star_rating';
 
 const CityShowRestaurantItem = ({ restaurant }) => {
     return(
@@ -11,6 +12,7 @@ const CityShowRestaurantItem = ({ restaurant }) => {
                 <Link className="city-show-item-link" to={`/restaurants/${restaurant.id}`}>
                     <h1 className="city-show-item-heading">{restaurant.name}</h1>
                 </Link>
+                <StarRating />
                 <h6>{restaurant.cuisine}</h6>
                 <h6>location under construction</h6>
                 <h6>price tag under construction</h6>
