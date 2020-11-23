@@ -9,6 +9,7 @@ class CityShow extends React.Component {
     componentDidMount() {
         this.props.fetchCity(this.props.match.params.cityId)
         this.props.fetchAllRestaurants();
+        window.scrollTo(0, 0);
     }
 
     render() {
