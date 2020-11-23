@@ -1,5 +1,5 @@
 import React from 'react';
-import RestaurantIndexContainer from '../restaurant/restaurant_index_container'
+import CityShowRestaurantItem from './city_show_item'
 
 class CityShow extends React.Component {
     constructor(props) {
@@ -10,6 +10,7 @@ class CityShow extends React.Component {
     componentDidMount() {
         // debugger
         this.props.fetchCity(this.props.match.params.cityId)
+        this.props.fetchAllRestaurants();
     }
 
     render() {
@@ -17,7 +18,12 @@ class CityShow extends React.Component {
         return (
             <div>
                 {this.props.city ? this.props.city.name : null}
-                {/* <RestaurantIndexContainer /> */}
+                {this.props.restaurants.map((restaurant, i) => {
+                    if(this.props.city.id === this.props.restaurants[i].city_id)
+                    return (
+                        <CityShowRestaurantItem restaurant={restaurant} key={i} />
+                    )
+                })}
             </div>
         )
 
