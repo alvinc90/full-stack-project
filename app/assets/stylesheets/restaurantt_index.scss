@@ -1,11 +1,13 @@
 .restaurant-index-outer-container {
     display: flex; 
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .restaurant-index-container {
-    text-decoration: none;
-    list-style: none;
+    // text-decoration: none;
+    // list-style: none;
+    // outline: none;
     border: 1px solid lightgray;
     width: 260px; 
     height: 260px; 
@@ -25,6 +27,7 @@
     width: 260px;
     height: 130px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .restaurant-index-header {
@@ -32,6 +35,8 @@
     font-size: 25px;
     color: black;
     font-family: 'Commissioner', sans-serif;
+    list-style: none;
+    outline: none;
 }
 
 .restaurant-index-info {

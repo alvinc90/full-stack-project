@@ -35,16 +35,20 @@ demo = User.create!(
 )
 
 c1 = City.create!(
-    name: "San Francisco"
+    name: "San Francisco",
+    code: "sf"
 )
 c2 = City.create!(
-    name: "New York"
+    name: "New York",
+    code: "ny"
 )
 c3 = City.create!(
-    name: "Chicago"
+    name: "Chicago",
+    code: "chicago"
 )
 c4 = City.create!(
-    name: "Los Angeles" 
+    name: "Los Angeles",
+    code: "la"
 )
 
 r1 = Restaurant.create!(

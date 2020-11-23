@@ -22,4 +22,4 @@ const RestaurantIndexItem = ({ restaurant }) => {
  
 }; 
 
-export default RestaurantIndexItem; 
+export default RestaurantIndexItem;  
