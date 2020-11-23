@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const CityItem = ({city}) => {
-    // debugger
     let cityImg;
     if (city.code === "sf") {
         cityImg = window.sfURL
@@ -15,10 +14,10 @@ const CityItem = ({city}) => {
     }
     return (
         <div>
-            <div>
+            <Link to={`/cities/${city.id}`}><div>
                 <h1 className="city-heading">{city.name}</h1>
                 <img className="sf" src={cityImg} alt={city.name} />
-            </div>
+            </div></Link>
 
         </div>
 

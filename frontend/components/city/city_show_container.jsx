@@ -4,7 +4,7 @@ import CityShow from './city_show';
 
 const mapStateToProps = (state, ownProps) => {
     return ({
-        city: state.entities.cities[ownProps.match.params.postId]
+        city: state.entities.cities[ownProps.match.params.cityId]
     })
 }; 
 
