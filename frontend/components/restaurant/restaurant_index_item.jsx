@@ -5,7 +5,7 @@ const RestaurantIndexItem = ({ restaurant }) => {
     
     return (
         <div>
-            <Link to={`/restaurants/${restaurant.id}`}><div className="restaurant-index-container">
+            <Link id="link1" to={`/restaurants/${restaurant.id}`}><div className="restaurant-index-container">
                 <div>
                     <img className="restaurant-index-picture" src={restaurant.photourl} alt="something"/>
                 </div>
