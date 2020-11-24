@@ -1,5 +1,6 @@
 import React from 'react';
-import CityShowRestaurantItem from './city_show_item'
+import CityShowRestaurantItem from './city_show_item';
+import HomeSearchBar from '../home/home_search_bar';
 
 class CityShow extends React.Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class CityShow extends React.Component {
             <div>
                 <img className="city-show-photo" src={cityImg} alt="city picture"/>
                 <h1 className="city-show-heading">Make a free reservation</h1>
+                <div className="home-search-bar"><HomeSearchBar /></div>
                 {this.props.city ? this.props.city.name : null}
                 {this.props.restaurants.map((restaurant, i) => {
                     if(this.props.city.id === this.props.restaurants[i].city_id)

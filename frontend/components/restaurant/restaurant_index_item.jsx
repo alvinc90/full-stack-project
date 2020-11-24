@@ -16,9 +16,6 @@ const RestaurantIndexItem = ({ restaurant }) => {
             </div></Link>
 
         </div>
-
-
-
     )
  
 };
