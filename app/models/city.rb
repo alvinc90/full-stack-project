@@ -2,14 +2,14 @@
 #
 # Table name: cities
 #
-#  id            :bigint           not null, primary key
-#  name          :string           not null
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  restaurant_id :integer          not null
+#  id         :bigint           not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  code       :string           not null
 #
 class City < ApplicationRecord
-    validates :name, presence: true
+    validates :name, :code, presence: true
 
     has_many :restaurants, 
         foreign_key: :city_id,
