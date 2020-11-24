@@ -100,7 +100,7 @@
 
 .footer {
     margin-top: 40px; 
-    background-color: gray;
+    background-color: #2d333f;
     height: 150px;
     font-size: 40px;
     text-align: center;
@@ -110,5 +110,7 @@
 .home-search-bar {
     display: flex;
     justify-content: center;
-    align-items: center;
+    position: absolute;
+    margin-top: 190px;
+    margin-left: 462px;
 }
