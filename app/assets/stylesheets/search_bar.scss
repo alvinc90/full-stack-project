@@ -1,0 +1,74 @@
+.search-bar-outer-container {
+    display: flex;
+}
+
+.search-bar-people-dropdown {
+    cursor: pointer;
+    height: 49px; 
+    width: 153px; 
+    border: 1px solid lightgray;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+}
+.search-bar-city-dropdown {
+    cursor: pointer;
+    height: 49px; 
+    width: 153px; 
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+}
+
+.search-bar-people-dropdown:focus,
+.search-bar-input-time:focus, 
+.search-bar-input-date:focus,
+.search-bar-city-dropdown:focus,
+.search-bar-button:focus
+ {
+    border-color: blue;
+    outline: 0;
+}
+
+.search-bar-input-time {
+    cursor: pointer;
+    height: 47px; 
+    width: 153px; 
+    border: 1px solid lightgray;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+}
+
+.search-bar-input-date {
+    cursor: pointer;
+    height: 47px; 
+    width: 153px; 
+    border: 1px solid lightgray;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+}
+
+.date-time-people-container {
+    margin-right: 10px;
+}
+
+.search-bar-button {
+    margin-left: 10px;
+    cursor: pointer;
+    height: 49px; 
+    width: 153px; 
+    border-radius: 5px;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(220, 20, 60);
+    color: white;
+}
+
+.search-bar-button:hover {
+    background-color: darkred;
+}

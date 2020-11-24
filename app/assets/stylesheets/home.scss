@@ -24,93 +24,76 @@
 }
 
 .home-heading {
-    margin: auto;
     font-size: 50px;
-    color: black;
     font-family: 'Commissioner', sans-serif;
-    color: white; 
-    position: relative;
-    top: 150px;
-    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
 }
 
-// .sf {
-//     background-color: hotpink;
-//     display: block; 
-//     width: 375px;
-//     height: 300px;
-//     border: 1px solid gray;
-//     margin-bottom: 70px;
-//     cursor: pointer;
-//     font-size: 30px;
-// }
-
-// .ny {
-//     background-color: darkblue;
-//     display: block;
-//     width: 375px;
-//     height: 300px;
-//     border: 1px solid gray;
-//     cursor: pointer;
-//     font-size: 30px;
-//     color: white;
-// }
-
-// .la {
-//     background-color: yellow;
-//     display: block; 
-//     width: 375px;
-//     height: 300px;
-//     border: 1px solid gray;
-//     margin-bottom: 70px;
-//     cursor: pointer; 
-//     font-size: 30px;
-// }
-
-// .deep-dish {
-//     background-color: darkgreen;
-//     display: block; 
-//     width: 375px;
-//     height: 300px;
-//     border: 1px solid gray;
-//     cursor: pointer; 
-//     font-size: 30px;
-//     color: white;
-// }
-
-// .sf:hover {
-//     filter: brightness(120%);
-// }
-
-// .ny:hover {
-//     filter: brightness(160%);
-// }
-
-// .la:hover {
-//     filter: brightness(140%);
-// }
-
-// .deep-dish:hover {
-//     filter: brightness(160%);
-// }
-
 .city-container3 {
-    margin-top: 380px;
+    margin-top: 300px;
 }
 
 .footer {
     margin-top: 40px; 
-    background-color: #2d333f;
+    background-color: #5a6980;
     height: 150px;
     font-size: 40px;
     text-align: center;
     font-family: 'Commissioner', sans-serif;
 }
 
-.home-search-bar {
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.home-search-bar-container {
     display: flex;
     justify-content: center;
-    position: absolute;
-    margin-top: 190px;
-    margin-left: 462px;
+    position: relative;
+    top: 20px;
+}
+
+.home-heading-container {
+    position: relative;
+    top: 115px;
+}
+
+.footer-container > h6 {
+    color: white;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+    position: relative; 
+    top: 70px;
+}
+
+.my-name {
+    color: white;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+    position: relative; 
+    top: 70px;
+}
+
+.alvin-links-container {
+    display: flex;
+}
+
+.links-logo {
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+    margin-bottom: -73px;
+}
+
+.links {
+    position: relative
+}
+
+.links:hover {
+    top: -2px;
+    opacity: 55%;
 }

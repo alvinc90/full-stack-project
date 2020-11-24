@@ -9,6 +9,7 @@
      cursor: pointer;
      font-family: 'Commissioner', sans-serif;
      margin-top: 30px;
+     border: none;
  }
 
  .button-signup {
@@ -22,6 +23,7 @@
      cursor: pointer;
      font-family: 'Commissioner', sans-serif;
      margin-top: 20px;
+     border: none;
  }
 
   .button-signup:hover {
@@ -34,17 +36,19 @@
 
  .button-demo {
      border-radius: 4px;
-     color: rgba(113, 143, 97, 0.972);
+    //  color: rgba(113, 143, 97, 0.972);
+    color: rgb(34, 31, 31);
      font: inherit;
      height: 40px; 
      width: 250px;
      margin-top: 12px; 
      cursor: pointer;
      font-family: 'Commissioner', sans-serif;
+     border: none;background-color: lightblue;
  }
 
   .button-demo:hover {
-    background-color: darkgray;
+    background-color: rgb(118, 207, 236);
   }
 
   .login-form {
