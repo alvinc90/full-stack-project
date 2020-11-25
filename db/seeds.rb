@@ -245,6 +245,49 @@ r3.photo.attach(io: f3, filename: "angler.jpg")
 f4 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/fogo.jpg")
 r4.photo.attach(io: f4, filename: "fogo.jpg") 
 
+f5 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/jiangnan.jpg")
+r5.photo.attach(io: f5, filename: "jiangnan.jpg") 
+
+f6 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/leopard.jpeg")
+r6.photo.attach(io: f6, filename: "leopardc.jpeg")
+
+f7 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/nurse.jpg")
+r7.photo.attach(io: f7, filename: "nurse.jpg")
+
+f8 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/perse.jpg")
+r8.photo.attach(io: f8, filename: "perse.jpg")
+
+f9 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/alinea.jpg")
+r9.photo.attach(io: f9, filename: "alinea.jpg")
+
+f10 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/pizza.jpg")
+r10.photo.attach(io: f10, filename: "pizza.jpg")
+
+f11 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/kama.jpg")
+r11.photo.attach(io: f11, filename: "kama.jpg")
+
+f12 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/autre.jpg")
+r12.photo.attach(io: f12, filename: "autre.jpg")
+
+f13 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/ombu+grill.jpg")
+r13.photo.attach(io: f13, filename: "ombu.jpg")
+
+f14 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/hatch.jpg")
+r14.photo.attach(io: f14, filename: "hatch.jpg")
+
+f15 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/littlesister.jpg")
+r15.photo.attach(io: f15, filename: "littlesister.jpg")
+
+f16 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/cod.jpg")
+r16.photo.attach(io: f16, filename: "cod.jpg")
+
+
+
+
+
+
+
+
 
 
 
