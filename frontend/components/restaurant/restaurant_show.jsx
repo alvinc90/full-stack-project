@@ -2,9 +2,7 @@ import React from 'react';
 import StarRating from '../star_rating';
 
 class RestaurantShow extends React.Component {
-
     constructor(props) {
-        
         super(props)
     }
 
@@ -17,22 +15,25 @@ class RestaurantShow extends React.Component {
 
         return (
             <div className="outer-show-div">
-                <img className="dining" src={window.diningURL} alt="dining" />
-                <div className="inner-show-container">
+                <div><img className="dining" src={window.diningURL} alt="dining" /></div>
 
-                    <ul className="show-nav">
-                        <li>Overview</li>
-                        <li>Photos</li>
-                        <li>Menu</li>
-                        <li>Reviews</li>
-                    </ul>
+                <div className="outer-show-container">
+                    <div className="inner-show-container">
 
-                    {(this.props.restaurant) ? <h1 className="show-h1">{this.props.restaurant.name}</h1> : console.log("")}
-                    {/* {(this.props.restaurant) ? <ul className="show-ul"><li>{this.props.restaurant.cuisine}</li></ul> : console.log("")} */}
-                    <h3 className="show-heading-list">Overview</h3>
-                    {(this.props.restaurant) ? <p className="show-description">{this.props.restaurant.description}</p> : console.log("")}
+                        <ul className="show-nav">
+                            <li>Overview</li>
+                            <li>Photos</li>
+                            <li>Menu</li>
+                            <li>Reviews</li>
+                        </ul>
 
-                    <aside className="show-aside-container">
+                        {(this.props.restaurant) ? <h1 className="show-h1">{this.props.restaurant.name}</h1> : console.log("")}
+                        <h3 className="show-heading-list">Overview</h3>
+                        {(this.props.restaurant) ? <p className="show-description">{this.props.restaurant.description}</p> : console.log("")}
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet voluptas tenetur saepe illo alias in architecto labore ex sit exercitationem sint impedit, libero illum ipsam sunt ipsum quibusdam deserunt dolore corrupti possimus placeat laboriosam consequuntur! Dignissimos in fugiat consequatur neque illo unde fuga sed vero reiciendis aperiam ab obcaecati doloremque, atque optio porro, nesciunt laborum! Laborum sint eligendi fugit suscipit alias saepe magni officia nam ex. Ex consequatur voluptas repudiandae vitae quam beatae, ab omnis inventore veniam iure quis, fugiat odio nesciunt non possimus dolorem, minima adipisci quia? Modi iusto quo iure doloribus earum, nisi excepturi voluptate quaerat accusamus.</p>
+                    </div>
+                    
+                    <div className="show-aside-container">
                         < StarRating />
                         <label> <h5 className="show-aside-heading">Address</h5>
                             {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.address}</p> : console.log("")}
@@ -53,15 +54,10 @@ class RestaurantShow extends React.Component {
                         <label> <h5 className="show-aside-heading">Cuisines</h5> 
                             {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.cuisine}</p> : console.log("")}
                         </label>
-                    </aside>
-
+                    </div>
 
                 </div>
 
-                {/* {console.log(this.props.name)}  */}
-                {/* {console.log(this.props.restaurant) } */}
-                {/* {console.log(this.props.restaurant.name) } */}
-                {/* {this.props.restaurant.name}  */}
             </div>
         )
     }

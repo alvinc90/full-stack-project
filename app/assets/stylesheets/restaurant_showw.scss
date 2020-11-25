@@ -1,17 +1,27 @@
 .outer-show-div {
-    background-color: whitesmoke;
+    // background-color: lightgray;
+}
+
+.outer-show-container {
+    // height: 500vh;
+    // background-color: lightgray;
+}
+
+.dining {
+    width: 100%; 
+    height: 370px; 
+    object-fit: cover;
 }
 
 .inner-show-container {
-    margin-left: 200px;
-    width: 700px;
-    height: 800px;
-    border: 20px solid white; 
+    // height: 100vh;
+    width: 53%;
     background-color: white;
-    position: absolute; 
-    z-index: 5;
-    margin-top: -80px;
+    position: absolute;
+    left: 13%;
+    top: 410px;
     border-radius: 10px;
+    border: 1px solid white;
 }
 
 .show-nav {
@@ -53,33 +63,24 @@
     color: gray;
 }
 
+.show-aside-container {
+    width: 19%;
+    background-color: white;
+    position: absolute;
+    right: 12%;
+    top: 410px;
+    border: 1px solid white; 
+    border-radius: 10px;
+}
+
 .show-aside-heading {
     font-size: 16px;
     font-family: 'Commissioner', sans-serif;
     margin: 7px 0px; 
 }
 
-.show-aside-container {
-    width: 330px;
-    height: 270px; 
-    border: 1px solid white; 
-    margin-left: 750px;
-    margin-bottom: 2000px;
-    background-color: white;
-    margin-top: -200px;
-}
-
 .show-aside-info {
      font-family: 'Commissioner', sans-serif;
      font-size: 14px;
      color: gray;
-}
-
-.dining {
-    width: 100%; 
-    height: 370px; 
-    // filter: brightness(75%);
-    object-fit: cover;
-    // position: absolute;
-    // z-index: -5;
 }
