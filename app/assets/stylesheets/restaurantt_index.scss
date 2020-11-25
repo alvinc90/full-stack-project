@@ -1,20 +1,16 @@
 .restaurant-index-outer-container {
     display: flex; 
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 .restaurant-index-container {
-    // text-decoration: none;
-    // list-style: none;
-    // outline: none;
+    margin: 20px;
     border: 1px solid lightgray;
     width: 260px; 
     height: 260px; 
     text-align: center;
-    // font-family: 'Commissioner', sans-serif;
     border-radius: 10px;
-    margin-bottom: 10px;
     position: relative;
 }
 
