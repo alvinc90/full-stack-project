@@ -99,6 +99,51 @@ r4 = Restaurant.create!(
     city_id: City.find_by(name: "San Francisco").id 
 )
 
+r5 = Restaurant.create!(
+    name: "Jiang Nan",
+    address: "103 Washington St 2nd floor, New York, NY 10006",
+    description: "Here at Jiang Nan Restaurant, we work hard to ensure that your food is served Sichuan style It is also our full intention to provide you with the high quality of service that you deserve.",
+    phone_num: "(718) 353-8855", 
+    hours: "Daily 11:15am - 10:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Chinese (Sichuan), Chinese (Shanghai), Chinese (Canton)",
+    city_id: City.find_by(name: "New York").id
+)
+
+r6 = Restaurant.create!(
+    name: "The Leopard at des Artistes",
+    address: "1 West 67th St. New York, NY 10023",
+    description: "Located in the New York landmarked Hotel Des Artistes, and surrounded by the astonishing 1920s murals by Howard Chandler Christy, THE LEOPARD at des Artistes cuisine respect the rich Italian cultural traditions, the absolute quality of ingredients, and the balance between dishes based on rural elements, such as pasta, vegetables, cheese, and seafood ingredients from the Mediterranean.",
+    phone_num: "(212) 787-8767", 
+    hours: "Lunch 11:30am - 3:00pm
+            Dinner 5:00pm - 9:30pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Italian",
+    city_id: City.find_by(name: "New York").id
+)
+
+r7 = Restaurant.create!(
+    name: "Nusr-Et Steakhouse New York",
+    address: "60 W 53rd St Ground Level New York, NY 10019",
+    description: "Saltbae” is opening his second restaurant location in the United States after a very successful launch in Miami.Nusr-Et is one of the worlds most celebrated chefs that will enhance the New York dining experience, in the heart of Manhattan.Chef and founder Nusret Gokce is a master butcher for over twenty years and personally selects each and every cut of meat that is being served in his restaurant. Expert grillers and master butchers complete the magic on the charcoal grill. Nusr-Et steak house will provide a dining experience unlike any other. Guests will delight in the highly personal and engaging Turkish hospitality. Creative fish and seafood options for the non meat lovers will complete the enticing menu that allows guest to choose their own cut from the butcher display.",
+    phone_num: "(212) 315-3660", 
+    hours: "Daily 12:00pm - 11:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Steakhouse, Steak",
+    city_id: City.find_by(name: "New York").id
+)
+
+r8 = Restaurant.create!(
+    name: "Per Se",
+    address: "4th Floor Time Warner Center, 10 Columbus Cir, New York, 10019",
+    description: "Per Se offers two prix fixe tasting menus a Tasting of Vegetables or the Chef’s Tasting Menu, which changes daily.",
+    phone_num: "(212) 823-9335", 
+    hours: "Mon-Fri 5:00pm - 11:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "American",
+    city_id: City.find_by(name: "New York").id
+)
+
 f1 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/lamar1.jpg")
 r1.photo.attach(io: f1, filename: "lamar1.jpg")
 
