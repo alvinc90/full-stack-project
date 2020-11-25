@@ -15,7 +15,13 @@ class User < ApplicationRecord
     validates :username, :email, :session_token, uniqueness: true 
     validates :password, length: {minimum: 4, allow_nil: true}
 
-    # has_many
+    has_many :reviews, 
+        foreign_key: :user_id,
+        class_name: :Review
+
+    has_many :reviewed_restaurants, 
+        through: :reviews,
+        source: :restaurant
 
     after_initialize :ensure_session_token
     # SPIRE 

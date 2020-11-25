@@ -23,4 +23,12 @@ class Restaurant < ApplicationRecord
     belongs_to :city, 
         foreign_key: :city_id, 
         class_name: :City 
+
+    has_many :reviews, 
+        foreign_key: :restaurant_id, 
+        class_name: :Review
+    
+    has_many :customers_reviewed, 
+        through: :reviews, 
+        source: :reviewer
 end 
