@@ -1,11 +1,36 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class HomeSearchBar extends React.Component {
+
+    constructor() {
+        super();
+        this.handleSelectCity = this.handleSelectCity.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            checkedCityName: "All Cities"
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.state.checkedCityName === "San Francisco" ? this.props.history.push("/cities/1") : null;
+        this.state.checkedCityName === "New York" ? this.props.history.push("/cities/2") : null;
+        this.state.checkedCityName === "Chicago" ? this.props.history.push("/cities/3") : null;
+        this.state.checkedCityName === "Los Angeles" ? this.props.history.push("/cities/4") : null;
+
+    }
+
+    handleSelectCity(e) {
+        debugger
+        console.log("I am from Jupiter")
+        this.setState({checkedCityName: e.currentTarget.value})
+    }
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div className="search-bar-outer-container">
                         
                         <div className="date-time-people-container">
@@ -27,12 +52,12 @@ class HomeSearchBar extends React.Component {
                         </div>
 
                         <div>
-                            <select className="search-bar-city-dropdown">
-                                <option value="">All Cities</option>
-                                <option value="">San Francisco</option>
-                                <option value="">New York</option>
-                                <option value="">Chicago</option>
-                                <option value="">Los Angeles</option>
+                            <select onChange={this.handleSelectCity} className="search-bar-city-dropdown">
+                                <option value="All Cities" id="1">All Cities</option>
+                                <option value="San Francisco" id="2">San Francisco</option>
+                                <option value="New York" id="2">New York</option>
+                                <option value="Chicago" id="3">Chicago</option>
+                                <option value="Los Angeles" id="4">Los Angeles</option>
                             </select>
                             <input className="search-bar-button" type="submit" value="Let's go"/>
                         </div>
@@ -44,6 +69,6 @@ class HomeSearchBar extends React.Component {
     }
 };
 
-export default HomeSearchBar;
+export default withRouter(HomeSearchBar);
 
 
