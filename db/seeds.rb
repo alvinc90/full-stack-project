@@ -123,7 +123,7 @@ r6 = Restaurant.create!(
 )
 
 r7 = Restaurant.create!(
-    name: "Nusr-Et Steakhouse New York",
+    name: "Nusr-Et Steakhouse",
     address: "60 W 53rd St Ground Level New York, NY 10019",
     description: "Saltbae” is opening his second restaurant location in the United States after a very successful launch in Miami.Nusr-Et is one of the worlds most celebrated chefs that will enhance the New York dining experience, in the heart of Manhattan.Chef and founder Nusret Gokce is a master butcher for over twenty years and personally selects each and every cut of meat that is being served in his restaurant. Expert grillers and master butchers complete the magic on the charcoal grill. Nusr-Et steak house will provide a dining experience unlike any other. Guests will delight in the highly personal and engaging Turkish hospitality. Creative fish and seafood options for the non meat lovers will complete the enticing menu that allows guest to choose their own cut from the butcher display.",
     phone_num: "(212) 315-3660", 
@@ -142,6 +142,95 @@ r8 = Restaurant.create!(
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
     cuisine: "American",
     city_id: City.find_by(name: "New York").id
+)
+
+r9 = Restaurant.create!(
+    name: "Alinea",
+    address: "1723 N Halsted St, Chicago, IL 60614",
+    description: "Chef Grant Achatz draws foodies with New American tasting menus featuring highly creative plates.",
+    phone_num: "unavailable", 
+    hours: "Daily 5:00pm - 10:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Fine Dining",
+    city_id: City.find_by(name: "Chicago").id
+)
+
+r10 = Restaurant.create!(
+    name: "Parlor Pizza Bar",
+    address: "1723 N Halsted St, Chicago, IL 60614",
+    description: "Industrial-chic pizzeria offering wood-fired pies & a bar with craft beer, plus outdoor seating.",
+    phone_num: "(312) 600-6090", 
+    hours: "Daily 11:00am - 11:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "American, Pizzeria",
+    city_id: City.find_by(name: "Chicago").id
+)
+
+r11 = Restaurant.create!(
+    name: "Kama Bistro",
+    address: "9 South La Grange Rd. La Grange, IL 60525",
+    description: "Kama Bistro is named after the Indian cupid, the god of love and passion, symbolizing the aesthetic pleasure of the senses. Indulge your senses and experience the passion Kama brings to its food and service, Following in the footsteps of Vikram’s father, a star chef in India, all dishes are prepared from scratch using only fresh ingredients. Traditional curries are elevated with freshly ground spices and time tested family recipes. Kama Indian Bistro aims to be unique, an exotic refuge from the daily grind, perfect for a romantic date, a dinner with friends or a quick appetizer and martini. Sink back into comfortable cushions with relaxing, upbeat music, enjoy the romantic atmosphere and escape from the everyday.",
+    phone_num: "(708) 352-3300", 
+    hours: "Lunch 11:00am - 3:00pm
+            Dinner 5:00pm - 10:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Indian, French, American",
+    city_id: City.find_by(name: "Chicago").id
+)
+
+r12 = Restaurant.create!(
+    name: "Autre Monde",
+    address: "6727 Roosevelt Rd Berwyn, IL 60402",
+    description: "Award winning, warm neighborhood restaurant with a European wine bar feel, farm to table sourcing & representing the flavors of Italy, Spain, Portugal, France, Greece and Morocco. Bar features over 70 wines, many available by the glass, a great craft cocktail program and tasty brews. Decor is eclectic making use of re-purposed materials and green technology wherever possible.",
+    phone_num: "(708) 775-8122", 
+    hours: "Lunch 10:00am - 2:00pm
+            Dinner 5:00pm - 9:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Mediterranean, Tapas / Small Plates",
+    city_id: City.find_by(name: "Chicago").id
+)
+
+r13 = Restaurant.create!(
+    name: "Ombu Grill",
+    address: "400 Western Ave #104 Los Angeles, CA 90020",
+    description: "Ombu Grill is a casual chic Los Angeles Korean barbecue restaurant, featuring a twist of Argentinian asado in a unique mix of cuisines. Our premium quality Korean meats include favorites such as prime beef short ribs, pork, and seafood alongside authentic side dishes (banchan) and fresh salads. We also provide an Argentinian asado experience. Enjoy it alone, or pair the ribs with essential achuras for a complete parrillada combination.Guests delight in relaxing in our space with a modern and sophisticated ambiance. High backed booths and private rooms for small or large groups accommodate both personal and professional occasions, free from any loud interruptions or distractions. Strategic pops of color make for a trendy and inviting environment, while lush greenery provides a positive energy. Our high-tech smokeless grills are just one of many sleek details found at Ombu Grill",
+    phone_num: "(213) 637-0262", 
+    hours: "Daily 4:30pm - 10:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Korean, Argentinean",
+    city_id: City.find_by(name: "Los Angeles").id
+)
+r14 = Restaurant.create!(
+    name: "HATCH Yakitori + Bar",
+    address: "700 W 7th St Ste G600 Los Angeles, CA 90017",
+    description: "HATCH is a modern Japanese grill that celebrates open fire skewers, a fresh raw bar and creative plates. Traditional Japanese cooking is fused with bold Californian flavors to deliver new takes on classic dishes. We pride in quality with our skewers grilled over binchotan charcoal and premium ingredients such as organic Jidori chicken that are locally sourced. We also offer a specialty cocktail program highlighting Japanese roots, a curated list of sake and rare Japanese whiskies. Step into a fun and casual dining experience paired with serious eats.",
+    phone_num: "(213) 282-9070", 
+    hours: "Daily 10:00am - 10:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Japanese, Izakaya",
+    city_id: City.find_by(name: "Los Angeles").id
+)
+
+r15 = Restaurant.create!(
+    name: "Little Sister",
+    address: "523 West 7th Street Los Angeles, CA 90014",
+    description: "Little Sister DTLA features East-meets-West inspired dishes served in a relaxed social environment that feels more residential than restaurant, as if you're being invited into the Chef Tin's home. Little Sister's menu showcases Chef Tin's take on one of the more interesting and rich collisions of food and culture that was borne out of the European colonization of Southeast Asia. Dishes blend and balance the spices and flavors of Southeast Asia with French techniques and Dutch and British colonial influences. The menu is continually and progressively evolving, reflecting inspiration and theseasons. Scott Young along with Chef Tin curates the restaurant's wine and beverage program with a focus on intriguing labels, both domestically and from around the world. Craft beer selection includes special batches from The Brewery at Abigaile, brewed only for the restaurant.",
+    phone_num: "(213) 628-3146", 
+    hours: "Daily 10:00am - 10:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Southeast Asian, Asian, Seafood",
+    city_id: City.find_by(name: "Los Angeles").id
+)
+
+r16 = Restaurant.create!(
+    name: "C.O.D. Seafood & Raw Bar",
+    address: "8408 W. 3rd Street Los Angeles, CA 90048",
+    description: "Located on West 3rd Street near the Beverly Center, C.O.D is a modern seafood brasserie offering Asian-inspired Californian cuisine. Influenced by both the great fishing villages of China and our own Californian coast, C.O.D crafts the best of these worlds together on a plate. C.O.D also features two full-sized bars, an extensive wine collection and hand-crafted cocktails. C.O.D stands for “Catch of the Day” and describes our restaurant’s dedication to serving only the freshest and highest quality ingredients available on the market. Our fish is never frozen. Seafood is the focus at C.O.D, but everything else―from the microgreens to pork belly―is also presented at the peak of freshness.",
+    phone_num: "(323) 658-9188", 
+    hours: "Daily 12:00pm - 10:00pm",
+    payment_option: "AMEX, Dicover, MasterCard, Visa", 
+    cuisine: "Seafood, Oyster Bar, Contemporary Asian",
+    city_id: City.find_by(name: "Los Angeles").id
 )
 
 f1 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/lamar1.jpg")
