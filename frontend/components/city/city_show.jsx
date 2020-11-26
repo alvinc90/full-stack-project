@@ -36,7 +36,7 @@ class CityShow extends React.Component {
                     {this.props.restaurants.map((restaurant, i) => {
                         if(this.props.city.id === this.props.restaurants[i].city_id)
                         return (
-                            <CityShowRestaurantItem restaurant={restaurant} key={i} />
+                            <CityShowRestaurantItem restaurant={restaurant} key={restaurant.id} />
                         )
                     })}
                 </div>

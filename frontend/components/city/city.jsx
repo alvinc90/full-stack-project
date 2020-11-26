@@ -13,9 +13,9 @@ class City extends React.Component {
     render() {
         return (
             <div className="outer-image-container">
-                    {this.props.cities.map((city, i) => {
+                    {this.props.cities.map((city) => {
                         return (
-                            <CityItem  city={city} key={i}/>
+                            <CityItem  city={city} key={city.id}/>
                         )
                     })}
             </div>

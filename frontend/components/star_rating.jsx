@@ -4,8 +4,8 @@ import { FaStar } from 'react-icons/fa';
 const StarRating = () => {
     return (
         <div>
-            {[...Array(5)].map((star) => {
-                return <FaStar />
+            {[...Array(5)].map((star, i) => {
+                return <FaStar key={i}/>
             })} 
         </div>
     )

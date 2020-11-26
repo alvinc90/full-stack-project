@@ -22,7 +22,6 @@ class HomeSearchBar extends React.Component {
     }
 
     handleSelectCity(e) {
-        debugger
         console.log("I am from Jupiter")
         this.setState({checkedCityName: e.currentTarget.value})
     }

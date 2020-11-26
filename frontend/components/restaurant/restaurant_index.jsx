@@ -16,9 +16,9 @@ class RestaurantIndex extends React.Component {
     render() {
         return (
             <div className="restaurant-index-outer-container">
-                {this.props.restaurants.map((restaurant, i) => {
+                {this.props.restaurants.map((restaurant) => {
                     return (
-                        <RestaurantIndexItem restaurant={restaurant} key={i} />
+                        <RestaurantIndexItem restaurant={restaurant} key={restaurant.id} />
                     )
                 })}
             </div>

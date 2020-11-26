@@ -1,10 +1,12 @@
 .outer-show-div {
-    // background-color: lightgray;
+    // height: 100vh;
+    background-color: whitesmoke; 
 }
 
 .outer-show-container {
     // height: 500vh;
-    // background-color: lightgray;
+    // background-color: orange;
+    display: flex;
 }
 
 .dining {
@@ -14,12 +16,11 @@
 }
 
 .inner-show-container {
-    height: 100vh; //how to fix show page height.
     width: 53%;
     background-color: white;
-    position: absolute;
+    position: relative;
     left: 13%;
-    top: 410px;
+    top: -45px;
     border-radius: 10px;
     border: 1px solid white;
 }
@@ -35,7 +36,7 @@
 .show-nav > li:hover {
     color: darkred;
     cursor: pointer;
-    border-bottom: 3px solid darkred;
+    text-decoration: underline;
 }
 
 .show-h1 {
@@ -65,10 +66,11 @@
 
 .show-aside-container {
     width: 19%;
+    height: 100%;
     background-color: white;
-    position: absolute;
-    right: 12%;
-    top: 410px;
+    position: relative;
+    left: 15%;
+    top: -44px;
     border: 1px solid white; 
     border-radius: 10px;
 }
@@ -83,4 +85,42 @@
      font-family: 'Commissioner', sans-serif;
      font-size: 14px;
      color: gray;
+}
+
+.review-outer-container {
+    margin-top: 20px;
+}
+
+.review-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leave-review-button {
+    margin-left: 10px;
+    cursor: pointer;
+    height: 49px; 
+    width: 153px; 
+    border-radius: 5px;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(220, 20, 60);
+    color: white;
+}
+
+.leave-review-button:hover {
+    background-color: darkred;
+}
+
+.review-index-item-container {
+    display: flex;
+}
+
+.review-box2 {
+    margin-left: 20px;
+}
+
+.review-box2 > span {
+    margin-right: 10px;
 }

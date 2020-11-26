@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import ReviewIndexItem from './review_index_item';
 
 class ReviewIndex extends React.Component {
@@ -14,9 +14,9 @@ class ReviewIndex extends React.Component {
     render() {
         return(
             <div>
-                {this.props.reviews.map((review, i) => {
+                {this.props.reviews.map((review) => {
                     return(
-                        <ReviewIndexItem review={review} key={i} />
+                        <ReviewIndexItem review={review} key={review.id} />
                     )
                 })}
             </div>
