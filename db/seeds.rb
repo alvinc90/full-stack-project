@@ -11,6 +11,7 @@ require 'open-uri'
 User.delete_all 
 City.delete_all
 Restaurant.delete_all
+Review.delete_all
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
@@ -281,6 +282,16 @@ r15.photo.attach(io: f15, filename: "littlesister.jpg")
 f16 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/cod.jpg")
 r16.photo.attach(io: f16, filename: "cod.jpg")
 
+
+rev1 = Review.create!(
+    body: "First review test",
+    overall: 1,
+    food: 2,
+    service: 3,
+    ambience: 4,
+    user_id: 1,
+    restaurant_id: 1
+)
 
 
 

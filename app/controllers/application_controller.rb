@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
     def require_logged_in!
-        render json: ['Invalid Credentials'] unless logged_in? 
+        render json: ['Login Required to Continue'] unless logged_in? 
     end
 
     def login!(user) 
