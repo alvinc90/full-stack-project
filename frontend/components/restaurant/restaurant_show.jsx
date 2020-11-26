@@ -1,5 +1,6 @@
 import React from 'react';
 import StarRating from '../star_rating';
+import ReviewIndexContainer from '../review/review_index_container';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -31,6 +32,7 @@ class RestaurantShow extends React.Component {
                         <h3 className="show-heading-list">Overview</h3>
                         {(this.props.restaurant) ? <p className="show-description">{this.props.restaurant.description}</p> : console.log("")}
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet voluptas tenetur saepe illo alias in architecto labore ex sit exercitationem sint impedit, libero illum ipsam sunt ipsum quibusdam deserunt dolore corrupti possimus placeat laboriosam consequuntur! Dignissimos in fugiat consequatur neque illo unde fuga sed vero reiciendis aperiam ab obcaecati doloremque, atque optio porro, nesciunt laborum! Laborum sint eligendi fugit suscipit alias saepe magni officia nam ex. Ex consequatur voluptas repudiandae vitae quam beatae, ab omnis inventore veniam iure quis, fugiat odio nesciunt non possimus dolorem, minima adipisci quia? Modi iusto quo iure doloribus earum, nisi excepturi voluptate quaerat accusamus.</p>
+                        <ReviewIndexContainer />
                     </div>
                     
                     <div className="show-aside-container">

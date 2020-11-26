@@ -9,7 +9,7 @@ const cityReducer = (oldState = {}, action) => {
             return action.cities 
         case RECEIVE_CITY: 
             newState[action.city.id] = action.city 
-            return newState; 
+            return newState;
         default:
             return oldState; 
     }
