@@ -1,14 +1,18 @@
 import React from 'react';
 import StarRating from '../star_rating';
 
-const ReviewIndexItem = ({ review }) => {
+const ReviewIndexItem = ({ review, allUsers }) => {
     // debugger
     let totalRating = review.overall + review.food + review.service + review.ambience;
     let avg = totalRating / 4
     return (
         <div className="review-index-item-container">
             <div className="review-box1">
-                <h1>My User id is {review.user_id}</h1>
+                {allUsers.map((user) => {
+                    if (user.id === review.user_id) {
+                        return <h1 className="username-review">{user.username}</h1>
+                    }
+                })}
             </div>
             <div className="review-box2">
                 <div><span><StarRating /></span></div>

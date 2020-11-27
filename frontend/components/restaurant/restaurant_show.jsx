@@ -1,23 +1,20 @@
 import React from 'react';
 import StarRating from '../star_rating';
-// import ReviewIndexContainer from '../review/review_index_container';
-import ReviewIndexItem from '../review/review_index_item';
+import ReviewIndex from '../review/review_index';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
         super(props)
-        // debugger
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchRestaurant(this.props.match.params.restaurantId);
-        this.props.fetchReviews();
         window.scrollTo(0, 0);
     }
 
     render() {
         // debugger
+        const { restaurant, reviews, fetchReviews, allUsers, fetchAllUsers } = this.props;
         return (
             <div className="outer-show-div">
                 <div><img className="dining" src={window.diningURL} alt="dining" /></div>
@@ -42,12 +39,12 @@ class RestaurantShow extends React.Component {
                                 <button className="leave-review-button">Leave a Review</button>
                             </div>
 
-                            {/* <ReviewIndexContainer /> */}
-                            {this.props.reviews.map((review) => {
-                                if(review.restaurant_id === this.props.restaurant.id) {
-                                    return <ReviewIndexItem review={review} key={review.id} />
-                                }
-                            })}
+                            <ReviewIndex 
+                                restaurant={restaurant} 
+                                reviews={reviews}
+                                fetchReviews={fetchReviews}
+                                allUsers={allUsers}
+                                fetchAllUsers={fetchAllUsers} />
                         </div>
                     </div>                          
                     

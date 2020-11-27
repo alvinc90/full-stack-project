@@ -292,6 +292,24 @@ rev1 = Review.create!(
     user_id: 1,
     restaurant_id: 1
 )
+rev2 = Review.create!(
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur magnam voluptate maxime molestias dolor veritatis dignissimos sint reiciendis enim assumenda aut quod facere nulla aspernatur eaque, dicta vero tempora. Sapiente recusandae voluptatem voluptate, neque quod mollitia esse voluptatum impedit blanditiis distinctio soluta debitis accusamus officiis. Expedita quam amet est necessitatibus aperiam non veritatis magnam odio perspiciatis asperiores! Quod, animi. Vitae quam dignissimos delectus laudantium, sapiente debitis magnam totam quaerat accusamus repellat labore adipisci recusandae dolore cum rem iste veniam nihil? At quidem nostrum sapiente, repellendus cumque reiciendis debitis porro iste, odio esse impedit possimus animi libero ipsam numquam voluptates nam deleniti ipsa cupiditate nemo excepturi? Repudiandae culpa rem sequi ad laboriosam blanditiis id eligendi, deleniti necessitatibus quidem? Ea, aperiam!",
+    overall: 5,
+    food: 5,
+    service: 5,
+    ambience: 5,
+    user_id: 2,
+    restaurant_id: 1
+)
+rev3 = Review.create!(
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur magnam voluptate maxime molestias dolor veritatis dignissimos sint reiciendis enim assumenda aut quod facere nulla aspernatur eaque, dicta vero tempora. Sapiente recusandae voluptatem voluptate, neque quod mollitia esse voluptatum impedit blanditiis distinctio soluta debitis accusamus officiis. Expedita quam amet est necessitatibus aperiam non veritatis magnam odio perspiciatis asperiores! Quod, animi. Vitae quam dignissimos delectus laudantium, sapiente debitis magnam totam quaerat accusamus repellat labore adipisci recusandae dolore cum rem iste veniam nihil? At quidem nostrum sapiente, repellendus cumque reiciendis debitis porro iste, odio esse impedit possimus animi libero ipsam numquam voluptates nam deleniti ipsa cupiditate nemo excepturi? Repudiandae culpa rem sequi ad laboriosam blanditiis id eligendi, deleniti necessitatibus quidem? Ea, aperiam!",
+    overall: 1,
+    food: 2,
+    service: 3,
+    ambience: 4,
+    user_id: 3,
+    restaurant_id: 1
+)
 
 
 

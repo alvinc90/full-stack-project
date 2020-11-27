@@ -115,12 +115,25 @@
 
 .review-index-item-container {
     display: flex;
+    border-top: 2px solid lightgray;
+    margin: 10px;
+}
+
+.review-box1 {
+    margin-top: 10px;
 }
 
 .review-box2 {
     margin-left: 20px;
+    margin-top: 10px;
 }
 
 .review-box2 > span {
     margin-right: 10px;
+}
+
+.username-review {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 20px;
+    color: cadetblue;
 }
