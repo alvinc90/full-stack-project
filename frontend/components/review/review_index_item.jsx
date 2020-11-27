@@ -8,9 +8,9 @@ const ReviewIndexItem = ({ review, allUsers }) => {
     return (
         <div className="review-index-item-container">
             <div className="review-box1">
-                {allUsers.map((user) => {
+                {allUsers.map((user, i) => {
                     if (user.id === review.user_id) {
-                        return <h1 className="username-review">{user.username}</h1>
+                        return <h1 className="username-review" key={i}>{user.username}</h1>
                     }
                 })}
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import StarRating from '../star_rating';
 import ReviewIndex from '../review/review_index';
+import ReviewCreate from '../review/review_create';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -14,7 +15,14 @@ class RestaurantShow extends React.Component {
 
     render() {
         // debugger
-        const { restaurant, reviews, fetchReviews, allUsers, fetchAllUsers } = this.props;
+        const { restaurant, 
+                reviews,
+                fetchReviews, 
+                allUsers, 
+                fetchAllUsers,
+                createReview,
+                updateReview,
+                deleteReview } = this.props;
         return (
             <div className="outer-show-div">
                 <div><img className="dining" src={window.diningURL} alt="dining" /></div>
@@ -39,6 +47,13 @@ class RestaurantShow extends React.Component {
                                 <button className="leave-review-button">Leave a Review</button>
                             </div>
 
+                            <ReviewCreate 
+                                createReview={createReview}
+                                updateReview={updateReview}
+                                deleteReview={deleteReview}
+                                reviews={reviews}
+                                restaurant={restaurant}/>
+                            
                             <ReviewIndex 
                                 restaurant={restaurant} 
                                 reviews={reviews}

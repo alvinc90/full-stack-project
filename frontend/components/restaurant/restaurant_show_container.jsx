@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'; 
 import { fetchRestaurant } from '../../actions/restaurant_action';
 import RestaurantShow from './restaurant_show'; 
-import { fetchReviews } from '../../actions/review_action'; 
+import { fetchReviews, createReview, updateReview, deleteReview } from '../../actions/review_action'; 
 import { fetchAllUsers } from '../../actions/user_action';
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,7 +16,10 @@ const mapDispatchToProps = (dispatch) => {
     return({
         fetchRestaurant: (restaurantId) => dispatch(fetchRestaurant(restaurantId)),
         fetchReviews: () => dispatch(fetchReviews()),
-        fetchAllUsers: () => dispatch(fetchAllUsers())
+        fetchAllUsers: () => dispatch(fetchAllUsers()),
+        createReview: () => dispatch(createReview()),
+        updateReview: () => dispatch(updateReview()),
+        deleteReview: () => dispatch(deleteReview())
     })
 }; 
 

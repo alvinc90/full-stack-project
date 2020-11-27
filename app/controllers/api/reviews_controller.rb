@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-    # before_action :require_logged_in!, only: [:new, :create, :edit, :update, :destroy]
+    before_action :require_logged_in!, only: [:new, :create, :edit, :update, :destroy]
 
     def index
         @reviews = Review.all
@@ -18,7 +18,7 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = current_user.reviews.new(review_params)
-
+        
         if @review and @review.save
             render :show
         else
