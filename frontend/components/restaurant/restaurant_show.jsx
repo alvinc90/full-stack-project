@@ -62,7 +62,10 @@ class RestaurantShow extends React.Component {
                                 reviews={reviews}
                                 fetchReviews={fetchReviews}
                                 allUsers={allUsers}
-                                fetchAllUsers={fetchAllUsers} />
+                                fetchAllUsers={fetchAllUsers}
+                                currentUser={currentUser}
+                                deleteReview={deleteReview}
+                                updateReview={updateReview} />
                         </div>
                     </div>                          
                     
