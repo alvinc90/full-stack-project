@@ -1,9 +1,10 @@
 import * as ReviewAPIUtil from '../util/review_api_util';
-export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
-export const RECEIVE_REVIEW = "RECEIVE_REVIEW"; 
-export const REMOVE_REVIEW = "RECEIVE_REVIEW";
-export const RECEIVE_REVIEW_ERROR = "RECEIVE_REVIEW_ERROR";
-export const CLEAR_ERROR = "CLEAR_ERROR";
+export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'; 
+export const REMOVE_REVIEW = 'RECEIVE_REVIEW';
+export const RECEIVE_REVIEW_ERROR = 'RECEIVE_REVIEW_ERROR';
+export const CLEAR_ERROR = 'CLEAR_ERROR';
+export const CLEAR_REVIEW = 'CLEAR_REVIEW';
 
 const receiveReviews= (reviews) => {
     return({
@@ -26,6 +27,10 @@ const removeReview = (reviewId) => {
     })
 };
 
+export const clearReview = () => {
+    return {type: CLEAR_REVIEW}
+};
+
 export const fetchReviews = () => {
     return (dispatch) => {
         return ReviewAPIUtil.fetchReviews()
@@ -43,14 +48,19 @@ export const fetchReview = (reviewId) => {
 export const createReview = (review) => {
     return (dispatch) => {
         return ReviewAPIUtil.createReview(review)
-            .then((createdReview) => dispatch(receiveReview(createdReview)))
+            .then((createdReview) => {
+                return dispatch(receiveReview(createdReview))
+
+            })
     }
 };
 
 export const updateReview = (review) => {
     return (dispatch) => {
         return ReviewAPIUtil.updateReview(review) 
-            .then((updatedReview) => dispatch(receiveReview(updatedReview)))
+            .then((updatedReview) => {
+                return dispatch(receiveReview(updatedReview))
+            })
     }
 };
 

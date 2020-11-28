@@ -1,13 +1,13 @@
 import {
     RECEIVE_REVIEWS, 
     RECEIVE_REVIEW, 
-    REMOVE_REVIEW
+    REMOVE_REVIEW,
+    CLEAR_REVIEW
 } from '../actions/review_action';
 
 const reviewsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState = Object.assign({}, oldState);
-
     switch(action.type) {
         case RECEIVE_REVIEWS:
             return action.reviews;
@@ -17,6 +17,8 @@ const reviewsReducer = (oldState = {}, action) => {
         case REMOVE_REVIEW: 
             delete newState[action.reviewId];
             return newState;
+        case CLEAR_REVIEW:
+            return [];
         default: 
             return oldState;
     }

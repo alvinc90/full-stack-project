@@ -14,7 +14,6 @@ class RestaurantShow extends React.Component {
     }
 
     render() {
-        // debugger
         const { restaurant, 
                 reviews,
                 fetchReviews, 
@@ -22,7 +21,9 @@ class RestaurantShow extends React.Component {
                 fetchAllUsers,
                 createReview,
                 updateReview,
-                deleteReview } = this.props;
+                deleteReview,
+                currentUser,
+                clearReview } = this.props;
         return (
             <div className="outer-show-div">
                 <div><img className="dining" src={window.diningURL} alt="dining" /></div>
@@ -52,8 +53,10 @@ class RestaurantShow extends React.Component {
                                 updateReview={updateReview}
                                 deleteReview={deleteReview}
                                 reviews={reviews}
-                                restaurant={restaurant}/>
-                            
+                                restaurant={restaurant}
+                                currentUser={currentUser}
+                                clearReview={clearReview}/>
+
                             <ReviewIndex 
                                 restaurant={restaurant} 
                                 reviews={reviews}

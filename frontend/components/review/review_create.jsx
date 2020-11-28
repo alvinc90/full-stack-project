@@ -1,16 +1,17 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 
 class ReviewCreate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             body: "",
-            overall: "",
-            food: "",
-            service: "",
-            ambience: "",
-            user_id: "",
-            restaurant_id: ""
+            overall: 5,
+            food: 5,
+            service: 5,
+            ambience: 5,
+            user_id: this.props.currentUser,
+            restaurant_id: this.props.restaurant.id
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -18,14 +19,20 @@ class ReviewCreate extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         this.props.createReview(this.state);
+        this.setState({
+            body: "",
+            overall: 5,
+            food: 5,
+            service: 5,
+            ambience: 5,
+        })
+        this.props.history.push(`/restaurants/${this.props.restaurant.id}`)
+        // this.props.history.push("/")
     }
 
     handleChange(type) {
-        return (e) => {
-            this.setState({ [type]: e.currentTarget.value})
-        }
+        return (e) => this.setState({ [type]: e.currentTarget.value})
     }
 
     render() {
@@ -75,7 +82,8 @@ class ReviewCreate extends React.Component {
                     <div>
                         <textarea 
                             className="create-review-textarea" 
-                            placeholder="How was your experience?">
+                            placeholder="How was your experience?"
+                            onChange={this.handleChange('body')}>
                         </textarea>
                     </div>
                     
@@ -86,6 +94,6 @@ class ReviewCreate extends React.Component {
     };
 }
 
-export default ReviewCreate;
+export default withRouter(ReviewCreate);
                                 
                     

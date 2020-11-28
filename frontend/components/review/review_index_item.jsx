@@ -2,7 +2,6 @@ import React from 'react';
 import StarRating from '../star_rating';
 
 const ReviewIndexItem = ({ review, allUsers }) => {
-    // debugger
     let totalRating = review.overall + review.food + review.service + review.ambience;
     let avg = totalRating / 4
     return (
