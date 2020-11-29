@@ -17,7 +17,8 @@ const App = () => {
             {/* <Route path="/" component={NavBarContainer}/> */}
             <Switch>
                 <Route exact path="/" component={Home}/>
-                <Route exact path ="/myprofile" component={UserShowContainer} />
+                {/* <Route exact path ="/myprofile" component={UserShowContainer} /> */}
+                <ProtectedRoute exact path ="/myprofile" component={UserShowContainer} />
                 <Route exact path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
                 <Route exact path="/cities/:cityId" component={CityShowContainer} />
                 <Route component={Error}/>
