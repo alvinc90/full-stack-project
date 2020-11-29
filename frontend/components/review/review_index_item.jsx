@@ -7,13 +7,17 @@ class ReviewIndexItem extends React.Component {
         super(props)
         this.handleDelete = this.handleDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.state = {
+            reviewId: 1.5
+        }
     }
-
+    
     handleDelete(e) {
         // debugger
+        this.setState({reviewId: this.props.review.id})
         this.props.deleteReview(this.props.review.id);
-        // this.props.history.push(`/restaurants/${this.props.review.restaurant_id}`);
-        this.props.history.push("/");
+        this.props.history.push(`/restaurants/${this.props.review.restaurant_id}`);
+        // this.props.history.push("/");
     }
 
     handleUpdate(e) {

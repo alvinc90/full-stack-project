@@ -1,6 +1,5 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom'; 
-import { openModal } from '../../actions/modal_action'; 
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -18,6 +17,7 @@ class NavBar extends React.Component {
                             <p className="this">Hello, {this.props.username}</p>
                             <ul className="list-items">
                                 <li onClick={this.props.logout}>Sign Out</li>
+                                <Link to="/myprofile"><li>My Profile</li></Link>
                             </ul>
                         </li>
                     </ul>
