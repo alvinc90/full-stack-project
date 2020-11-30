@@ -15,6 +15,7 @@ class ReviewCreateModal extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handlePropagation = this.handlePropagation.bind(this);
     }
 
     handleSubmit(e) {
@@ -36,10 +37,14 @@ class ReviewCreateModal extends React.Component {
         return (e) => this.setState({ [type]: e.currentTarget.value})
     }
 
+    handlePropagation(e) {
+        e.stopPropagation()
+    }
+
     render() {
         return(
-            <div className="modal-background">
-                <div className="modal-child">
+            <div className="modal-background" onClick={this.props.handleModal}>
+                <div className="modal-child" onClick={this.handlePropagation}>
                     <form onSubmit={this.handleSubmit}>
                         <div>
                             <label>Food

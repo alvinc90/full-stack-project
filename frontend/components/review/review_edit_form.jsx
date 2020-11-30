@@ -5,6 +5,7 @@ class ReviewEditForm extends React.Component {
         super(props)
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlePropagation = this.handlePropagation.bind(this);
         this.state = {
             id: this.props.review.id,
             body: this.props.review.body,
@@ -17,10 +18,6 @@ class ReviewEditForm extends React.Component {
         }
     };
 
-    // componentDidMount() {
-    //     this.props.fetchReview(this.props.review.id)
-    // }
-
     handleSubmit(e) {
         e.preventDefault();
         this.props.updateReview(this.state);
@@ -31,11 +28,14 @@ class ReviewEditForm extends React.Component {
         return (e) => this.setState({ [type]: e.currentTarget.value})
     }
 
+    handlePropagation(e) {
+         e.stopPropagation();
+    }
+
     render() {
-        // const { review, updateReview, currentUser, allUsers, fetchReview} = this.props;
         return(
-            <div className="modal-background">
-                <div className="modal-child">
+            <div className="modal-background" onClick={this.props.handleEditModal}>
+                <div className="modal-child" onClick={this.handlePropagation}>
                      <form onSubmit={this.handleSubmit}>
                         <div>
                             <label>Food
