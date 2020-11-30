@@ -43,10 +43,9 @@ class Api::ReviewsController < ApplicationController
 
     def destroy
         @review = current_user.reviews.find_by(id: params[:id])
-        if @review.destroy 
-            render :index
+        if @review.destroy
         else
-            render json: ["Nothing to delete"]
+            render json: ["No Authority to delete other user's review"]
         end
     end
 

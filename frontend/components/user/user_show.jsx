@@ -11,7 +11,6 @@ class UserShow extends React.Component {
     }
 
     render(){
-        // debugger
         const { currentUser, user, restaurants } = this.props
         return(
             <div>
