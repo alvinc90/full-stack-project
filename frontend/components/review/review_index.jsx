@@ -13,7 +13,7 @@ class ReviewIndex extends React.Component {
     }
 
     render() {
-        const { allUsers, currentUser, deleteReview, updateReview } = this.props;
+        const { allUsers, currentUser, deleteReview, updateReview, fetchReview } = this.props;
         return(
             <div>
                 {this.props.reviews.map((review) => {
@@ -24,7 +24,8 @@ class ReviewIndex extends React.Component {
                                     allUsers={allUsers} 
                                     currentUser={currentUser}
                                     deleteReview={deleteReview}
-                                    updateReview={updateReview} />
+                                    updateReview={updateReview}
+                                    fetchReview={fetchReview} />
                     }
                 })}
             </div>

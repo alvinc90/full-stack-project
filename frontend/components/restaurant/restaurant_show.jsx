@@ -36,7 +36,8 @@ class RestaurantShow extends React.Component {
                 updateReview,
                 deleteReview,
                 currentUser,
-                clearReview } = this.props;
+                clearReview,
+                fetchReview } = this.props;
         return (
             <div className="outer-show-div">
                 <div><img className="dining" src={window.diningURL} alt="dining" /></div>
@@ -61,7 +62,6 @@ class RestaurantShow extends React.Component {
                                 <button onClick={this.handleModal} className="leave-review-button">Leave a Review</button>
                             </div>
 
-                            {/* {this.state.showModal ? <SampleModal handleModal={this.handleModal} /> : null } */}
                             { this.state.showModal ? 
                                 <ReviewCreateModal
                                     createReview={createReview}
@@ -85,7 +85,8 @@ class RestaurantShow extends React.Component {
                                 fetchAllUsers={fetchAllUsers}
                                 currentUser={currentUser}
                                 deleteReview={deleteReview}
-                                updateReview={updateReview} />
+                                updateReview={updateReview}
+                                fetchReview={fetchReview} />
                         </div>
                     </div>                          
                     
@@ -113,8 +114,6 @@ class RestaurantShow extends React.Component {
                     </div>
 
                 </div>
-
-                <ReviewEditForm />
 
                 <footer className="footer">
                 <div className="footer-container">

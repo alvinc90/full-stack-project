@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'; 
 import { fetchRestaurant } from '../../actions/restaurant_action';
 import RestaurantShow from './restaurant_show'; 
-import { fetchReviews, createReview, updateReview, deleteReview, clearReview } from '../../actions/review_action'; 
+import { fetchReviews, createReview, updateReview, deleteReview, clearReview, fetchReview } from '../../actions/review_action'; 
 import { fetchAllUsers } from '../../actions/user_action';
 import { openModal } from '../../actions/modal_action';
 
@@ -23,7 +23,8 @@ const mapDispatchToProps = (dispatch) => {
         updateReview: (review) => dispatch(updateReview(review)),
         deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
         clearReview: () => dispatch(clearReview()),
-        openModal: (modal) => dispatch(openModal(modal))
+        openModal: (modal) => dispatch(openModal(modal)),
+        fetchReview: (reviewId) => dispatch(fetchReview(reviewId))
     })
 }; 
 
