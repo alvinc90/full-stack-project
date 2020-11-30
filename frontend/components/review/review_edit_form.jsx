@@ -4,18 +4,35 @@ class ReviewEditForm extends React.Component {
     constructor(props) {
         super(props)
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            id: this.props.review.id,
+            body: this.props.review.body,
+            overall: this.props.review.overall,
+            food: this.props.review.food,
+            service: this.props.review.service,
+            ambience: this.props.review.ambience,
+            user_id: this.props.currentUser,
+            restaurant_id: this.props.review.restaurant_id
+        }
     };
 
     // componentDidMount() {
     //     this.props.fetchReview(this.props.review.id)
     // }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.updateReview(this.state);
+        this.props.handleEditModal();
+    }
+
     handleChange(type) {
         return (e) => this.setState({ [type]: e.currentTarget.value})
     }
 
     render() {
-        const { review, updateReview, currentUser, allUsers, fetchReview} = this.props;
+        // const { review, updateReview, currentUser, allUsers, fetchReview} = this.props;
         return(
             <div className="modal-background">
                 <div className="modal-child">
@@ -64,6 +81,7 @@ class ReviewEditForm extends React.Component {
                             <textarea 
                                 className="create-review-textarea" 
                                 placeholder="Edit your form"
+                                value={this.state.body}
                                 onChange={this.handleChange('body')}>
                             </textarea>
                         </div>
