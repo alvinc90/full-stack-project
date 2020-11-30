@@ -8,6 +8,7 @@ import Home from "./home/home";
 import RestaurantShowContainer from './restaurant/restaurant_show_container';
 import CityShowContainer from './city/city_show_container';
 import UserShowContainer from './user/user_show_container';
+// import ReviewEditContainer from './review/review_edit_container';
 
 const App = () => {
     return (
@@ -20,6 +21,7 @@ const App = () => {
                 {/* <Route exact path ="/myprofile" component={UserShowContainer} /> */}
                 <ProtectedRoute exact path ="/myprofile" component={UserShowContainer} />
                 <Route exact path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
+                {/* <Route exact path="/restaurants/:restaurantId" component={ReviewEditContainer} /> */}
                 <Route exact path="/cities/:cityId" component={CityShowContainer} />
                 <Route component={Error}/>
             </Switch>

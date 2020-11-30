@@ -2,8 +2,7 @@ import React from 'react';
 import StarRating from '../star_rating';
 import ReviewIndex from '../review/review_index';
 import ReviewCreateModal from '../review/review_create';
-import SampleModal from './sample_modal';
-
+import ReviewEditForm from '../review/review_edit_form';
 class RestaurantShow extends React.Component {
     constructor(props) {
         super(props)
@@ -79,7 +78,7 @@ class RestaurantShow extends React.Component {
                             }
 
                             <ReviewIndex 
-                                restaurant={restaurant} 
+                                restaurant={restaurant}
                                 reviews={reviews}
                                 fetchReviews={fetchReviews}
                                 allUsers={allUsers}
@@ -114,6 +113,8 @@ class RestaurantShow extends React.Component {
                     </div>
 
                 </div>
+
+                <ReviewEditForm />
 
                 <footer className="footer">
                 <div className="footer-container">
