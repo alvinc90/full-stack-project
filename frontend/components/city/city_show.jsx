@@ -14,6 +14,7 @@ class CityShow extends React.Component {
     }
 
     render() {
+        // debugger
         let cityImg;
             if (this.props.city.code === "sf") {
                 cityImg = window.sfURL

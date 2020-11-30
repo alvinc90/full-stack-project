@@ -2,15 +2,24 @@ import React from 'react';
 import StarRating from '../star_rating';
 import ReviewIndex from '../review/review_index';
 import ReviewCreate from '../review/review_create';
+import SampleModal from './sample_modal';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            showModal: false
+        }
+        this.handleModal = this.handleModal.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchRestaurant(this.props.match.params.restaurantId);
         window.scrollTo(0, 0);
+    }
+
+    handleModal() {
+        this.setState({showModal: !this.state.showModal})
     }
 
     render() {
@@ -45,8 +54,10 @@ class RestaurantShow extends React.Component {
                         <div className="review-outer-container">
                             <div className="review-heading">
                                 <h1 className="show-heading-list">What people are saying</h1>
-                                <button className="leave-review-button">Leave a Review</button>
+                                <button onClick={this.handleModal} className="leave-review-button">Leave a Review</button>
                             </div>
+
+                            {this.state.showModal ? <SampleModal handleModal={this.handleModal} /> : null }
 
                             <ReviewCreate 
                                 createReview={createReview}
