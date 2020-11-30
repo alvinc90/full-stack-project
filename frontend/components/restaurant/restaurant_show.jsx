@@ -1,7 +1,7 @@
 import React from 'react';
 import StarRating from '../star_rating';
 import ReviewIndex from '../review/review_index';
-import ReviewCreate from '../review/review_create';
+import ReviewCreateModal from '../review/review_create';
 import SampleModal from './sample_modal';
 
 class RestaurantShow extends React.Component {
@@ -19,7 +19,12 @@ class RestaurantShow extends React.Component {
     }
 
     handleModal() {
-        this.setState({showModal: !this.state.showModal})
+        if(this.props.currentUser) {
+            this.setState({showModal: !this.state.showModal})
+        } else {
+            this.props.openModal('login')
+        }
+
     }
 
     render() {
@@ -57,16 +62,21 @@ class RestaurantShow extends React.Component {
                                 <button onClick={this.handleModal} className="leave-review-button">Leave a Review</button>
                             </div>
 
-                            {this.state.showModal ? <SampleModal handleModal={this.handleModal} /> : null }
+                            {/* {this.state.showModal ? <SampleModal handleModal={this.handleModal} /> : null } */}
+                            { this.state.showModal ? 
+                                <ReviewCreateModal
+                                    createReview={createReview}
+                                    updateReview={updateReview}
+                                    deleteReview={deleteReview}
+                                    reviews={reviews}
+                                    restaurant={restaurant}
+                                    currentUser={currentUser}
+                                    clearReview={clearReview}
+                                    handleModal={this.handleModal}/>
 
-                            <ReviewCreate 
-                                createReview={createReview}
-                                updateReview={updateReview}
-                                deleteReview={deleteReview}
-                                reviews={reviews}
-                                restaurant={restaurant}
-                                currentUser={currentUser}
-                                clearReview={clearReview}/>
+                                : null
+
+                            }
 
                             <ReviewIndex 
                                 restaurant={restaurant} 

@@ -3,6 +3,7 @@ import { fetchRestaurant } from '../../actions/restaurant_action';
 import RestaurantShow from './restaurant_show'; 
 import { fetchReviews, createReview, updateReview, deleteReview, clearReview } from '../../actions/review_action'; 
 import { fetchAllUsers } from '../../actions/user_action';
+import { openModal } from '../../actions/modal_action';
 
 const mapStateToProps = (state, ownProps) => {
     return({
@@ -21,7 +22,8 @@ const mapDispatchToProps = (dispatch) => {
         createReview: (review) => dispatch(createReview(review)),
         updateReview: (review) => dispatch(updateReview(review)),
         deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
-        clearReview: () => dispatch(clearReview())
+        clearReview: () => dispatch(clearReview()),
+        openModal: (modal) => dispatch(openModal(modal))
     })
 }; 
 
