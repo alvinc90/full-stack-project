@@ -19,7 +19,7 @@ const App = () => {
             <Switch>
                 <Route exact path="/" component={Home}/>
                 {/* <Route exact path ="/myprofile" component={UserShowContainer} /> */}
-                <ProtectedRoute exact path ="/myprofile" component={UserShowContainer} />
+                <ProtectedRoute exact path ="/my/profile" component={UserShowContainer} />
                 <Route exact path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
                 {/* <Route exact path="/restaurants/:restaurantId" component={ReviewEditContainer} /> */}
                 <Route exact path="/cities/:cityId" component={CityShowContainer} />
