@@ -23,7 +23,7 @@ const StarRating = () => {
                 return(
                     <label>
                         <input
-                            className="star-shit" 
+                            className="hidden-radio"
                             type="radio" 
                             name="rating" 
                             value={ratingValue} 
@@ -33,8 +33,9 @@ const StarRating = () => {
                             className="star" 
                             color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9" } 
                             key={i}
-                            onMouseEnter={() => setHover(ratingValue)}
-                            onMouseLeaver={() => setHover(null)} />
+                            // onMouseEnter={() => setHover(ratingValue)}
+                            // onMouseLeaver={() => setHover(null)} 
+                        />
                     </label>
                 );
             })} 

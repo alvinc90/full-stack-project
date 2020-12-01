@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import StarRating from '../star_rating';
-import Star from '../star/star';
+// import StarRating from '../star_rating';
+// import Star from '../star/star';
+import { FaStar } from 'react-icons/fa';
 
 class ReviewCreateModal extends React.Component {
     constructor(props) {
@@ -44,7 +45,6 @@ class ReviewCreateModal extends React.Component {
     }
 
     render() {
-        // debugger
         return(
             <div className="modal-background" onClick={this.props.handleModal}>
                 <div className="modal-child" onClick={this.handlePropagation}>
@@ -52,43 +52,89 @@ class ReviewCreateModal extends React.Component {
                         <h1 className="create-form-title">Share your experience</h1>
                         <div className="rating-outer-container">
                             <div className="rating-inner-container">
-                                <label>Food
-                                    <input type="radio" name="food" id="" value="1" onChange={this.handleChange('food')}/>
-                                    <input type="radio" name="food" id="" value="2" onChange={this.handleChange('food')}/>
-                                    <input type="radio" name="food" id="" value="3" onChange={this.handleChange('food')}/>
-                                    <input type="radio" name="food" id="" value="4" onChange={this.handleChange('food')}/>
-                                    <input type="radio" name="food" id="" value="5" onChange={this.handleChange('food')}/>
-                                </label>
+                                Food
+                                {[...Array(5)].map((star, i) => {
+                                    return(
+                                        <label>
+                                            <input 
+                                                type="radio" 
+                                                name="food" 
+                                                className="hidden-radio"
+                                                value={i + 1}
+                                                onChange={this.handleChange('food')}
+                                            />
+
+                                            <FaStar 
+                                                className="star"
+                                                color={ i + 1 <= this.state.food ? "crimson" : "darkgray" }
+                                            />
+
+                                        </label>
+                                    )  
+                                })}
                             </div>
 
                             <div className="rating-inner-container"> 
-                                <label>Service
-                                    <input type="radio" name="service" id="" value="1" onChange={this.handleChange('service')}/>
-                                    <input type="radio" name="service" id="" value="2" onChange={this.handleChange('service')}/>
-                                    <input type="radio" name="service" id="" value="3" onChange={this.handleChange('service')}/>
-                                    <input type="radio" name="service" id="" value="4" onChange={this.handleChange('service')}/>
-                                    <input type="radio" name="service" id="" value="5" onChange={this.handleChange('service')}/>
-                                </label>
+                                Service
+                                {[...Array(5)].map((star, i) => {
+                                    return(
+                                        <label>
+                                            <input 
+                                                type="radio" 
+                                                name="service" 
+                                                className="hidden-radio"
+                                                value={i + 1}
+                                                onChange={this.handleChange('service')}
+                                            />
+
+                                            <FaStar 
+                                                className="star"
+                                                color={ i + 1 <= this.state.service ? "crimson" : "darkgray" } />
+                                        </label>
+                                    )  
+                                })}
                             </div>
 
                             <div className="rating-inner-container">
-                                <label>Ambience
-                                    <input type="radio" name="ambience" id="" value="1" onChange={this.handleChange('ambience')}/>
-                                    <input type="radio" name="ambience" id="" value="2" onChange={this.handleChange('ambience')}/>
-                                    <input type="radio" name="ambience" id="" value="3" onChange={this.handleChange('ambience')}/>
-                                    <input type="radio" name="ambience" id="" value="4" onChange={this.handleChange('ambience')}/>
-                                    <input type="radio" name="ambience" id="" value="5" onChange={this.handleChange('ambience')}/>
-                                </label>
+                                Ambience
+                                {[...Array(5)].map((star, i) => {
+                                    return(
+                                        <label>
+                                            <input 
+                                                type="radio" 
+                                                name="ambience" 
+                                                className="hidden-radio"
+                                                value={i + 1}
+                                                onChange={this.handleChange('ambience')}
+                                            />
+
+                                            <FaStar 
+                                                className="star"
+                                                color={ i + 1 <= this.state.ambience ? "crimson" : "darkgray" } />
+                                        </label>
+                                    )  
+                                })}
                             </div>
 
                             <div className="rating-inner-container">
-                                <label>Overall
-                                    <input type="radio" name="overall" id="" value="1" onChange={this.handleChange('overall')}/>
-                                    <input type="radio" name="overall" id="" value="2" onChange={this.handleChange('overall')}/>
-                                    <input type="radio" name="overall" id="" value="3" onChange={this.handleChange('overall')}/>
-                                    <input type="radio" name="overall" id="" value="4" onChange={this.handleChange('overall')}/>
-                                    <input type="radio" name="overall" id="" value="5" onChange={this.handleChange('overall')}/>
-                                </label>
+                                Overall
+                                {[...Array(5)].map((star, i) => {
+                                    return(
+                                        <label>
+                                            <input 
+                                                type="radio" 
+                                                name="overall" 
+                                                className="hidden-radio"
+                                                value={i + 1}
+                                                onChange={this.handleChange('overall')}
+                                            />
+
+                                            <FaStar 
+                                                className="star"
+                                                color={ i + 1 <= this.state.overall ? "crimson" : "darkgray" } />
+                                        </label>
+                                    )  
+                                })}
                             </div>
                         </div>
 

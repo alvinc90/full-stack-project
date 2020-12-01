@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import StarRating from '../star_rating';
 import ReviewEditForm from './review_edit_form';
+import { FaStar } from 'react-icons/fa';
 
 class ReviewIndexItem extends React.Component {
     constructor(props) {
@@ -35,9 +36,11 @@ class ReviewIndexItem extends React.Component {
         const { review, allUsers, currentUser, updateReview, fetchReview } = this.props;
         let totalRating = review.overall + review.food + review.service + review.ambience;
         let avg = totalRating / 4
+        
         if (review.user_id === currentUser) {
             return (
                 <div className="review-index-item-container">
+
                     <div className="review-box1">
                         {allUsers.map((user, i) => {
                             if (user.id === review.user_id) {
@@ -45,16 +48,22 @@ class ReviewIndexItem extends React.Component {
                             }
                         })}
                     </div>
+
                     <div className="review-box2">
-                        <div><span><StarRating /></span></div>
-                        <span>Overall: {review.overall}</span>
-                        <span>Food: {review.food}</span>
-                        <span>Service: {review.service}</span>
-                        <span>Ambience: {review.ambience}</span>
-                        <p>{review.body}</p>
-                        <span>Dined On: {review.updated_at}</span>
-                        <button onClick={this.handleEditModal}>Edit</button>
-                        <button onClick={this.handleDelete}>Delete</button>
+                        {[...Array(review.overall)].map((star) => {
+                            return <FaStar size={25} color="crimson" />
+                        })}
+                        <div className="review-score">
+                            <span className="review-score-list">Overall: {review.overall}</span>
+                            <span className="review-score-list">Food: {review.food}</span>
+                            <span className="review-score-list">Service: {review.service}</span>
+                            <span className="review-score-list">Ambience: {review.ambience}</span>
+                        </div>
+
+                        <p className="review-body">{review.body}</p>
+                        {/* <span>Dined On: {review.updated_at}</span> */}
+                        <button className="review-btn-edit" onClick={this.handleEditModal}>Edit</button>
+                        <button className="review-btn-delete" onClick={this.handleDelete}>Delete</button>
                     </div>
 
                     {this.state.showEditModal ? 
@@ -81,13 +90,19 @@ class ReviewIndexItem extends React.Component {
                         })}
                     </div>
                     <div className="review-box2">
-                        <div><span><StarRating /></span></div>
-                        <span>Overall: {review.overall}</span>
-                        <span>Food: {review.food}</span>
-                        <span>Service: {review.service}</span>
-                        <span>Ambience: {review.ambience}</span>
-                        <p>{review.body}</p>
-                        <span>Dined On: {review.updated_at}</span>
+                        {[...Array(review.overall)].map((star) => {
+                            return <FaStar size={25} color="crimson" />
+                        })}
+
+                        <div className="review-score">
+                            <span className="review-score-list">Overall: {review.overall}</span>
+                            <span className="review-score-list">Food: {review.food}</span>
+                            <span className="review-score-list">Service: {review.service}</span>
+                            <span className="review-score-list">Ambience: {review.ambience}</span>
+                        </div>
+
+                        <p className="review-body">{review.body}</p>
+                        {/* <span>Dined On: {review.updated_at}</span> */}
                     </div>
                 </div>
             )

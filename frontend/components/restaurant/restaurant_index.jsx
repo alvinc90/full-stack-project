@@ -1,7 +1,5 @@
 import React from 'react'
 import RestaurantIndexItem from './restaurant_index_item'
-import { fetchAllRestaurants } from '../../actions/restaurant_action';
-import RestaurantShow from './restaurant_show';
 
 class RestaurantIndex extends React.Component {
 
@@ -11,6 +9,7 @@ class RestaurantIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllRestaurants();
+        this.props.fetchReviews();
     }
 
     render() {
@@ -18,7 +17,7 @@ class RestaurantIndex extends React.Component {
             <div className="restaurant-index-outer-container">
                 {this.props.restaurants.map((restaurant) => {
                     return (
-                        <RestaurantIndexItem restaurant={restaurant} key={restaurant.id} />
+                        <RestaurantIndexItem restaurant={restaurant} key={restaurant.id} reviews={this.props.reviews} />
                     )
                 })}
             </div>

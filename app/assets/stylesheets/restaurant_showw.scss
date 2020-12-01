@@ -31,6 +31,7 @@
     font-family: 'Commissioner', sans-serif;
     font-size: 23px;
     margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .show-nav > li:hover {
@@ -191,4 +192,75 @@
     opacity: 87%;
     top: -2px;
 
+}
+
+.hidden-radio {
+  display: none;
+}
+
+.star {
+    cursor: pointer;
+    transition: color 100ms; 
+    // margin-right: 1px;
+    margin-left: 3px;
+}
+
+.review-body {
+    font-weight: light;
+    font-family: 'Commissioner', sans-serif;
+    line-height: 23px;
+    color: gray;
+    margin-bottom: 25px;
+}
+
+.review-score {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.review-score-list {
+    font-size: 16px;
+    font-family: 'Commissioner', sans-serif;
+    margin-right: 14px;
+}
+
+.review-btn-edit {
+    border-radius: 4px;
+    background-color: white;
+    color: rgb(92, 90, 90);
+    padding: 6px;
+    margin: 5px; 
+    text-decoration: none;
+    list-style: none;
+    outline: none;; 
+    cursor: pointer;
+    border: 1px solid lightgray; 
+    width: 60px;
+    height: 32px; 
+    font-size: 15px;
+    font-family: 'Commissioner', sans-serif;
+    position: relative;
+}
+
+.review-btn-delete {
+    list-style: none;
+    border-radius: 4px;
+    background-color: lightseagreen;
+    text-decoration: none;
+    color: white; 
+    padding: 6px;
+    margin: 5px; 
+    cursor: pointer;
+    border: none; 
+    outline: none;
+    width: 60px;
+    height: 32px;
+    font-size: 15px; 
+    font-family: 'Commissioner', sans-serif;
+    position: relative;
+}
+
+.review-btn-edit:hover, .review-btn-delete:hover {
+    opacity: 80%;
+    top: -2px;
 }

@@ -3,6 +3,7 @@ import StarRating from '../star_rating';
 import ReviewIndex from '../review/review_index';
 import ReviewCreateModal from '../review/review_create';
 import ReviewEditForm from '../review/review_edit_form';
+import { FaStar } from 'react-icons/fa';
 class RestaurantShow extends React.Component {
     constructor(props) {
         super(props)
@@ -38,6 +39,22 @@ class RestaurantShow extends React.Component {
                 currentUser,
                 clearReview,
                 fetchReview } = this.props;
+        let reviewRes = this.props.reviews.filter((review) => review.restaurant_id === this.props.restaurant.id);
+        let total = 0;
+        reviewRes.forEach((rev) => total += rev.overall)
+        let avg = total / reviewRes.length
+        let rating;
+        if (avg >= 4.5) {
+            rating = 5
+        } else if (avg >= 3.5 && avg < 4.5) {
+            rating = 4
+        } else if (avg >= 2.5 && avg < 3.5) {
+            rating = 3
+        } else if (avg >= 1.5 && avg < 2.5) {
+            rating = 2
+        } else {
+            rating = 1
+        }
         return (
             <div className="outer-show-div">
                 <div><img className="dining" src={window.diningURL} alt="dining" /></div>
@@ -91,7 +108,9 @@ class RestaurantShow extends React.Component {
                     </div>                          
                     
                     <div className="show-aside-container">
-                        < StarRating />
+                        {[...Array(rating)].map((star) => {
+                            return <FaStar color="crimson" />
+                        })}
                         <label> <h5 className="show-aside-heading">Address</h5>
                             {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.address}</p> : null}
                         </label>
