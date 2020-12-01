@@ -53,33 +53,31 @@ class SignUpForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className='login-form'>
                     <h1 className="form-heading">Welcome to OpenStreetTable!</h1>
 
-                    <div onClick={this.props.closeModal}>
-                    </div>
-
-                    {/* {this.renderErrors()}  */}
-
-                    <label className="labels">
-                        <input className="input-username" type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*"/>
-                        <div className="error-form">{this.renderErrors().username}</div>
-                    </label>
-                    {/* <span className={firstNameError}>Please enter your first name</span> */}
-                    <label className="labels">
-                        <input className="input-email" type="text" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email*"/>
-                        <div className="error-form">{this.renderErrors().email}</div>
-                    </label>
-                    <label className="labels">
-                        <input className="input-password" type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password*"/>
-                        <div className="error-form">{this.renderErrors().password}</div>
-                    </label>
-                    <label> 
-                        <select className="selector" defaultValue="Dining Location">
-                            <option disabled value="Dining Location">Dining Location*</option>
-                            <option value={this.state.diningLocation}>San Francisco</option>
-                            <option value={this.state.diningLocation}>New York</option>
-                            <option value={this.state.diningLocation}>Chicago</option>
-                            <option value={this.state.diningLocation}>Los Angeles</option>
-                        </select>
-                    </label>
+                    {/* <div onClick={this.props.closeModal}> */}
+                    {/* </div> */}
+                    {/* <div className="form-input-container"> */}
+                        <label className="labels">
+                            <input className="input-username" type="text" value={this.state.username} onChange={this.handleChange('username')} placeholder="Username*"/>
+                            <div className="error-form">{this.renderErrors().username}</div>
+                        </label>
+                        <label className="labels">
+                            <input className="input-email" type="text" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email*"/>
+                            <div className="error-form">{this.renderErrors().email}</div>
+                        </label>
+                        <label className="labels">
+                            <input className="input-password" type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password*"/>
+                            <div className="error-form">{this.renderErrors().password}</div>
+                        </label>
+                        <label> 
+                            <select className="selector" defaultValue="Dining Location">
+                                <option disabled value="Dining Location">Dining Location*</option>
+                                <option value={this.state.diningLocation}>San Francisco</option>
+                                <option value={this.state.diningLocation}>New York</option>
+                                <option value={this.state.diningLocation}>Chicago</option>
+                                <option value={this.state.diningLocation}>Los Angeles</option>
+                            </select>
+                        </label>
+                    {/* </div> */}
 
                     <button className="button-signup">Create Account</button>
                 </form>
@@ -90,3 +88,4 @@ class SignUpForm extends React.Component {
 };  
 
 export default SignUpForm;
+                        

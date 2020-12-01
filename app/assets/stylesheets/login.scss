@@ -3,12 +3,11 @@
      border-radius: 4px;
      color: white;
      font: inherit;
-     height: 40px; 
+     height: 47px; 
      width: 250px;
-     margin-top: 12px; 
      cursor: pointer;
      font-family: 'Commissioner', sans-serif;
-     margin-top: 30px;
+     margin-top: 29px;
      border: none;
  }
 
@@ -34,14 +33,19 @@
    background-color: darkred;
   }
 
+  .button-demo:focus, .button-signup:focus, .button-login:focus {
+    border: none;
+    outline: none;
+  }
+
  .button-demo {
      border-radius: 4px;
     //  color: rgba(113, 143, 97, 0.972);
     color: rgb(34, 31, 31);
      font: inherit;
-     height: 40px; 
+     height: 46px; 
      width: 250px;
-     margin-top: 12px; 
+     margin-top: 26px; 
      cursor: pointer;
      font-family: 'Commissioner', sans-serif;
      border: none;background-color: lightblue;
@@ -71,38 +75,24 @@
 
  .form-heading2 {
    font-size: 24px;
-   margin-top: 80px;
+   margin-top: 44px;
+   margin-bottom: 13px;
    font-family: 'Commissioner', sans-serif;
  }
-
-//  input[type=text] {
-//   height: 40px;
-//   width: 350px; 
-//   border-style: solid;
-//   border-color: lightgray;
-//   margin-bottom: 20px;
-  // }
  
  input[type=text]:hover {
    border-color: darkgray;
  }
-
-//  input[type=password] {
-//    height: 40px; 
-//    width: 350px; 
-//    border-style: solid;
-//    border-color: lightgray; 
-//   }
 
   input[type=password]:hover {
     border-color: darkgray;
  }
 
   .selector {
-    margin-top: 20px;
+    margin-top: 15px;
     cursor: pointer; 
    height: 45px; 
-   width: 360px; 
+   width: 250px; 
    border: 2px solid lightgray
   }
 
@@ -115,35 +105,28 @@
     margin-left: 3px;
     font-size: 14px;
     position: absolute;
+    top: 70px;
   }
 
   .labels {
-    position: relative; 
+    position: relative;
+    top: -10px;
   }
 
-  .input-username {
+  .input-username, .input-email, .input-password {
     height: 40px;
-    width: 350px; 
+    width: 240px; 
     border-style: solid;
     border-color: lightgray;
     margin-bottom: 8px;
     margin-top: 20px;
   }
 
-  .input-email {
-    height: 40px;
-    width: 350px; 
-    border-style: solid;
-    border-color: lightgray;
-    margin-bottom: 8px;
-    margin-top: 20px;
+  .input-username:focus, .input-email:focus, .input-password:focus, .selector:focus {
+    border-color: darkgray;
+    outline: none;
   }
 
-  .input-password {
-    height: 40px; 
-    width: 350px; 
-    border-style: solid;
-    border-color: lightgray;
-    margin-bottom: 8px; 
-    margin-top: 20px;
-  }
+  // .form-input-container {
+  //   margin-top: 10px;
+  // }
