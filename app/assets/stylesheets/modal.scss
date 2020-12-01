@@ -16,5 +16,27 @@
   transform: translate(-50%, -50%);
   height: 448px;
   width: 400px; 
-  border-radius: 4px;
+  border-radius: 5px;
+}
+
+.modal-x-button {
+  cursor: pointer;
+  background-color: rgb(220, 20, 60);
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  font-family: 'Commissioner', sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 90%;
+  top: 2%;
+  border-radius: 3px;
+}
+
+.modal-x-button:hover {
+  opacity: 70%;
+  background-color: darkred;
 }

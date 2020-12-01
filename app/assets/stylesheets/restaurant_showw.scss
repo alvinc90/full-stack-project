@@ -142,11 +142,53 @@
     border-radius: 5px;
     border: 1px solid lightgray;
     height: 150px;
-    width: 95%;
+    width: 90%;
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 16px;
+    margin-left: 15px;
+    resize: none;
 }
 
-// .create-input-button {
-//     background-color: blue;
-// }
+.create-review-textarea:focus {
+    border-color: darkgray;
+    outline: none;
+}
+
+.rating-inner-container {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.rating-outer-container {
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+.create-form-title {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 45px;
+}
+
+.create-input-button {
+    background-color: rgb(220, 20, 60);
+    border-radius: 4px;
+    color: white;
+    font: inherit;
+    height: 40px; 
+    width: 150px;
+    cursor: pointer;
+    font-family: 'Commissioner', sans-serif;
+    margin-top: 24px;
+    border: none;
+    margin-left: 31%;
+    position: relative;
+}
+
+.create-input-button:hover {
+    opacity: 87%;
+    top: -2px;
+
+}

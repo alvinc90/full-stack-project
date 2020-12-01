@@ -22,7 +22,11 @@
   font-family: 'Commissioner', sans-serif;
 }
 
-// .a {
-//   color: blue;
-// }
+.star-shit {
+  display: none;
+}
 
+.star {
+  cursor: pointer;
+  transition: color 200ms; 
+}
