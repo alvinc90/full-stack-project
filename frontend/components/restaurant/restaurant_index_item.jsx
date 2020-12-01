@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { FaStar } from 'react-icons/fa';
-import StarRating from '../star_rating';
 
 const RestaurantIndexItem = ({ restaurant, reviews }) => {
         let reviewRes = reviews.filter((review) => review.restaurant_id === restaurant.id);

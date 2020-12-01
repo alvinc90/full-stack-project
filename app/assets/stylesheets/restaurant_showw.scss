@@ -55,7 +55,15 @@
     font-size: 25px;
     margin-bottom: 10px;
     font-family: 'Commissioner', sans-serif;
-    // font-weight: bold;
+    margin-left: 2%;
+}
+
+.div1 {
+    background-color: lightgray;
+    height: 2px;
+    width: 95%;
+    margin-left: 2%;
+    margin-bottom: 12px;
 }
 
 .show-description {
@@ -63,6 +71,7 @@
     font-family: 'Commissioner', sans-serif;
     line-height: 30px;
     color: gray;
+    margin-left: 2%;
 }
 
 .show-aside-container {
@@ -263,4 +272,18 @@
 .review-btn-edit:hover, .review-btn-delete:hover {
     opacity: 80%;
     top: -2px;
+}
+
+.show-content-container {
+    margin-bottom: 35px;
+}
+
+.nav-li {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-li:hover {
+    color: darkred;
+    text-decoration: underline;
 }

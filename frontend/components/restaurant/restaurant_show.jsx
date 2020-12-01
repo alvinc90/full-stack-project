@@ -4,6 +4,7 @@ import ReviewIndex from '../review/review_index';
 import ReviewCreateModal from '../review/review_create';
 import ReviewEditForm from '../review/review_edit_form';
 import { FaStar } from 'react-icons/fa';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 class RestaurantShow extends React.Component {
     constructor(props) {
         super(props)
@@ -63,19 +64,43 @@ class RestaurantShow extends React.Component {
                     <div className="inner-show-container">
 
                         <ul className="show-nav">
-                            <li>Overview</li>
-                            <li>Photos</li>
-                            <li>Menu</li>
-                            <li>Reviews</li>
+                            <AnchorLink className="nav-li" href="#to-overview">
+                                <li>Overview</li>
+                            </AnchorLink>
+                            <AnchorLink className="nav-li" href="#to-photos">
+                                <li>Photos</li>
+                            </AnchorLink>
+                            <AnchorLink className="nav-li" href="#to-menu">
+                                <li>Menu</li>
+                            </AnchorLink>
+                            <AnchorLink className="nav-li" href="#to-review">
+                                <li>Reviews</li>
+                            </AnchorLink>
+
                         </ul>
 
                         {(this.props.restaurant) ? <h1 className="show-h1">{this.props.restaurant.name}</h1> : null}
-                        <h3 className="show-heading-list">Overview</h3>
-                        {(this.props.restaurant) ? <p className="show-description">{this.props.restaurant.description}</p> : null}
+
+                        <div className="show-content-container">
+                            <h3 className="show-heading-list" id="to-overview">Overview</h3>
+                            <div className="div1"></div>
+                            {(this.props.restaurant) ? <p className="show-description">{this.props.restaurant.description}</p> : null}
+                        </div>
+
+                        <div className="show-content-container">
+                            <h3 className="show-heading-list" id="to-photos">Photos</h3>
+                            <div className="div1"></div>
+                        </div>
+
+                        <div className="show-content-container">
+                            <h3 className="show-heading-list" id="to-menu">Menu</h3>
+                            <div className="div1"></div>
+                        </div>
+
 
                         <div className="review-outer-container">
                             <div className="review-heading">
-                                <h1 className="show-heading-list">What people are saying</h1>
+                                <h1 className="show-heading-list" id="to-review">What people are saying</h1>
                                 <button onClick={this.handleModal} className="leave-review-button">Leave a Review</button>
                             </div>
 
@@ -93,17 +118,19 @@ class RestaurantShow extends React.Component {
                                 : null
 
                             }
+                            <div>
+                                <ReviewIndex 
+                                    restaurant={restaurant}
+                                    reviews={reviews}
+                                    fetchReviews={fetchReviews}
+                                    allUsers={allUsers}
+                                    fetchAllUsers={fetchAllUsers}
+                                    currentUser={currentUser}
+                                    deleteReview={deleteReview}
+                                    updateReview={updateReview}
+                                    fetchReview={fetchReview} />
+                            </div>
 
-                            <ReviewIndex 
-                                restaurant={restaurant}
-                                reviews={reviews}
-                                fetchReviews={fetchReviews}
-                                allUsers={allUsers}
-                                fetchAllUsers={fetchAllUsers}
-                                currentUser={currentUser}
-                                deleteReview={deleteReview}
-                                updateReview={updateReview}
-                                fetchReview={fetchReview} />
                         </div>
                     </div>                          
                     

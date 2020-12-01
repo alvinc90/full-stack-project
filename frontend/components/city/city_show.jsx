@@ -10,6 +10,7 @@ class CityShow extends React.Component {
     componentDidMount() {
         this.props.fetchCity(this.props.match.params.cityId)
         this.props.fetchAllRestaurants();
+        this.props.fetchReviews();
         window.scrollTo(0, 0);
     }
 
@@ -36,7 +37,11 @@ class CityShow extends React.Component {
                     {this.props.restaurants.map((restaurant, i) => {
                         if(this.props.city.id === this.props.restaurants[i].city_id)
                         return (
-                            <CityShowRestaurantItem restaurant={restaurant} key={restaurant.id} />
+                            <CityShowRestaurantItem 
+                                restaurant={restaurant} 
+                                key={restaurant.id}
+                                reviews={this.props.reviews}
+                            />
                         )
                     })}
                 </div>
