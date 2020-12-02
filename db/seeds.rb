@@ -322,6 +322,18 @@ fav2 = Favorite.create!(
     restaurant_id: 2
 )
 
+fav2 = Favorite.create!(
+    user_id: 1,
+    restaurant_id: 2
+)
+
+fav2 = Favorite.create!(
+    user_id: 1,
+    restaurant_id: 3
+)
+
+
+
 
 
 

@@ -25,18 +25,16 @@ class UserFav extends React.Component {
                             <h1>My Reservations</h1>
                         </div>
                         <div className="user-show-info-container">
+                            <h1>My Favorite Restaurants</h1>
                             { favorites.map((favorite) => {
                                 if(favorite.user_id === currentUser) {
                                     favResId.push(favorite.restaurant_id)
                                 }
                             })}
 
-                            {restaurants.forEach((restaurant) => {
-                                favResId.forEach((resId) => {
-                                    if (restaurant.id === resId) {
-                                        favRes.push(restaurant)
-                                    }
-                                })
+                            {favResId.forEach((resId) => {
+                                const findRestaurant = restaurants.find((restaurant) => restaurant.id === resId);
+                                if(findRestaurant) favRes.push(findRestaurant)
                             })}
 
                             {favRes.map((favRe) => {
