@@ -5,32 +5,36 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.toggleMenu = this.toggleMenu.bind(this);
+        this.closeDropDown = this.closeDropDown.bind(this);
     }; 
 
     toggleMenu(e) {
-        console.log("pizzzzaaa timeeeee");
         const listItems = document.getElementsByClassName("list-items")[0];
-        if (listItems.style.display === "none"){
+        if (listItems.style.display === "none" || listItems.style.display === ""){
             listItems.style.display = "block"
         } else {
             listItems.style.display = "none"
         }
+    }
 
+    closeDropDown(e) {
+        const listItems = document.getElementsByClassName("list-items")[0];
+        listItems.style.display = "none"
     }
 
     render() {
         const display = this.props.currentUserId ? (
             <div className="navbar">
-                <Link to={"/"}><img src={window.brentURL} alt="open street table logo" /></Link>
+                <Link onClick={this.closeDropDown} to={"/"}><img src={window.brentURL} alt="open street table logo" /></Link>
 
                 <div className="signed-in-nav">
                     <ul className="signed-in-nav2">
                         <li>
                             <p onClick={this.toggleMenu} className="this">Hello, {this.props.username}</p>
                             <ul className="list-items">
-                                <Link className="link-styling" to="/my/profile"><li>My Profile</li></Link>
-                                <Link className="link-styling" to="/my/favorites"><li>My Saved Restaurants</li></Link>
-                                <Link className="link-styling" to="/"><li>My Reservation</li></Link>
+                                <Link onClick={this.toggleMenu} className="link-styling" to="/my/profile"><li>My Profile</li></Link>
+                                <Link onClick={this.toggleMenu} className="link-styling" to="/my/favorites"><li>My Saved Restaurants</li></Link>
+                                <Link onClick={this.toggleMenu} className="link-styling" to="/"><li>My Reservation</li></Link>
                                 <li onClick={this.props.logout}>Sign Out</li>
                             </ul>
                         </li>

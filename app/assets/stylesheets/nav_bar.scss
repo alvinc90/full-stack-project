@@ -26,6 +26,14 @@
  .this {
      cursor: pointer;
      padding-right: 110px;
+     font-size: 20px;
+     color: rgb(104, 102, 102);
+     
+ }
+
+ .this:hover {
+     filter: brightness(60%);
+     
  }
 
  .list-items {

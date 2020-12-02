@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../footer';
+import { Link } from 'react-router-dom';
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -16,9 +17,12 @@ class UserShow extends React.Component {
             <div className="user-show-outer-container">
                 <div className="user-show-inner-container">
                     <div className="user-show-links-container">
-                        <h1>My Profile</h1>
-                        <h1>My Saved Restaurants</h1>
-                        <h1>My Reservations</h1>
+                        <div className="links-container">
+                            <Link className="link-styling" to="/my/profile"><h1>My Profile</h1></Link>
+                            <Link className="link-styling" to="/my/favorites"><h1>My Saved Restaurants</h1></Link>
+                            <Link className="link-styling" to="/"><h1>My Reservations</h1></Link>
+                        </div>
+
                     </div>
                     <div className="user-show-info-container">
                         <h1>Username: {user.username}</h1>
