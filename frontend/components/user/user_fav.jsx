@@ -13,13 +13,13 @@ class UserFav extends React.Component {
 
     handleUnfavorite(e) {
         debugger
-        const { currentUser, users } = this.props;
+        const { currentUser } = this.props;
         const findFavorite = this.props.favorites.find((favorite) => (favorite.restaurant_id == e.currentTarget.id) && ( favorite.user_id === currentUser))
         this.props.deleteFavorite(findFavorite.id);
     }
 
     render() {
-        const { users, currentUser, restaurants, favorites, deleteFavorite } = this.props;
+        const { currentUser, restaurants, favorites } = this.props;
         const favResId = [];
         const favRes = [];
         return(

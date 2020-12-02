@@ -123,6 +123,10 @@
     background-color: darkred;
 }
 
+.leave-review-button:focus {
+    outline: none;
+}
+
 .review-index-item-container {
     display: flex;
     border-top: 2px solid lightgray;
@@ -286,4 +290,23 @@
 .nav-li:hover {
     color: darkred;
     text-decoration: underline;
+}
+
+.show-favorite-button {
+    position: absolute;
+    top: 120px;
+    right: 45px;
+    height: 45px;
+    width: 180px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.show-favorite-button:hover {
+    border: 5px solid darkred;
+}
+
+.show-favorite-button:focus, .create-input-button:hover {
+    outline: none;
 }

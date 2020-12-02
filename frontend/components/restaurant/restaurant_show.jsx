@@ -1,8 +1,6 @@
 import React from 'react';
-import StarRating from '../star_rating';
 import ReviewIndex from '../review/review_index';
 import ReviewCreateModal from '../review/review_create';
-import ReviewEditForm from '../review/review_edit_form';
 import { FaStar } from 'react-icons/fa';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 class RestaurantShow extends React.Component {
@@ -59,7 +57,7 @@ class RestaurantShow extends React.Component {
         return (
             <div className="outer-show-div">
                 <div><img className="dining" src={window.diningURL} alt="dining" /></div>
-
+                <button className="show-favorite-button">Save this Restaurant</button>
                 <div className="outer-show-container">
                     <div className="inner-show-container">
 
