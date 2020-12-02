@@ -8,6 +8,7 @@ import Home from "./home/home";
 import RestaurantShowContainer from './restaurant/restaurant_show_container';
 import CityShowContainer from './city/city_show_container';
 import UserShowContainer from './user/user_show_container';
+import UserFavContainer from './user/user_fav_container';
 // import ReviewEditContainer from './review/review_edit_container';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
                 <Route exact path="/" component={Home}/>
                 {/* <Route exact path ="/myprofile" component={UserShowContainer} /> */}
                 <ProtectedRoute exact path ="/my/profile" component={UserShowContainer} />
+                <ProtectedRoute exact path ="/my/favorites" component={UserFavContainer} />
                 <Route exact path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
                 {/* <Route exact path="/restaurants/:restaurantId" component={ReviewEditContainer} /> */}
                 <Route exact path="/cities/:cityId" component={CityShowContainer} />

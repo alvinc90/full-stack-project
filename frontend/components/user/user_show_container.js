@@ -6,15 +6,13 @@ import UserShow from './user_show';
 const mapStateToProps = (state, ownProps) => {
     return({
         currentUser: state.session.currentUserId,
-        user: state.entities.users,
-        restaurants: Object.values(state.entities.restaurants)
+        user: state.entities.users
     })
 };
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        fetchUser: (userId) => dispatch(fetchUser(userId)),
-        fetchAllRestaurants: () => dispatch(fetchAllRestaurants())
+        fetchUser: (userId) => dispatch(fetchUser(userId))
     })
 };
 

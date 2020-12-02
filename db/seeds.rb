@@ -12,6 +12,7 @@ User.delete_all
 City.delete_all
 Restaurant.delete_all
 Review.delete_all
+# Favorite.delete_all
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
