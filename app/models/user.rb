@@ -15,6 +15,14 @@ class User < ApplicationRecord
     validates :username, :email, :session_token, uniqueness: true 
     validates :password, length: {minimum: 4, allow_nil: true}
 
+    has_many :favorites,
+        foreign_key: :user_id,
+        class_name: :Favorite
+    
+    has_many :favorite_kitchens, 
+        through: :favorites,
+        source: :restaurant
+
     has_many :reviews, 
         foreign_key: :user_id,
         class_name: :Review

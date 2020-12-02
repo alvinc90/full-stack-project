@@ -31,4 +31,12 @@ class Restaurant < ApplicationRecord
     has_many :customers_reviewed, 
         through: :reviews, 
         source: :reviewer
+
+    has_many :favorites,
+        foreign_key: :restaurant_id,
+        class_name: :Favorite
+
+    has_many :follower, 
+        through: :favorites,
+        source: :user
 end 

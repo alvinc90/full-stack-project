@@ -18,6 +18,8 @@ class NavBar extends React.Component {
                             <ul className="list-items">
                                 <li onClick={this.props.logout}>Sign Out</li>
                                 <Link to="/my/profile"><li>My Profile</li></Link>
+                                <Link to="/my/favorites"><li>My Saved Restaurants</li></Link>
+                                <Link to="/"><li>My Reservation</li></Link>
                             </ul>
                         </li>
                     </ul>

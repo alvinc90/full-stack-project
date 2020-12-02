@@ -1,0 +1,28 @@
+.user-show-outer-container {
+    // background-color: darkred;
+    // height: 100vh;
+}
+
+.user-show-inner-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.user-show-links-container {
+    height: 300px;
+    width: 200px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+}
+
+.user-show-info-container {
+    height: 200px;
+    width: 300px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+}
+
+.user-show-links-container h1, .user-show-info-container h1 {
+    font-family: 'Commissioner', sans-serif
+}
