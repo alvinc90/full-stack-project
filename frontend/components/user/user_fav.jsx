@@ -36,6 +36,7 @@ class UserFav extends React.Component {
                         </div>
 
                         <div className="user-show-info-container">
+                            <h1>My favorites</h1>
                             <h1>My Favorite Restaurants</h1>
                             { favorites.map((favorite) => {
                                 if(favorite.user_id === currentUser) {

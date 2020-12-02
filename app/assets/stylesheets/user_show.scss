@@ -33,11 +33,14 @@
 }
 
 .user-show-info-container {
-    height: 200px;
-    width: 300px;
-    border: 1px solid darkgray;
+    height: 100%;
+    width: 550px;
+    border: 1px solid whitesmoke;
     border-radius: 4px;
     margin-top: 48px;
+    position: relative;
+    left: -80px;
+    background-color: whitesmoke;
 }
 
 .user-show-links-container h1, .user-show-info-container h1 {
@@ -46,4 +49,37 @@
 
 .links-container {
     padding-top: 9px;
+}
+
+// .user-show-info-inner-container {
+//     width: 90%;
+//     height: 80%;
+//     border: 1px solid gold;
+// }
+
+.profile-heading {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.line-below-heading {
+    width: 90%;
+    height: 2px;
+    background-color: lightgray;
+    margin-left: 5%;
+    margin-bottom: 15px;
+}
+
+.user-bio-list {
+    // text-align: center;
+    margin-left: 40px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.username {
+    color: #247f9e;
+    margin-left: 20px;
 }

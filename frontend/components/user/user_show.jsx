@@ -25,9 +25,20 @@ class UserShow extends React.Component {
 
                     </div>
                     <div className="user-show-info-container">
-                        <h1>Username: {user.username}</h1>
-                        <h1>Email: {user.email}</h1>
-                        <h1>Location: Unavailable at this time</h1>
+                        <h1 className="profile-heading">My Profile</h1>
+                        <div className="line-below-heading"></div>
+                        <h1 className="user-bio-list">
+                            <span>Username:</span>
+                            <span className="username">{user.username}</span>
+                        </h1>
+                        <h1 className="user-bio-list">
+                            <span>Email:</span>
+                            <span className="username">{user.email}</span>
+                        </h1>
+                        <h1 className="user-bio-list">
+                            <span>Location:</span>
+                            <span className="username">Unavailable at this time</span>
+                        </h1>
                     </div>
                 </div>
 
@@ -41,3 +52,4 @@ class UserShow extends React.Component {
 };
 
 export default UserShow;
+
