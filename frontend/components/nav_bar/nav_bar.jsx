@@ -4,7 +4,19 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
+        this.toggleMenu = this.toggleMenu.bind(this);
     }; 
+
+    toggleMenu(e) {
+        console.log("pizzzzaaa timeeeee");
+        const listItems = document.getElementsByClassName("list-items")[0];
+        if (listItems.style.display === "none"){
+            listItems.style.display = "block"
+        } else {
+            listItems.style.display = "none"
+        }
+
+    }
 
     render() {
         const display = this.props.currentUserId ? (
@@ -14,12 +26,12 @@ class NavBar extends React.Component {
                 <div className="signed-in-nav">
                     <ul className="signed-in-nav2">
                         <li>
-                            <p className="this">Hello, {this.props.username}</p>
+                            <p onClick={this.toggleMenu} className="this">Hello, {this.props.username}</p>
                             <ul className="list-items">
+                                <Link className="link-styling" to="/my/profile"><li>My Profile</li></Link>
+                                <Link className="link-styling" to="/my/favorites"><li>My Saved Restaurants</li></Link>
+                                <Link className="link-styling" to="/"><li>My Reservation</li></Link>
                                 <li onClick={this.props.logout}>Sign Out</li>
-                                <Link to="/my/profile"><li>My Profile</li></Link>
-                                <Link to="/my/favorites"><li>My Saved Restaurants</li></Link>
-                                <Link to="/"><li>My Reservation</li></Link>
                             </ul>
                         </li>
                     </ul>

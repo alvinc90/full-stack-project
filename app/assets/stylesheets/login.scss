@@ -41,18 +41,19 @@
  .button-demo {
      border-radius: 4px;
     //  color: rgba(113, 143, 97, 0.972);
-    color: rgb(34, 31, 31);
+    // color: rgb(34, 31, 31);
+    color: white;
      font: inherit;
      height: 46px; 
      width: 250px;
      margin-top: 26px; 
      cursor: pointer;
      font-family: 'Commissioner', sans-serif;
-     border: none;background-color: lightblue;
+     border: none;background-color: #247f9e;
  }
 
   .button-demo:hover {
-    background-color: rgb(118, 207, 236);
+    filter: brightness(110%);
   }
 
   .login-form {

@@ -25,21 +25,40 @@
  }
  .this {
      cursor: pointer;
-     padding-right: 50px;
+     padding-right: 110px;
  }
 
  .list-items {
-     display: none;
-     position: absolute; 
+    display: none;
+    position: absolute;
+    right: 80px;
+    top: 50px;
+    z-index: 2;
+    width: 200px;
+    height: 176px;
+    border: 1px solid darkgray;
+    background-color: whitesmoke;
+    border-radius: 4px;
  }
 
  .signed-in-nav2:hover .list-items {
-     display: block; 
+    //  display: block; 
  }
 
  .list-items li:hover {
      background-color: lightgray;
      cursor: pointer;
+ }
+ 
+ .list-items li {
+     padding: 13px 8px;
+     font-size: 18px;
+     text-decoration: none;
+     color: #247f9e;
+ }
+
+ .link-styling {
+     text-decoration: none;
  }
  
  .btn-login {
