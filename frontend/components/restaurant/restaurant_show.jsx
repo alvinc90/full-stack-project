@@ -7,14 +7,29 @@ class RestaurantShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            showModal: false
+            showModal: false,
+            favorite: {
+                restaurant_id: this.props.restaurant.id,
+                user_id: this.props.currentUser,
+            }
         }
         this.handleModal = this.handleModal.bind(this);
+        this.handleCreateFavorite = this.handleCreateFavorite.bind(this);
+        this.handleDeleteFavorite = this.handleDeleteFavorite.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchRestaurant(this.props.match.params.restaurantId);
+        this.props.fetchFavorites();
         window.scrollTo(0, 0);
+    }
+
+    handleCreateFavorite(e) {
+        this.props.createFavorite(this.state.favorite);
+    }
+
+    handleDeleteFavorite(e) {
+        this.props.deleteFavorite(parseInt(e.currentTarget.id));
     }
 
     handleModal() {
@@ -27,6 +42,7 @@ class RestaurantShow extends React.Component {
     }
 
     render() {
+        // debugger
         const { restaurant, 
                 reviews,
                 fetchReviews, 
@@ -37,7 +53,8 @@ class RestaurantShow extends React.Component {
                 deleteReview,
                 currentUser,
                 clearReview,
-                fetchReview } = this.props;
+                fetchReview,
+                favorites } = this.props;
         let reviewRes = this.props.reviews.filter((review) => review.restaurant_id === this.props.restaurant.id);
         let total = 0;
         reviewRes.forEach((rev) => total += rev.overall)
@@ -54,10 +71,12 @@ class RestaurantShow extends React.Component {
         } else {
             rating = 1
         }
+        const findFavorite = favorites.find((favorite) => (favorite.user_id === this.state.favorite.user_id) && (favorite.restaurant_id === this.state.favorite.restaurant_id))
         return (
             <div className="outer-show-div">
                 <div><img className="dining" src={window.diningURL} alt="dining" /></div>
-                <button className="show-favorite-button">Save this Restaurant</button>
+                { findFavorite ? <button id={findFavorite.id} className="show-favorite-button" onClick={this.handleDeleteFavorite}>Unsafe this Restaurant</button> : <button className="show-favorite-button" onClick={this.handleCreateFavorite}>Save this Restaurant</button>}
+
                 <div className="outer-show-container">
                     <div className="inner-show-container">
 

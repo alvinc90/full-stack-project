@@ -4,13 +4,15 @@ import RestaurantShow from './restaurant_show';
 import { fetchReviews, createReview, updateReview, deleteReview, clearReview, fetchReview } from '../../actions/review_action'; 
 import { fetchAllUsers } from '../../actions/user_action';
 import { openModal } from '../../actions/modal_action';
+import { fetchFavorites, deleteFavorite, createFavorite } from '../../actions/favorite_action';
 
 const mapStateToProps = (state, ownProps) => {
     return({
         restaurant: state.entities.restaurants[ownProps.match.params.restaurantId],
         reviews: Object.values(state.entities.reviews),
         allUsers: Object.values(state.entities.allUsers),
-        currentUser: state.session.currentUserId
+        currentUser: state.session.currentUserId,
+        favorites: Object.values(state.entities.favorites)
     })
 }; 
 
@@ -24,7 +26,10 @@ const mapDispatchToProps = (dispatch) => {
         deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
         clearReview: () => dispatch(clearReview()),
         openModal: (modal) => dispatch(openModal(modal)),
-        fetchReview: (reviewId) => dispatch(fetchReview(reviewId))
+        fetchReview: (reviewId) => dispatch(fetchReview(reviewId)),
+        fetchFavorites: () => dispatch(fetchFavorites()),
+        deleteFavorite: (favoriteId) => dispatch(deleteFavorite(favoriteId)),
+        createFavorite: (favorite) => dispatch(createFavorite(favorite))
     })
 }; 
 

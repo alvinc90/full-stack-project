@@ -14,7 +14,6 @@ const receiveReviews= (reviews) => {
 };
 
 const receiveReview = (review) => {
-    debugger
     return({
         type: RECEIVE_REVIEW,
         review

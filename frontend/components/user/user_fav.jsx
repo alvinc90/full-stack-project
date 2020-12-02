@@ -12,7 +12,6 @@ class UserFav extends React.Component {
     }
 
     handleUnfavorite(e) {
-        debugger
         const { currentUser } = this.props;
         const findFavorite = this.props.favorites.find((favorite) => (favorite.restaurant_id == e.currentTarget.id) && ( favorite.user_id === currentUser))
         this.props.deleteFavorite(findFavorite.id);
