@@ -1,6 +1,7 @@
 import React from 'react';
 import CityShowRestaurantItem from './city_show_item';
 import HomeSearchBar from '../home/home_search_bar';
+import Footer from '../footer';
 
 class CityShow extends React.Component {
     constructor(props) {
@@ -45,6 +46,10 @@ class CityShow extends React.Component {
                         )
                     })}
                 </div>
+
+                <footer>
+                    <Footer />
+                </footer>
             </div>
         )
 
