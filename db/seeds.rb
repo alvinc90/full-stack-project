@@ -12,7 +12,7 @@ User.delete_all
 City.delete_all
 Restaurant.delete_all
 Review.delete_all
-# Favorite.delete_all
+Favorite.delete_all
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
@@ -310,6 +310,16 @@ rev3 = Review.create!(
     ambience: 4,
     user_id: 3,
     restaurant_id: 1
+)
+
+fav1 = Favorite.create!(
+    user_id: 3,
+    restaurant_id: 1
+)
+
+fav2 = Favorite.create!(
+    user_id: 3,
+    restaurant_id: 2
 )
 
 
