@@ -18,6 +18,7 @@ export const createFavorite = (favorite) => {
 };
 
 export const deleteFavorite = (favoriteId) => {
+    debugger
     return(
         $.ajax({
             method: "DELETE",

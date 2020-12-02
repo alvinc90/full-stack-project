@@ -3,6 +3,7 @@ import React from 'react';
 class UserFav extends React.Component {
     constructor(props){
         super(props)
+        this.handleUnfavorite = this.handleUnfavorite.bind(this);
     }
 
     componentDidMount() {
@@ -10,11 +11,17 @@ class UserFav extends React.Component {
         this.props.fetchFavorites();
     }
 
+    handleUnfavorite(e) {
+        debugger
+        const { currentUser, users } = this.props;
+        const findFavorite = this.props.favorites.find((favorite) => (favorite.restaurant_id == e.currentTarget.id) && ( favorite.user_id === currentUser))
+        this.props.deleteFavorite(findFavorite.id);
+    }
+
     render() {
         const { users, currentUser, restaurants, favorites, deleteFavorite } = this.props;
         const favResId = [];
         const favRes = [];
-        debugger
         return(
             <div>
                 <div className="user-show-outer-container">
@@ -38,7 +45,17 @@ class UserFav extends React.Component {
                             })}
 
                             {favRes.map((favRe) => {
-                                return <h1>{favRe.name}</h1>
+                                return (
+                                    <div>
+                                        <h1>{favRe.name}</h1>
+                                        <h1>{favRe.phone_num}</h1>
+                                        <button 
+                                            onClick={this.handleUnfavorite}
+                                            id={favRe.id}>
+                                            Unfavorite this restaurant
+                                        </button>
+                                    </div>          
+                                )
                             })}
                         </div>
                     </div>

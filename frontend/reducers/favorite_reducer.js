@@ -7,7 +7,7 @@ import {
 const favoriteReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState = Object.assign({}, oldState);
-
+    debugger
     switch(action.type) {
         case RECEIVE_ALL_FAVORITES:
             return action.favorites;
@@ -16,7 +16,7 @@ const favoriteReducer = (oldState = {}, action) => {
             return  newState
         case REMOVE_FAVORITE:
             delete newState[action.favoriteId]
-            return
+            return newState
         default: 
             return oldState;
     }
