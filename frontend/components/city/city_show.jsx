@@ -17,11 +17,11 @@ class CityShow extends React.Component {
 
     render() {
         let cityImg;
-            if (this.props.city.code === "sf") {
+            if (!this.props.city ? null : this.props.city.code === "sf") {
                 cityImg = window.sfURL
-            } else if(this.props.city.code === "ny") {
+            } else if(!this.props.city ? null : this.props.city.code === "ny") {
                 cityImg = window.nyURL
-            } else if (this.props.city.code === "chicago") {
+            } else if (!this.props.city ? null : this.props.city.code === "chicago") {
                 cityImg = window.chicagoURL
             } else {
                 cityImg = window.laURL
