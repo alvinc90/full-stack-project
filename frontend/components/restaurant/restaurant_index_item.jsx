@@ -27,10 +27,10 @@ const RestaurantIndexItem = ({ restaurant, reviews }) => {
                     <img className="restaurant-index-picture" src={restaurant.photourl} alt="something"/>
                 </div>
                 <h1 className="restaurant-index-header">{restaurant.name}</h1>
-                <div className="restaurant-index-info">{restaurant.cuisine}</div>
                 {[...Array(rating)].map((star) => {
-                            return <FaStar color="crimson" />
-                        })}
+                    return <FaStar className="star-for-index" color="crimson" />
+                })}
+                <div className="restaurant-index-info">{restaurant.cuisine}</div>
             </div></Link>
 
         </div>

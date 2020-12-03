@@ -79,8 +79,9 @@ r1 = Restaurant.create!(
     hours: "Lunch 11:30am - 2:30pm
             Dinner 5:00pm - 9:30pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Peruvian, Seafood",
-    city_id: City.find_by(name: "San Francisco").id 
+    cuisine: "Peruvian",
+    city_id: City.find_by(name: "San Francisco").id,
+    price: 3
 )
 
 r2 = Restaurant.create!(
@@ -91,8 +92,9 @@ r2 = Restaurant.create!(
     hours: "Lunch 11:00am - 2:30pm
             Dinner 4:00pm - 9:30pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Japanese, Sushi, Japanese Specialty",
-    city_id: City.find_by(name: "San Francisco").id 
+    cuisine: "Japanese",
+    city_id: City.find_by(name: "San Francisco").id,
+    price: 3
 )
 
 r3 = Restaurant.create!(
@@ -103,8 +105,9 @@ r3 = Restaurant.create!(
     hours: "Lunch 11:00am - 2:00pm
             Dinner 5:30pm - 9:30pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "American, Seafood",
-    city_id: City.find_by(name: "San Francisco").id 
+    cuisine: "American",
+    city_id: City.find_by(name: "San Francisco").id,
+    price: 4
 )
 
 r4 = Restaurant.create!(
@@ -115,8 +118,9 @@ r4 = Restaurant.create!(
     hours: "Lunch 11:30am - 2:00pm
             Dinner 4:30pm - 10:30pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Brazillian Steakhouse",
-    city_id: City.find_by(name: "San Francisco").id 
+    cuisine: "Brazillian",
+    city_id: City.find_by(name: "San Francisco").id,
+    price: 3
 )
 
 r5 = Restaurant.create!(
@@ -126,8 +130,9 @@ r5 = Restaurant.create!(
     phone_num: "(718) 353-8855", 
     hours: "Daily 11:15am - 10:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Chinese (Sichuan), Chinese (Shanghai), Chinese (Canton)",
-    city_id: City.find_by(name: "New York").id
+    cuisine: "Chinese",
+    city_id: City.find_by(name: "New York").id,
+    price: 2
 )
 
 r6 = Restaurant.create!(
@@ -139,7 +144,8 @@ r6 = Restaurant.create!(
             Dinner 5:00pm - 9:30pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
     cuisine: "Italian",
-    city_id: City.find_by(name: "New York").id
+    city_id: City.find_by(name: "New York").id,
+    price: 3
 )
 
 r7 = Restaurant.create!(
@@ -149,8 +155,9 @@ r7 = Restaurant.create!(
     phone_num: "(212) 315-3660", 
     hours: "Daily 12:00pm - 11:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Steakhouse, Steak",
-    city_id: City.find_by(name: "New York").id
+    cuisine: "Turkish",
+    city_id: City.find_by(name: "New York").id,
+    price: 4
 )
 
 r8 = Restaurant.create!(
@@ -161,7 +168,8 @@ r8 = Restaurant.create!(
     hours: "Mon-Fri 5:00pm - 11:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
     cuisine: "American",
-    city_id: City.find_by(name: "New York").id
+    city_id: City.find_by(name: "New York").id,
+    price: 4
 )
 
 r9 = Restaurant.create!(
@@ -172,7 +180,8 @@ r9 = Restaurant.create!(
     hours: "Daily 5:00pm - 10:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
     cuisine: "Fine Dining",
-    city_id: City.find_by(name: "Chicago").id
+    city_id: City.find_by(name: "Chicago").id,
+    price: 4
 )
 
 r10 = Restaurant.create!(
@@ -182,8 +191,9 @@ r10 = Restaurant.create!(
     phone_num: "(312) 600-6090", 
     hours: "Daily 11:00am - 11:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "American, Pizzeria",
-    city_id: City.find_by(name: "Chicago").id
+    cuisine: "Pizzeria",
+    city_id: City.find_by(name: "Chicago").id,
+    price: 2
 )
 
 r11 = Restaurant.create!(
@@ -194,8 +204,9 @@ r11 = Restaurant.create!(
     hours: "Lunch 11:00am - 3:00pm
             Dinner 5:00pm - 10:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Indian, French, American",
-    city_id: City.find_by(name: "Chicago").id
+    cuisine: "Indian",
+    city_id: City.find_by(name: "Chicago").id,
+    price: 3
 )
 
 r12 = Restaurant.create!(
@@ -206,8 +217,9 @@ r12 = Restaurant.create!(
     hours: "Lunch 10:00am - 2:00pm
             Dinner 5:00pm - 9:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Mediterranean, Tapas / Small Plates",
-    city_id: City.find_by(name: "Chicago").id
+    cuisine: "Mediterranean",
+    city_id: City.find_by(name: "Chicago").id,
+    price: 2
 )
 
 r13 = Restaurant.create!(
@@ -217,8 +229,9 @@ r13 = Restaurant.create!(
     phone_num: "(213) 637-0262", 
     hours: "Daily 4:30pm - 10:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Korean, Argentinean",
-    city_id: City.find_by(name: "Los Angeles").id
+    cuisine: "Korean",
+    city_id: City.find_by(name: "Los Angeles").id,
+    price: 2
 )
 r14 = Restaurant.create!(
     name: "HATCH Yakitori + Bar",
@@ -227,8 +240,9 @@ r14 = Restaurant.create!(
     phone_num: "(213) 282-9070", 
     hours: "Daily 10:00am - 10:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Japanese, Izakaya",
-    city_id: City.find_by(name: "Los Angeles").id
+    cuisine: "Japanese",
+    city_id: City.find_by(name: "Los Angeles").id,
+    price: 2
 )
 
 r15 = Restaurant.create!(
@@ -238,8 +252,9 @@ r15 = Restaurant.create!(
     phone_num: "(213) 628-3146", 
     hours: "Daily 10:00am - 10:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Southeast Asian, Asian, Seafood",
-    city_id: City.find_by(name: "Los Angeles").id
+    cuisine: "Southeast Asian",
+    city_id: City.find_by(name: "Los Angeles").id,
+    price: 2
 )
 
 r16 = Restaurant.create!(
@@ -249,8 +264,9 @@ r16 = Restaurant.create!(
     phone_num: "(323) 658-9188", 
     hours: "Daily 12:00pm - 10:00pm",
     payment_option: "AMEX, Dicover, MasterCard, Visa", 
-    cuisine: "Seafood, Oyster Bar, Contemporary Asian",
-    city_id: City.find_by(name: "Los Angeles").id
+    cuisine: "Seafood",
+    city_id: City.find_by(name: "Los Angeles").id,
+    price: 3
 )
 
 f1 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/lamar1.jpg")
