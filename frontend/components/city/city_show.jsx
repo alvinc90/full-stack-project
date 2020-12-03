@@ -34,15 +34,17 @@ class CityShow extends React.Component {
                     <div className="home-search-bar-container"><HomeSearchBar /></div>
                 </div>
                 <div className="city-show-inner-cont">
-                    {this.props.city ? this.props.city.name : null}
+                    {this.props.city ? <h1 className="city-show-heading"> {this.props.city.name}</h1> : null}
                     {this.props.restaurants.map((restaurant, i) => {
                         if(this.props.city.id === this.props.restaurants[i].city_id)
                         return (
-                            <CityShowRestaurantItem 
-                                restaurant={restaurant} 
-                                key={restaurant.id}
-                                reviews={this.props.reviews}
-                            />
+                            <div className="city-list-outer-container">
+                                <CityShowRestaurantItem 
+                                    restaurant={restaurant} 
+                                    key={restaurant.id}
+                                    reviews={this.props.reviews}
+                                />
+                            </div>
                         )
                     })}
                 </div>

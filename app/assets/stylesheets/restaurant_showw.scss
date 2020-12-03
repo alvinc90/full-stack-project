@@ -107,7 +107,6 @@
 }
 
 .leave-review-button {
-    margin-left: 10px;
     cursor: pointer;
     height: 49px; 
     width: 153px; 
@@ -117,6 +116,7 @@
     border: none;
     background-color: rgb(220, 20, 60);
     color: white;
+    margin-right: 50px;
 }
 
 .leave-review-button:hover {
@@ -135,11 +135,13 @@
 
 .review-box1 {
     margin-top: 10px;
+    width: 20%
 }
 
 .review-box2 {
     margin-left: 20px;
     margin-top: 10px;
+    width: 50%;
 }
 
 .review-box2 > span {
@@ -148,8 +150,10 @@
 
 .username-review {
     font-family: 'Commissioner', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     color: cadetblue;
+    margin-left: 25px;
+    margin-top: 7px;
 }
 
 .create-review-textarea {
