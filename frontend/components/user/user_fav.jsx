@@ -70,7 +70,7 @@ class UserFav extends React.Component {
                                 }
                                 return (
                                     <div className="fav-list-container">
-                                        <div>
+                                        <div className="that3">
                                             <Link to={`/restaurants/${favRe.id}`}>
                                                 <img 
                                                     className="user-fav-image" 
@@ -80,20 +80,22 @@ class UserFav extends React.Component {
                                             </Link>
                                         </div>
                                         <div className="restaurant-fav-info">
-                                            <Link className="link-styling" to={`/restaurants/${favRe.id}`}>
-                                                <h1 className="that1">{favRe.name}</h1>
-                                            </Link>
-                                            {[...Array(rating)].map((star) => {
-                                                return <FaStar color="crimson" />
-                                            })}
-                                            <h1 className="that2">{favRe.cuisine}</h1>
+                                            <div>
+                                                <Link className="link-styling" to={`/restaurants/${favRe.id}`}>
+                                                    <h1 className="that1">{favRe.name}</h1>
+                                                </Link>
+                                                {[...Array(rating)].map((star) => {
+                                                    return <FaStar color="crimson" />
+                                                })}
+                                                <h1 className="that2">{favRe.cuisine}</h1>
+                                            </div>
                                         </div>
-                                        <div>
+                                        <div className="btn-container-fav">
                                             <button
                                                 className="fav-remove-btn"
                                                 onClick={this.handleUnfavorite}
                                                 id={favRe.id}>
-                                                Unfavorite this restaurant
+                                                Remove
                                             </button>
                                         </div>
                                     </div>          

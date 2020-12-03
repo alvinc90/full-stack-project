@@ -149,9 +149,9 @@
     margin: 5px; 
     cursor: pointer;
     border: none; 
-    width: 132px;
-    height: 70px;
-    font-size: 16px; 
+    width: 97px;
+    height: 42px;
+    font-size: 18px;
     font-family: 'Commissioner', sans-serif;
     position: relative;
 }
@@ -159,4 +159,9 @@
 .fav-remove-btn:hover {
     top: -2px;
     filter:brightness(80%);
+}
+
+.btn-container-fav, .restaurant-fav-info, .that3 {
+    display: flex;
+    align-items: center;
 }

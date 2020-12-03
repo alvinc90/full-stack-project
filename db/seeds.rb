@@ -19,15 +19,33 @@ ActiveRecord::Base.connection.tables.each do |t|
 end
 
 u1 = User.create!(
-    username: "alvin1",
+    username: "alvin",
     password: "password",
-    email: "alvin1"
+    email: "alvin@alvin.com"
 )
 
 u2 = User.create!(
-    username: "alvin2",
+    username: "ryan",
     password: "password",
-    email: "alvin2"
+    email: "ryan@ryan.com"
+)
+
+u3 = User.create!(
+    username: "chester",
+    password: "password",
+    email: "chester@chester.com"
+)
+
+u4 = User.create!(
+    username: "melissa",
+    password: "password",
+    email: "melissa@melissa.com"
+)
+
+u5 = User.create!(
+    username: "rachel",
+    password: "password",
+    email: "rachel@rachel.com"
 )
 
 demo = User.create!(
@@ -285,30 +303,331 @@ r16.photo.attach(io: f16, filename: "cod.jpg")
 
 
 rev1 = Review.create!(
-    body: "First review test",
-    overall: 1,
-    food: 2,
-    service: 3,
-    ambience: 4,
+    body: "It was much better than I expected. Everything was simply decadent. I found the ambiance to be very charming. They got a new customer for life!",
+    overall: 5, food: 3, service: 3, ambience: 4,
     user_id: 1,
     restaurant_id: 1
 )
 rev2 = Review.create!(
-    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur magnam voluptate maxime molestias dolor veritatis dignissimos sint reiciendis enim assumenda aut quod facere nulla aspernatur eaque, dicta vero tempora. Sapiente recusandae voluptatem voluptate, neque quod mollitia esse voluptatum impedit blanditiis distinctio soluta debitis accusamus officiis. Expedita quam amet est necessitatibus aperiam non veritatis magnam odio perspiciatis asperiores! Quod, animi. Vitae quam dignissimos delectus laudantium, sapiente debitis magnam totam quaerat accusamus repellat labore adipisci recusandae dolore cum rem iste veniam nihil? At quidem nostrum sapiente, repellendus cumque reiciendis debitis porro iste, odio esse impedit possimus animi libero ipsam numquam voluptates nam deleniti ipsa cupiditate nemo excepturi? Repudiandae culpa rem sequi ad laboriosam blanditiis id eligendi, deleniti necessitatibus quidem? Ea, aperiam!",
-    overall: 5,
-    food: 5,
-    service: 5,
-    ambience: 5,
-    user_id: 2,
+    body: "Yummers! Make sure to save room for dessert, because that was the best part of the meal! The waiter was prompt and polite. Easily earned their 5 stars!",
+    overall: 5, food: 5, service: 5, ambience: 5, 
+    user_id: 1,
     restaurant_id: 1
 )
 rev3 = Review.create!(
-    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur magnam voluptate maxime molestias dolor veritatis dignissimos sint reiciendis enim assumenda aut quod facere nulla aspernatur eaque, dicta vero tempora. Sapiente recusandae voluptatem voluptate, neque quod mollitia esse voluptatum impedit blanditiis distinctio soluta debitis accusamus officiis. Expedita quam amet est necessitatibus aperiam non veritatis magnam odio perspiciatis asperiores! Quod, animi. Vitae quam dignissimos delectus laudantium, sapiente debitis magnam totam quaerat accusamus repellat labore adipisci recusandae dolore cum rem iste veniam nihil? At quidem nostrum sapiente, repellendus cumque reiciendis debitis porro iste, odio esse impedit possimus animi libero ipsam numquam voluptates nam deleniti ipsa cupiditate nemo excepturi? Repudiandae culpa rem sequi ad laboriosam blanditiis id eligendi, deleniti necessitatibus quidem? Ea, aperiam!",
-    overall: 1,
-    food: 2,
-    service: 3,
-    ambience: 4,
+    body: "Yummers! The food was flavorful, savory, and succulent. The desserts must be sprinkled with crack because I just craved for more and more. I was happy to see how clean everything was. This is definitely a spot I'll be frequenting",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 1,
+    restaurant_id: 1
+)
+rev4 = Review.create!(
+    body: "This is one of my favorite places. The waitress was prompt and polite. Everything from the starters to the entrees to the desserts meshed perfectly with my flavor-profile. Everything I tried was bursting with flavor. 5 stars!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 1,
+    restaurant_id: 1
+)
+rev5 = Review.create!(
+    body: "This place had a lot of heart. The decor was unique and incredible. The entree I had was sublime. I removed a star because the hostess made a pass at me. So uncomfortable.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 1,
+    restaurant_id: 1
+)
+rev6 = Review.create!(
+    body: "This place had a lot of heart. Everything was mostly decadent. Try out the huge selection of incredible appetizers. The decor was unique and incredible. Everything was just so yummy. I had to take one star away because my wine glass was dirty.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 1,
+    restaurant_id: 1
+)
+rev7 = Review.create!(
+    body: "I have been here several times before. There were a lot of interesting decorations on the walls. Everything I tried was bursting with flavor. The food was flavorful, savory, and succulent. Everything was just so yummy. It failed to meet the 5-star experience because the busboy had really bad body odor",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 1,
+    restaurant_id: 1
+)
+rev8 = Review.create!(
+    body: "This place had a lot of heart. The ambiance gives off an earthy feel-good vibe. The service was good for the most part but the waitress was a bit slow. Everything was just so yummy. I docked them one star because the pork was a little undercooked.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 1,
+    restaurant_id: 1
+)
+
+rev9 = Review.create!(
+    body: "Yumm-o! The decor was unique and incredible. Everything from the starters to the entrees to the desserts meshed perfectly with my flavor-profile. 5 stars!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 2,
+    restaurant_id: 1
+)
+
+rev10 = Review.create!(
+    body: "Yummers! The food is simply to die for. I want to hire their decorator to furnish my apartment. The waitress was prompt and polite. 5 stars!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 2,
+    restaurant_id: 1
+)
+
+rev11 = Review.create!(
+    body: "It was much better than I expected. The food is simply to die for. Try out the huge selection of incredible appetizers. Overall experience: 5 stars.",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 2,
+    restaurant_id: 1
+)
+
+rev12 = Review.create!(
+    body: "OMG! So good! Everything I tried was bursting with flavor. After my meal, I was knocked into a food coma. I'd give more than 5 stars if I could!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 2,
+    restaurant_id: 1
+)
+
+rev13 = Review.create!(
+    body: "I have been here several times before. Everything I tried was bursting with flavor. Make sure to save room for dessert, because that was the best part of the meal! The entrees are simply to die for. I had to take one star away because my coffee mug was dirty.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 2,
+    restaurant_id: 1
+)
+
+rev14 = Review.create!(
+    body: "This place was nearby and I decided to check it out. This was one of the best mouth-watering burgers I've had grace my taste buds in a long time. The waitress did an excellent job. There were a lot of interesting decorations on the walls. Everything I tried was bursting with flavor. Satisfactory experience, will come again.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 2,
+    restaurant_id: 1
+)
+
+rev15 = Review.create!(
+    body: "This place had a lot of heart. Try out the huge selection of incredible appetizers. The decor was unique and incredible. I had to take one star away because the waiter touched the rim of my water glass.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 2,
+    restaurant_id: 1
+)
+
+rev16 = Review.create!(
+    body: "This place had a lot of heart. Make sure to save room for dessert, because that was the best part of the meal! The food is simply to die for. I want to hire their decorator to furnish my house. It failed to meet the 5-star experience because the staff kept looking at me funny.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 2,
+    restaurant_id: 1
+)
+
+rev17 = Review.create!(
+    body: "I felt like this place was trying too hard. Overhyped. The waiter was nothing remarkable. Overall, this place is just okay. I might come back.",
+    overall: 3, food: 3, service: 3, ambience: 4,
     user_id: 3,
+    restaurant_id: 1
+)
+
+rev18 = Review.create!(
+    body: "I had high hopes for this place. The food was all right but seriously lacked presentation. The service was good for the most part but the waiter was a bit air-headed. The ambiance gives off an earthy feel-good vibe. Might be back. Time will tell.",
+    overall: 3, food: 3, service: 3, ambience: 4,
+    user_id: 3,
+    restaurant_id: 1
+)
+
+rev19 = Review.create!(
+    body: "This place was nearby and I decided to check it out. The tofu dish tasted spongy and a bit bland. The service wasn't that good and the waitress was air-headed. I felt the prices were too high given the quality of the food. 3 stars.",
+    overall: 3, food: 3, service: 3, ambience: 4,
+    user_id: 3,
+    restaurant_id: 1
+)
+
+rev20 = Review.create!(
+    body: "This place was just ok. I was not very pleased to find out that the coffee wasn't local. The food was all right but seriously lacked presentation. Overall, this place is just okay. I may come back",
+    overall: 3, food: 3, service: 3, ambience: 4,
+    user_id: 3,
+    restaurant_id: 1
+)
+
+rev21 = Review.create!(
+    body: "Oh my God! So good! The food is simply to die for. Try out the huge selection of incredible appetizers. I would eat here every day if I could afford it!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 3,
+    restaurant_id: 1
+)
+
+rev22 = Review.create!(
+    body: "Oh my God! So good! Everything from the starters to the entrees to the desserts meshed perfectly with my flavor-profile. After my meal, I was knocked into a food coma. Everything I tried was bursting with flavor. Everything was just so yummy. I would eat here every day if I could afford it!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 3,
+    restaurant_id: 1
+)
+
+rev23 = Review.create!(
+    body: "My taste buds are still singing from our last visit! Make sure to save room for dessert, because that was the best part of the meal! The entrees are simply to die for. I want to hire their decorator to furnish my apartment. Easily earned their 5 stars!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 3,
+    restaurant_id: 1
+)
+
+rev24 = Review.create!(
+    body: "This is one of my favorite places. I was happy to see how clean everything was. I found the ambiance to be very charming. Overall experience: 5 stars.",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 3,
+    restaurant_id: 1
+)
+
+rev25 = Review.create!(
+    body: "Yumm-o! Everything from the starters to the entrees to the desserts meshed perfectly with my flavor-profile. The waitress did an excellent job. I found the ambiance to be very charming. Easily earned their 4 stars!",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 4,
+    restaurant_id: 1
+)
+
+rev26 = Review.create!(
+    body: "I have been here several times before. The ambiance gives off an earthy feel-good vibe. The desserts must be sprinkled with crack because I just craved for more and more. The entrees are simply to die for. I had to take one star away because the waiter touched the rim of my wine glass",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 4,
+    restaurant_id: 1
+)
+
+rev27 = Review.create!(
+    body: "This place had a lot of heart. The appetizers must be sprinkled with crack because I just craved for more and more. The entree I had was sublime. I want to hire their decorator to furnish my apartment. It could have been perfect, but the wait to get in was so long.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 4,
+    restaurant_id: 1
+)
+
+rev28 = Review.create!(
+    body: "Decent place. Try out the huge selection of incredible appetizers. The service was good for the most part but the waiter was a bit slow. The ambiance gives off an earthy feel-good vibe. The food was cooked to perfection. Overall experience: 4 stars.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 4,
+    restaurant_id: 1
+)
+
+rev29 = Review.create!(
+    body: "I've got a fetish for good food and this place gets me hot! I was happy to see how clean everything was. Everything I tried was bursting with flavor. The food was flavorful, savory, and succulent. Everything was just so yummy. 5 stars!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 4,
+    restaurant_id: 1
+)
+
+rev30 = Review.create!(
+    body: "Best experience ever! I was happy to see how clean everything was. I want to hire their decorator to furnish my house. Everything was just so yummy. Easily earned their 5 stars!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 4,
+    restaurant_id: 1
+)
+
+rev31 = Review.create!(
+    body: "Yumm-o! The food was flavorful, savory, and succulent. I was happy to see how clean everything was. Overall experience: 5 stars.",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 4,
+    restaurant_id: 1
+)
+
+rev32 = Review.create!(
+    body: "I stumbled on this undiscovered gem right in our neighboorhood. The food is simply to die for. The waitress was prompt and polite. Make sure to save room for dessert, because that was the best part of the meal! I was happy to see how clean everything was. I'm definitely coming back for more!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 4,
+    restaurant_id: 1
+)
+
+rev33 = Review.create!(
+    body: "I am never coming back here! I felt the prices were too high given the quality of the food. There were a lot of interesting decorations on the walls. I was not very pleased to find out that the coffee wasn't fair trade. 2 stars",
+    overall: 2, food: 3, service: 3, ambience: 4,
+    user_id: 5,
+    restaurant_id: 1
+)
+
+rev34 = Review.create!(
+    body: "Best experience ever! Everything from the starters to the entrees to the desserts meshed perfectly with my flavor-profile. I found the ambiance to be very charming. The waiter did an excellent job. This is definitely a spot I'll be frequenting.",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 5,
+    restaurant_id: 1
+)
+
+rev35 = Review.create!(
+    body: "Best experience ever! Everything I tried was bursting with flavor. The waiter was prompt and polite. Everything was just so yummy. I'd give more than 5 stars if I could!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 5,
+    restaurant_id: 1
+)
+
+rev36 = Review.create!(
+    body: "OMG! So yummy! Everything was just so yummy. Try out the huge selection of incredible appetizers. Everything I tried was bursting with flavor. The experience was heavenly as I was served a meal fit for God himself. They got a new customer for life!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 5,
+    restaurant_id: 1
+)
+
+rev37 = Review.create!(
+    body: "My taste buds are still dancing from our last visit! The food is simply to die for. The decor was unique and incredible. Make sure to save room for dessert, because that was the best part of the meal! I was happy to see how clean everything was. This is definitely a spot I'll be frequenting.",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 5,
+    restaurant_id: 1
+)
+
+rev38 = Review.create!(
+    body: "This place was just ok. I felt the prices were too high given the quality of the food. The menu didn't match the one on their website. I would probably come back more often if the service was better.",
+    overall: 3, food: 3, service: 3, ambience: 4,
+    user_id: 5,
+    restaurant_id: 1
+)
+
+rev39 = Review.create!(
+    body: "I don't understand the hype about this place. Overhyped. I found the entrees to be somewhat agreeable to my personal flavor-profile. I felt the prices were too high given the quality of the food. Might be back. Time will tell.",
+    overall: 3, food: 3, service: 3, ambience: 4,
+    user_id: 5,
+    restaurant_id: 1
+)
+
+rev40 = Review.create!(
+    body: "I can summarize my visit in one word: Horrible. The service was terrible. The waiter was very slow. I threw up in my mouth a little when they brought me my food. I wish I could put a sign out front that said 'RUN AWAY!'",
+    overall: 1, food: 3, service: 3, ambience: 4,
+    user_id: 5,
+    restaurant_id: 1
+)
+
+rev41 = Review.create!(
+    body: "I can summarize my visit in one word: Horrible. The food sucked. The service sucked. Everything sucked. I was served dog food on a plate, but I wouldn't even feed it to my dog. I wish I could put a sign out front that said 'DON'T COME HERE!'",
+    overall: 1, food: 3, service: 3, ambience: 4,
+    user_id: 6,
+    restaurant_id: 1
+)
+
+rev42 = Review.create!(
+    body: "I must have ordered the wrong things because the food was terrible. The waitress was nothing remarkable. I shouldn't have to pay good money to be served vegetables from a can. I found the entrees to not be very agreeable to my personal flavor-profile. I would be hard pressed to come back.",
+    overall: 2, food: 3, service: 3, ambience: 4,
+    user_id: 6,
+    restaurant_id: 1
+)
+
+rev43 = Review.create!(
+    body: "I don't understand the hype about this place. The steak was a little dry. The menu didn't match the one on their website. Overhyped. Overall experience: 3 stars.",
+    overall: 3, food: 3, service: 3, ambience: 4,
+    user_id: 6,
+    restaurant_id: 1
+)
+
+rev44 = Review.create!(
+    body: "I have been here several times before. I found the ambiance to be very charming. The food was cooked to perfection. I could see myself being a regular here.",
+    overall: 4, food: 3, service: 3, ambience: 4,
+    user_id: 6,
+    restaurant_id: 1
+)
+
+rev45 = Review.create!(
+    body: "It was much better than I expected. This was one of the best mouth-watering burgers I've had grace my taste buds in a long time. The waitress was prompt and polite. I'd give more than 5 stars if I could!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 6,
+    restaurant_id: 1
+)
+
+rev46 = Review.create!(
+    body: "Oh! My! God! So awesome! I was happy to see how clean everything was. Make sure to save room for dessert, because that was the best part of the meal! I'd give more than 5 stars if I could!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 6,
+    restaurant_id: 1
+)
+
+rev47 = Review.create!(
+    body: "Yummers! The decor was unique and incredible. The food is simply to die for. I'd give more than 5 stars if I could!",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 6,
+    restaurant_id: 1
+)
+
+rev48 = Review.create!(
+    body: "Oh my God! So yummy! Everything was just so yummy. Everything I tried was bursting with flavor. This is definitely a spot I'll be frequenting.",
+    overall: 5, food: 3, service: 3, ambience: 4,
+    user_id: 6,
     restaurant_id: 1
 )
 
