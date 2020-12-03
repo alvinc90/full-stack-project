@@ -100,3 +100,25 @@
     margin-left: 20px;
 }
 
+.city-show-content-outer-container {
+    display: flex;
+    margin-left: 12%;
+}
+
+.city-show-side-bar-container {
+    width: 25%;
+    height: 500px;
+    border: 1px solid hotpink;
+    position: relative;
+    top: 346px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.city-show-inner-cont {
+    margin-left: 50px;
+}
+

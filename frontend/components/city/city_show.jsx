@@ -33,21 +33,36 @@ class CityShow extends React.Component {
                     <h1 className="home-heading">Make a free reservation</h1>
                     <div className="home-search-bar-container"><HomeSearchBar /></div>
                 </div>
-                <div className="city-show-inner-cont">
-                    {this.props.city ? <h1 className="city-show-heading"> {this.props.city.name}</h1> : null}
-                    {this.props.restaurants.map((restaurant, i) => {
-                        if(this.props.city.id === this.props.restaurants[i].city_id)
-                        return (
-                            <div className="city-list-outer-container">
-                                <CityShowRestaurantItem 
-                                    restaurant={restaurant} 
-                                    key={restaurant.id}
-                                    reviews={this.props.reviews}
-                                />
-                            </div>
-                        )
-                    })}
-                </div>
+                <div className="city-show-content-outer-container">
+                    <div className="city-show-side-bar-container">
+                        <div>
+                            price
+                        </div>
+                        <div>
+                            rating
+                        </div>
+                        <div>
+                            cuisine
+                        </div>
+                    </div>
+
+                    <div className="city-show-inner-cont">
+                        {this.props.city ? <h1 className="city-show-heading"> {this.props.city.name}</h1> : null}
+                        {this.props.restaurants.map((restaurant, i) => {
+                            if(this.props.city.id === this.props.restaurants[i].city_id)
+                            return (
+                                <div className="city-list-outer-container">
+                                    <CityShowRestaurantItem 
+                                        restaurant={restaurant} 
+                                        key={restaurant.id}
+                                        reviews={this.props.reviews}
+                                        city={this.props.city}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </div>
+                 </div>
 
                 <footer>
                     <Footer />
