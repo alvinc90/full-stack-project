@@ -10,7 +10,7 @@ class RestaurantShow extends React.Component {
         this.state = {
             showModal: false,
             favorite: {
-                restaurant_id: this.props.restaurant.id,
+                restaurant_id: (this.props.restaurant ? this.props.restaurant.id : null),
                 user_id: this.props.currentUser,
             }
         }
@@ -43,7 +43,6 @@ class RestaurantShow extends React.Component {
     }
 
     render() {
-        // debugger
         const { restaurant, 
                 reviews,
                 fetchReviews, 
@@ -56,21 +55,25 @@ class RestaurantShow extends React.Component {
                 clearReview,
                 fetchReview,
                 favorites } = this.props;
-        let reviewRes = this.props.reviews.filter((review) => review.restaurant_id === this.props.restaurant.id);
-        let total = 0;
-        reviewRes.forEach((rev) => total += rev.overall)
-        let avg = total / reviewRes.length
+        let reviewRes = restaurant ? this.props.reviews.filter((review) => review.restaurant_id === this.props.restaurant.id) : null
         let rating;
-        if (avg >= 4.5) {
-            rating = 5
-        } else if (avg >= 3.5 && avg < 4.5) {
-            rating = 4
-        } else if (avg >= 2.5 && avg < 3.5) {
-            rating = 3
-        } else if (avg >= 1.5 && avg < 2.5) {
-            rating = 2
+        if (restaurant) {
+            let total = 0;
+            reviewRes.forEach((rev) => total += rev.overall)
+            let avg = total / reviewRes.length
+            if (avg >= 4.5) {
+                rating = 5
+            } else if (avg >= 3.5 && avg < 4.5) {
+                rating = 4
+            } else if (avg >= 2.5 && avg < 3.5) {
+                rating = 3
+            } else if (avg >= 1.5 && avg < 2.5) {
+                rating = 2
+            } else {
+                rating = 1
+            }
         } else {
-            rating = 1
+            return null;
         }
         const findFavorite = favorites.find((favorite) => (favorite.user_id === this.state.favorite.user_id) && (favorite.restaurant_id === this.state.favorite.restaurant_id))
         return (
