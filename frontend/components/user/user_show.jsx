@@ -28,15 +28,15 @@ class UserShow extends React.Component {
                         <h1 className="profile-heading">My Profile</h1>
                         <div className="line-below-heading"></div>
                         <h1 className="user-bio-list">
-                            <span>Username:</span>
+                            <span className="username2">Username:</span>
                             <span className="username">{user.username}</span>
                         </h1>
                         <h1 className="user-bio-list">
-                            <span>Email:</span>
+                            <span className="username2">Email:</span>
                             <span className="username">{user.email}</span>
                         </h1>
                         <h1 className="user-bio-list">
-                            <span>Location:</span>
+                            <span className="username2">Location:</span>
                             <span className="username">Unavailable at this time</span>
                         </h1>
                     </div>

@@ -4,7 +4,7 @@ import { FaStar } from 'react-icons/fa';
 // import StarRating from '../star_rating';
 
 const CityShowRestaurantItem = ({ restaurant, reviews}) => {
-    let reviewRes = reviews.filter((review) => review.restaurant_id === restaurant.id);
+        let reviewRes = reviews.filter((review) => review.restaurant_id === restaurant.id);
         let total = 0;
         reviewRes.forEach((rev) => total += rev.overall)
         let avg = total / reviewRes.length

@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../footer';
 import { Link } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
 
 class UserFav extends React.Component {
     constructor(props){
@@ -11,6 +12,7 @@ class UserFav extends React.Component {
     componentDidMount() {
         this.props.fetchAllRestaurants();
         this.props.fetchFavorites();
+        this.props.fetchReviews();
     }
 
     handleUnfavorite(e) {
@@ -20,7 +22,7 @@ class UserFav extends React.Component {
     }
 
     render() {
-        const { currentUser, restaurants, favorites } = this.props;
+        const { currentUser, restaurants, favorites, reviews } = this.props;
         const favResId = [];
         const favRes = [];
         return(
@@ -35,9 +37,9 @@ class UserFav extends React.Component {
                             </div>
                         </div>
 
-                        <div className="user-show-info-container">
-                            <h1>My favorites</h1>
-                            <h1>My Favorite Restaurants</h1>
+                        <div className="user-show-info-container2">
+                            <h1 className="profile-heading">My favorites</h1>
+                            <div className="line-below-heading"></div>
                             { favorites.map((favorite) => {
                                 if(favorite.user_id === currentUser) {
                                     favResId.push(favorite.restaurant_id)
@@ -50,15 +52,50 @@ class UserFav extends React.Component {
                             })}
 
                             {favRes.map((favRe) => {
+                                let reviewRes = reviews.filter((review) => review.restaurant_id === favRe.id);
+                                let total = 0;
+                                reviewRes.forEach((rev) => total += rev.overall)
+                                let avg = total / reviewRes.length
+                                let rating;
+                                if (avg >= 4.5) {
+                                    rating = 5
+                                } else if (avg >= 3.5 && avg < 4.5) {
+                                    rating = 4
+                                } else if (avg >= 2.5 && avg < 3.5) {
+                                    rating = 3
+                                } else if (avg >= 1.5 && avg < 2.5) {
+                                    rating = 2
+                                } else {
+                                    rating = 1
+                                }
                                 return (
-                                    <div>
-                                        <h1>{favRe.name}</h1>
-                                        <h1>{favRe.phone_num}</h1>
-                                        <button 
-                                            onClick={this.handleUnfavorite}
-                                            id={favRe.id}>
-                                            Unfavorite this restaurant
-                                        </button>
+                                    <div className="fav-list-container">
+                                        <div>
+                                            <Link to={`/restaurants/${favRe.id}`}>
+                                                <img 
+                                                    className="user-fav-image" 
+                                                    src={favRe.photourl} 
+                                                    alt="aws picture"
+                                                />
+                                            </Link>
+                                        </div>
+                                        <div className="restaurant-fav-info">
+                                            <Link className="link-styling" to={`/restaurants/${favRe.id}`}>
+                                                <h1 className="that1">{favRe.name}</h1>
+                                            </Link>
+                                            {[...Array(rating)].map((star) => {
+                                                return <FaStar color="crimson" />
+                                            })}
+                                            <h1 className="that2">{favRe.cuisine}</h1>
+                                        </div>
+                                        <div>
+                                            <button
+                                                className="fav-remove-btn"
+                                                onClick={this.handleUnfavorite}
+                                                id={favRe.id}>
+                                                Unfavorite this restaurant
+                                            </button>
+                                        </div>
                                     </div>          
                                 )
                             })}

@@ -43,7 +43,9 @@
     background-color: whitesmoke;
 }
 
-.user-show-links-container h1, .user-show-info-container h1 {
+.user-show-links-container h1,
+.user-show-info-container h1,
+.user-show-info-container2 h1 {
     font-family: 'Commissioner', sans-serif;
 }
 
@@ -62,6 +64,7 @@
     font-size: 25px;
     margin-top: 15px;
     margin-bottom: 10px;
+    color: rgb(104, 102, 102);
 }
 
 .line-below-heading {
@@ -82,4 +85,78 @@
 .username {
     color: #247f9e;
     margin-left: 20px;
+}
+
+.username2 {
+    color: rgb(104, 102, 102);
+}
+
+.user-fav-image {
+    width: 120px;
+    height:120px;
+    object-fit: cover;
+    border-radius: 5px;
+    position: relative;
+}
+
+.user-fav-image:hover {
+    top: -2px;
+    opacity: 70%;
+}
+
+.fav-list-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.user-show-info-container2 {
+    height: 100%;
+    width: 630px;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+    margin-top: 48px;
+    position: relative;
+    left: -80px;
+    background-color: whitesmoke;
+}
+
+.restaurant-fav-info {
+    width: 37%;
+}
+
+.that1 {
+    font-size: 22px;
+    color: #247f9e;
+    margin-bottom: 7px;
+}
+
+.that1:hover {
+    text-decoration: underline;
+}
+
+.that2 {
+    font-size: 15px;
+    margin-top: 7px;
+}
+
+.fav-remove-btn {
+    list-style: none;
+    border-radius: 4px;
+    background-color: lightseagreen;
+    color: whitesmoke; 
+    padding: 6px;
+    margin: 5px; 
+    cursor: pointer;
+    border: none; 
+    width: 132px;
+    height: 70px;
+    font-size: 16px; 
+    font-family: 'Commissioner', sans-serif;
+    position: relative;
+}
+
+.fav-remove-btn:hover {
+    top: -2px;
+    filter:brightness(80%);
 }
