@@ -11,8 +11,7 @@ class CityShow extends React.Component {
         super(props)
         this.handleCheckedValues = this.handleCheckedValues.bind(this);
         this.state = {
-            checkedPriceValue: {},
-            truePriceValue: []
+            checkedPriceValue: {}
         }
     }
 
