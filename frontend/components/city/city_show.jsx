@@ -49,17 +49,16 @@ class CityShow extends React.Component {
                 </div>
                 <div className="city-show-content-outer-container">
                     <div className="city-show-side-bar-container">
-                        <div>
-                            <h2>Price</h2>
+                        <div className="m1">
+                            <h2 className="n1">Price</h2>
                             <div>
                                 <input 
                                     type="checkbox" 
-                                    id="2"
+                                    id="4"
                                     value=""
                                     onClick={this.handleCheckedValues}
                                 />
-                                <label>$2</label>
-                                <AttachMoneyIcon />
+                                <label>$$$$</label>
                             </div>
                             <div>
                                 <input 
@@ -68,20 +67,20 @@ class CityShow extends React.Component {
                                     value=""
                                     onClick={this.handleCheckedValues}
                                 />
-                                <label>$3</label>
+                                <label>$$$</label>
                             </div>
                             <div>
                                 <input 
                                     type="checkbox" 
-                                    id="4"
+                                    id="2"
                                     value=""
                                     onClick={this.handleCheckedValues}
                                 />
-                                <label>$4</label>    
+                                <label>$$</label>    
                             </div>
                         </div>
-                        <div>
-                            <h2>rating</h2>
+                        <div className="m2">
+                            <h2 className="n1">Rating</h2>
                             <div>
                                 <input type="checkbox" id="25" onClick={this.handleCheckedValues}/>
                                 <label>
@@ -107,8 +106,8 @@ class CityShow extends React.Component {
                                 </label>
                             </div>
                         </div>
-                        <div>
-                           <h2>cuisine</h2>
+                        <div className="m3">
+                           <h2 className="n1">Cuisine</h2>
                             <div>
                                 <input type="checkbox" id="5" onClick={this.handleCheckedValues}/>
                                 <label>Peruvian</label>

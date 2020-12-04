@@ -107,13 +107,15 @@
 
 .city-show-side-bar-container {
     width: 25%;
-    height: 580px;
-    border: 1px solid hotpink;
+    height: 650px;
+    border: 1px solid whitesmoke;
     margin-top: 346px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    // justify-content: space-around;
     align-items: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
 
 }
 
@@ -121,3 +123,31 @@
     margin-left: 50px;
 }
 
+.m1, .m2, .m3 {
+    width: 70%;
+    margin-left: 90px;
+    // border: 1px solid hotpink;
+}
+
+.n1 {
+    color: #247f9e;
+    font-size: 25px;
+    margin-bottom: 6px;
+    margin-top: 10px;
+    
+}
+
+input[type=checkbox] {
+    margin-bottom: 10px;
+}
+
+input[type=checkbox]:hover {
+    cursor: pointer;
+}
+
+.m1 > div > label, .m3 > div > label {
+    font-family: 'Commissioner', sans-serif;
+    color: rgb(66, 64, 64);
+    font-size: 16px;
+    // transition: font-size 0.5s;
+}
