@@ -34,7 +34,7 @@ class NavBar extends React.Component {
                             <ul className="list-items">
                                 <Link onClick={this.toggleMenu} className="link-styling" to="/my/profile"><li>My Profile</li></Link>
                                 <Link onClick={this.toggleMenu} className="link-styling" to="/my/favorites"><li>My Saved Restaurants</li></Link>
-                                <Link onClick={this.toggleMenu} className="link-styling"><li>My Reservation</li></Link>
+                                <Link onClick={this.toggleMenu} className="link-styling" to="/my/reservations"><li>My Reservation</li></Link>
                                 <li onClick={this.props.logout}>Sign Out</li>
                             </ul>
                         </li>

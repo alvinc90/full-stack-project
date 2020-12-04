@@ -33,7 +33,7 @@ class UserFav extends React.Component {
                             <div className="links-container">
                                 <Link className="link-styling" to="/my/profile"><h1>My Profile</h1></Link>
                                 <Link className="link-styling" to="/my/favorites"><h1>My Saved Restaurants</h1></Link>
-                                <Link className="link-styling"><h1>My Reservations</h1></Link>
+                                <Link className="link-styling" to="/my/reservations"><h1>My Reservations</h1></Link>
                             </div>
                         </div>
 

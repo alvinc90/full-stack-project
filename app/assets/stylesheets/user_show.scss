@@ -45,7 +45,8 @@
 
 .user-show-links-container h1,
 .user-show-info-container h1,
-.user-show-info-container2 h1 {
+.user-show-info-container2 h1,
+.user-show-info-container3 h1 {
     font-family: 'Commissioner', sans-serif;
 }
 
@@ -164,4 +165,21 @@
 .btn-container-fav, .restaurant-fav-info, .that3 {
     display: flex;
     align-items: center;
+}
+
+.user-reservation-outer-container {
+    background-color: lightgray;
+    height: 2px;
+    width: 100%;
+}
+
+.user-show-info-container3 {
+    height: 100%;
+    width: 630px;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+    margin-top: 48px;
+    position: relative;
+    left: -80px;
+    background-color: whitesmoke;
 }

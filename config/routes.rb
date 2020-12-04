@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :cities, only: [:index, :show]
     resources :reviews
     resources :favorites, only: [:index, :create, :destroy]
+    resources :reservations, except: [:new, :edit]
   end
 
   root to: "static_pages#root"
