@@ -19,7 +19,7 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Favorite
     
-    has_many :favorite_kitchens, 
+    has_many :favorite_restaurants, 
         through: :favorites,
         source: :restaurant
 
@@ -29,6 +29,14 @@ class User < ApplicationRecord
 
     has_many :reviewed_restaurants, 
         through: :reviews,
+        source: :restaurant
+
+    has_many :reservations, 
+        foreign_key: :user_id,
+        class_name: :Reservation
+
+    has_many :reserved_restaurants, 
+        through: :reservations,
         source: :restaurant
 
     after_initialize :ensure_session_token

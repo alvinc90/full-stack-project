@@ -13,6 +13,7 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  description    :text             not null
+#  price          :integer          not null
 #
 class Restaurant < ApplicationRecord
 
@@ -38,5 +39,13 @@ class Restaurant < ApplicationRecord
 
     has_many :follower, 
         through: :favorites,
+        source: :user
+
+    has_many :reservations, 
+        foreign_key: :restaurant_id, 
+        class_name: :Reservation
+
+    has_many :customer_reservations,
+        through: :reservations,
         source: :user
 end 
