@@ -11,7 +11,7 @@ class CityShow extends React.Component {
         super(props)
         this.handleCheckedValues = this.handleCheckedValues.bind(this);
         this.state = {
-            checkedPriceValue: {}
+            checkedPriceIds: {}
         }
     }
 
@@ -24,11 +24,11 @@ class CityShow extends React.Component {
 
     handleCheckedValues(e) {
         debugger
-        const checkedPriceValue = {...this.state.checkedPriceValue}
-        const priceValue = e.currentTarget.value
-        checkedPriceValue[priceValue] = e.currentTarget.checked
+        const checkedPriceIds = {...this.state.checkedPriceIds}
+        const priceId = e.currentTarget.id
+        checkedPriceIds[priceId] = e.currentTarget.checked
         // e.currentTarget.checked ? this.state.truePriceValue.push(e.currentTarget.value) : null
-        this.setState({checkedPriceValue})
+        this.setState({checkedPriceIds})
     };
 
     render() {
@@ -56,8 +56,8 @@ class CityShow extends React.Component {
                             <div>
                                 <input 
                                     type="checkbox" 
-                                    id=""
-                                    value="2"
+                                    id="2"
+                                    value=""
                                     onClick={this.handleCheckedValues}
                                 />
                                 <label>$2</label>
@@ -66,8 +66,8 @@ class CityShow extends React.Component {
                             <div>
                                 <input 
                                     type="checkbox" 
-                                    id=""
-                                    value="3"
+                                    id="3"
+                                    value=""
                                     onClick={this.handleCheckedValues}
                                 />
                                 <label>$3</label>
@@ -75,8 +75,8 @@ class CityShow extends React.Component {
                             <div>
                                 <input 
                                     type="checkbox" 
-                                    id=""
-                                    value="4"
+                                    id="4"
+                                    value=""
                                     onClick={this.handleCheckedValues}
                                 />
                                 <label>$4</label>    
@@ -112,59 +112,59 @@ class CityShow extends React.Component {
                         <div>
                            <h2>cuisine</h2>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="5" onClick={this.handleCheckedValues}/>
                                 <label>Peruvian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="6" onClick={this.handleCheckedValues}/>
                                 <label>Japanese</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="7" onClick={this.handleCheckedValues}/>
                                 <label>American</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="8" onClick={this.handleCheckedValues}/>
                                 <label>Brazillian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="9" onClick={this.handleCheckedValues}/>
                                 <label>Chinese</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="10" onClick={this.handleCheckedValues}/>
                                 <label>Italian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="11" onClick={this.handleCheckedValues}/>
                                 <label>Turkish</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="12" onClick={this.handleCheckedValues}/>
                                 <label>Pizzeria</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="13" onClick={this.handleCheckedValues}/>
                                 <label>Fine Dining</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="14" onClick={this.handleCheckedValues}/>
                                 <label>Indian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="15" onClick={this.handleCheckedValues}/>
                                 <label>Mediterranean</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="16" onClick={this.handleCheckedValues}/>
                                 <label>Korean</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="17" onClick={this.handleCheckedValues}/>
                                 <label>Southeast Asian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id=""/>
+                                <input type="checkbox" id="18" onClick={this.handleCheckedValues}/>
                                 <label>Seafood</label>
                             </div>
                         </div>
@@ -173,11 +173,31 @@ class CityShow extends React.Component {
                     <div className="city-show-inner-cont">
                         {this.props.city ? <h1 className="city-show-heading"> {this.props.city.name}</h1> : null}
                         {this.props.restaurants.map((restaurant, i) => {
-                            const priceKeys = Object.keys(this.state.checkedPriceValue);
-                            const priceValues = Object.values(this.state.checkedPriceValue);
+                            const priceKeys = Object.keys(this.state.checkedPriceIds);
+                            const priceValues = Object.values(this.state.checkedPriceIds);
                             const allFalseValues = priceValues.every((bool) => bool === false);
                             const resPrice = restaurant.price;
-                            
+                            const cuisineId = {
+                                Peruvian: 5,
+                                Japanese: 6,
+                                American: 7,
+                                Brazillian: 8,
+                                Chinese: 9,
+                                Italian: 10,
+                                Turkish: 11,
+                                Pizzeria: 12,
+                                "Fine Dining": 13,
+                                Indian: 14,
+                                Mediterranean: 15,
+                                Korean: 16,
+                                "Southeast Asian": 17,
+                                Seafood: 18
+                            };
+
+                            let cuisine = this.props.restaurants[i].cuisine;
+
+                            let c1 = cuisineId[cuisine]
+
                             // only good for initial render
                             // render the restaurant when the state is empty
                             if((this.props.city.id === this.props.restaurants[i].city_id) && (!priceKeys.length)) {
@@ -204,7 +224,7 @@ class CityShow extends React.Component {
                                     </div>
                                 )
                                 // render the restaurant when the checkmark is true
-                            } else if ( (this.props.city.id === this.props.restaurants[i].city_id) && (this.state.checkedPriceValue[resPrice]) ) {
+                            } else if ( (this.props.city.id === this.props.restaurants[i].city_id) && (this.state.checkedPriceIds[resPrice] || this.state.checkedPriceIds[c1]) ) {
                                 return(
                                     <div className="city-list-outer-container">
                                         <CityShowRestaurantItem 

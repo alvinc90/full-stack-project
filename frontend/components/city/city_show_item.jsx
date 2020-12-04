@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { FaStar } from 'react-icons/fa';
 
-const CityShowRestaurantItem = ({ restaurant, reviews, city, checkedPriceValue }) => {
+const CityShowRestaurantItem = ({ restaurant, reviews, city }) => {
         let reviewRes = reviews.filter((review) => review.restaurant_id === restaurant.id);
         let total = 0;
         reviewRes.forEach((rev) => total += rev.overall)
