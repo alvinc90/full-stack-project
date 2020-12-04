@@ -271,7 +271,20 @@ class CityShow extends React.Component {
                                         />
                                     </div>
                                 )
-                            }
+                            } 
+                            // renders for price and cuisine but does not work at the moment
+                            // else if ( (this.props.city.id === this.props.restaurants[i].city_id) && ( (this.state.checkedPriceIds[resPrice]) && (this.state.checkedPriceIds[c1]) ) ) {
+                            //     return(
+                            //         <div className="city-list-outer-container">
+                            //             <CityShowRestaurantItem 
+                            //                 restaurant={restaurant} 
+                            //                 key={restaurant.id}
+                            //                 reviews={this.props.reviews}
+                            //                 city={this.props.city}
+                            //             />
+                            //         </div>
+                            //     )
+                            // }
                         })}
                     </div>
                  </div>
