@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { FaStar } from 'react-icons/fa';
-// import StarRating from '../star_rating';
 
-const CityShowRestaurantItem = ({ restaurant, reviews, city }) => {
+const CityShowRestaurantItem = ({ restaurant, reviews, city, checkedPriceValue }) => {
         let reviewRes = reviews.filter((review) => review.restaurant_id === restaurant.id);
         let total = 0;
         reviewRes.forEach((rev) => total += rev.overall)
@@ -22,7 +21,7 @@ const CityShowRestaurantItem = ({ restaurant, reviews, city }) => {
         }
     return(
         <div className="city-show-item-container">
-            
+
             <Link to={`/restaurants/${restaurant.id}`}><div>
                 <img className="city-show-restaurant-image" src={restaurant.photourl} alt="aws picture"/>
             </div></Link>
@@ -31,7 +30,6 @@ const CityShowRestaurantItem = ({ restaurant, reviews, city }) => {
                 <Link className="city-show-item-link" to={`/restaurants/${restaurant.id}`}>
                     <h1 className="city-show-item-heading">{restaurant.name}</h1>
                 </Link>
-                {/* <StarRating /> */}
                 {[...Array(rating)].map((star) => {
                     return <FaStar color="crimson" />
                 })}
