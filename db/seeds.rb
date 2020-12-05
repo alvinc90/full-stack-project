@@ -13,6 +13,7 @@ City.delete_all
 Restaurant.delete_all
 Review.delete_all
 Favorite.delete_all
+Reservation.delete_all
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
@@ -681,6 +682,16 @@ fav5 = Favorite.create!(
 fav6 = Favorite.create!(
     user_id: 1,
     restaurant_id: 3
+)
+
+reservation1 = Reservation.create!(
+    num_guests: 2,
+    date: "10-12-2020",
+    time: "13:00",
+    special_request: "mayor breed birthday",
+    reserved: true,
+    user_id: 6,
+    restaurant_id: 1
 )
 
 

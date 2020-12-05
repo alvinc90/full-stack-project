@@ -1,13 +1,22 @@
 import React from 'react';
 import Footer from '../footer';
 import { Link } from 'react-router-dom';
+import UserReservationList from './user_reservation_list';
 
 class UserReservation extends React.Component {
     constructor(props){
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchReservations();
+        this.props.fetchAllRestaurants();
+    }
+
     render() {
+        const { restaurants, reservations, currentUser } = this.props;
+        !Object.values(restaurants).length ? null : restaurants
+        debugger
         return(
             <div className="user-reservation-outer-container">
                 <div className="user-show-inner-container">
@@ -21,6 +30,23 @@ class UserReservation extends React.Component {
                     </div>
                     <div className="user-show-info-container3">
                         <h1 className="profile-heading">My Reservations</h1>
+                        {!Object.values(restaurants).length ? null : 
+                        
+                        reservations.map((reservation) => {
+                            if (reservation.restaurant_id === restaurants[reservation.restaurant_id].id) {
+                                debugger
+                                return (
+                                       <UserReservationList
+                                            reservation={reservation}
+                                            key={reservation.id}
+                                            restaurants={restaurants}
+                                            currentUser={currentUser}
+                                       />
+                                )
+                            }
+                        })
+                        
+                        }
                     </div>
                 </div>
 
