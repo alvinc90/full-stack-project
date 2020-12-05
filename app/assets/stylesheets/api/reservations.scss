@@ -1,3 +1,140 @@
 // Place all the styles related to the api/reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sticky-outer-container {
+    position: fixed;
+    // position: sticky;
+    z-index: 2;
+    width: 20%;
+    border: 1px solid whitesmoke;
+    right: 12%;
+    top: 40%;
+    border-radius: 6px;
+    background-color: white;
+    opacity: 85%;
+}
+
+.sticky-underline {
+    background-color: lightgray;
+    height: 2px;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+.sticky-heading {
+    margin-top: 19px;
+    font-size: 22px;
+    font-family: 'Commissioner', sans-serif;
+    text-align: center;
+}
+
+.sticky-dropdown {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 4px;
+    font-size: 16px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 2px solid lightgray;
+    color: gray;
+}
+
+.sticky-dropdown:focus, .sticky-date-time:focus {
+    border-bottom: 2px solid crimson;
+    outline: none;
+}
+
+.sticky-dropdown:hover, .sticky-date-time:hover {
+    border-bottom: 2px solid crimson;
+    cursor: pointer;
+}
+
+.sticky-labels {
+    margin-top: 15px;
+    margin-left: 5%;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.sticky-date-time {
+    width: 42%;
+    margin-left: 5%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 2px solid lightgray;
+}
+
+.sticky-date-label {
+    // margin-top: 15px;
+    margin-left: 5%;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.sticky-time-label {
+    // margin-top: 15px;
+    margin-left: 36%;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.date-time-container {
+    margin-top: 15px;
+}
+
+.sticky-button {
+    margin-top: 15px;
+    margin-left: 5%;
+    cursor: pointer;
+    height: 45px; 
+    width: 90%; 
+    border-radius: 3px;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+    border: none;
+    background-color: rgb(220, 20, 60);
+    color: white;
+    margin-bottom: 25px;
+}
+
+.sticky-button:hover {
+    background-color: darkred;
+}
+
+.sticky-select-time-label {
+    margin-left: 5%;
+    font-family: 'Commissioner', sans-serif;
+    // margin-top: 15px;
+    font-size: 18px;
+}
+
+.sticky-time-buttons-container {
+    margin-top: 15px;
+}
+
+.sticky-time-bombs {
+    margin-left: 6%;
+    margin-bottom: 25px;
+    // font-family: 'Commissioner', sans-serif;
+    color: white;
+    background-color: crimson;
+    border-radius: 4px; 
+    font-size: 15px;
+    border: none;
+    height: 36px;
+    width: 25%;
+}
+
+.sticky-time-bombs:hover {
+    cursor: pointer;
+    background-color: darkred;
+}
+
+.time-bomb-container {
+    display: none;
+}
+
+.sticky-time-bombs:focus, .sticky-button {
+    outline: none;
+}

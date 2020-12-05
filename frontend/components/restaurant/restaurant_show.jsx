@@ -4,6 +4,9 @@ import ReviewCreateModal from '../review/review_create';
 import { FaStar } from 'react-icons/fa';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Footer from '../footer';
+import ReservationFormSticky from '../reservation/reservation_form_sticky';
+// import ReservationFormStickyContainer from '../reservation/reservation_container';
+
 class RestaurantShow extends React.Component {
     constructor(props) {
         super(props)
@@ -178,6 +181,11 @@ class RestaurantShow extends React.Component {
                         <label> <h5 className="show-aside-heading">Cuisines</h5> 
                             {(this.props.restaurant) ? <p className="show-aside-info">{this.props.restaurant.cuisine}</p> : null}
                         </label>
+                    </div>
+
+                    <div>
+                        <ReservationFormSticky/>
+                        {/* <ReservationFormStickyContainer /> */}
                     </div>
 
                 </div>

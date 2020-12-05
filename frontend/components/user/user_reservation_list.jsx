@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const UserReservationList = ({ reservation, restaurants, currentUser }) => {
     const imgUrl = restaurants[reservation.restaurant_id].photourl
+
     return(
         <div className="fav-list-container">
             <div>
