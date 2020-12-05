@@ -7,7 +7,7 @@ class ReservationFormSticky extends React.Component {
     };
 
     handleFindTable(e) {
-        const bomb = document.getElementsByClassName("time-bomb-container");
+        const bomb = document.getElementsByClassName("time-bomb-container")[0];
         bomb.style.display = "block";
     }
 
