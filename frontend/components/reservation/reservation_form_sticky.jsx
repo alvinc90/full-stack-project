@@ -4,6 +4,15 @@ class ReservationFormSticky extends React.Component {
     constructor(props) {
         super(props)
         this.handleFindTable = this.handleFindTable.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        const todayDay = new Date().toDateString().slice(8,10);
+        const todayMonth = new Date().getMonth() + 1;
+        const todayYear = new Date().toDateString().slice(11);
+        this.state = {
+            num_guests: 2,
+            date: `${todayYear}-${todayMonth}-${todayDay}`,
+            time: ""
+        }
     };
 
     handleFindTable(e) {
@@ -11,7 +20,13 @@ class ReservationFormSticky extends React.Component {
         bomb.style.display = "block";
     }
 
+    handleChange(type) {
+        // debugger
+        return (e) => this.setState({[type] : e.currentTarget.value})
+    }
+
     render() {
+        // debugger
         return(
             <div className="sticky-outer-container">
                 <div>
@@ -19,17 +34,17 @@ class ReservationFormSticky extends React.Component {
                     <div className="sticky-underline"></div>
                     <div>
                         <h6 className="sticky-labels">Party Size</h6>
-                        <select className="sticky-dropdown">
-                            <option value="">1 person</option>
-                            <option selected value="">2 people</option>
-                            <option value="">3 people</option>
-                            <option value="">4 people</option>
-                            <option value="">5 people</option>
-                            <option value="">6 people</option>
-                            <option value="">7 people</option>
-                            <option value="">8 people</option>
-                            <option value="">9 people</option>
-                            <option value="">10 people</option>
+                        <select onChange={this.handleChange('num_guests')} className="sticky-dropdown">
+                            <option value="1">1 person</option>
+                            <option selected value="2">2 people</option>
+                            <option value="3">3 people</option>
+                            <option value="4">4 people</option>
+                            <option value="5">5 people</option>
+                            <option value="6">6 people</option>
+                            <option value="7">7 people</option>
+                            <option value="8">8 people</option>
+                            <option value="9">9 people</option>
+                            <option value="10">10 people</option>
                         </select>
                     </div>
 
@@ -42,10 +57,20 @@ class ReservationFormSticky extends React.Component {
 
                 <div>
                     <span>
-                        <input type="date" id="" className="sticky-date-time"/>
+                        <input 
+                            type="date"
+                            className="sticky-date-time"
+                            value={this.state.date}
+                            onChange={this.handleChange('date')}
+                        />
                     </span>
                     <span>
-                        <input type="time" id="" className="sticky-date-time"/>
+                        <input 
+                            type="time" 
+                            className="sticky-date-time"
+                            onChange={this.handleChange('time')}
+                            value=""
+                        />
                     </span>
                 </div>
                 <div>
