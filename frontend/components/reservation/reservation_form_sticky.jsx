@@ -46,6 +46,20 @@ class ReservationFormSticky extends React.Component {
 
     render() {
         // debugger
+        const time1 = {
+            "10:00": "10:00 AM",
+            "11:00": "11:00 AM",
+            "12:00": "12:00 PM",
+            "13:00": "1:00 PM",
+            "14:00": "2:00 PM",
+            "15:00": "3:00 PM",
+            "16:00": "4:00 PM",
+            "17:00": "5:00 PM",
+            "18:00": "6:00 PM",
+            "19:00": "7:00 PM",
+            "20:00": "8:00 PM",
+            "21:00": "9:00 PM",
+        };
         return(
             <div className="sticky-outer-container">
                 <div>
@@ -84,12 +98,6 @@ class ReservationFormSticky extends React.Component {
                         />
                     </span>
                     <span>
-                        {/* <input 
-                            type="time" 
-                            className="sticky-date-time"
-                            onChange={this.handleChange('time')}
-                            value={this.state.time}
-                        /> */}
                         <select className="sticky-date-time" onChange={this.handleChange('time')} >
                             <option value="10:00">10:00 AM</option>
                             <option selected value="11:00">11:00 AM</option>
@@ -115,7 +123,8 @@ class ReservationFormSticky extends React.Component {
                     <h6 className="sticky-select-time-label">Select a time:</h6>
                     <div className="sticky-time-buttons-container">
                         <button className="sticky-time-bombs">Time 1</button>
-                        <button className="sticky-time-bombs">{this.state.time}</button>
+                        <button className="sticky-time-bombs">{time1[this.state.time]}</button>
+                        {/* <button className="sticky-time-bombs">{time1.this.state.time}</button> */}
                         <button className="sticky-time-bombs">Time 3</button>
                     </div>
                 </div>

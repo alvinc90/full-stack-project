@@ -6,9 +6,9 @@
     position: fixed;
     // position: sticky;
     z-index: 2;
-    width: 20%;
+    width: 23%;
     border: 1px solid whitesmoke;
-    right: 12%;
+    right: 9%;
     top: 40%;
     border-radius: 6px;
     background-color: white;
@@ -123,7 +123,7 @@
     font-size: 15px;
     border: none;
     height: 36px;
-    width: 25%;
+    width: 83px;
 }
 
 .sticky-time-bombs:hover {
@@ -132,6 +132,7 @@
 }
 
 .time-bomb-container {
+    margin-top: 15px;
     display: none;
 }
 
