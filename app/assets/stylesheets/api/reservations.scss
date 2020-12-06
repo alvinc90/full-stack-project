@@ -138,3 +138,20 @@
 .sticky-time-bombs:focus, .sticky-button {
     outline: none;
 }
+
+#sticky-loader {
+    display: none;
+    border: 4px solid lightgray;
+    border-radius: 100%;
+    border-top: 6px dotted crimson;
+    width: 40px;
+    height: 40px;
+    animation: spin 1.6s linear infinite;
+    margin-left: 40%;
+    margin-top: 5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

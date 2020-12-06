@@ -5,24 +5,43 @@ class ReservationFormSticky extends React.Component {
         super(props)
         this.handleFindTable = this.handleFindTable.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.loaded = this.loaded.bind(this);
         const todayDay = new Date().toDateString().slice(8,10);
         const todayMonth = new Date().getMonth() + 1;
         const todayYear = new Date().toDateString().slice(11);
+        // const nowTime = new Date().toTimeString().slice(0, 5);
         this.state = {
             num_guests: 2,
             date: `${todayYear}-${todayMonth}-${todayDay}`,
-            time: ""
+            time: "11:00"
         }
     };
 
     handleFindTable(e) {
         const bomb = document.getElementsByClassName("time-bomb-container")[0];
+        const loader = document.getElementById("sticky-loader");
         bomb.style.display = "block";
+        loader.style.display = "none";
+    }
+
+    loaded() {
+        const findTableBtn = document.getElementsByClassName("sticky-button")[0];
+        const loader = document.getElementById("sticky-loader");
+        findTableBtn.style.display = "none";
+        loader.style.display = "block"
+        setTimeout(this.handleFindTable, 1400);
     }
 
     handleChange(type) {
-        // debugger
-        return (e) => this.setState({[type] : e.currentTarget.value})
+        return (e) => {
+            const findTableBtn = document.getElementsByClassName("sticky-button")[0];
+            const bomb = document.getElementsByClassName("time-bomb-container")[0];
+            const loader = document.getElementById("sticky-loader");
+            findTableBtn.style.display = "block";
+            bomb.style.display = "none";
+            loader.style.display = "none";
+            this.setState({[type] : e.currentTarget.value}) 
+        }
     }
 
     render() {
@@ -65,23 +84,38 @@ class ReservationFormSticky extends React.Component {
                         />
                     </span>
                     <span>
-                        <input 
+                        {/* <input 
                             type="time" 
                             className="sticky-date-time"
                             onChange={this.handleChange('time')}
-                            value=""
-                        />
+                            value={this.state.time}
+                        /> */}
+                        <select className="sticky-date-time" onChange={this.handleChange('time')} >
+                            <option value="10:00">10:00 AM</option>
+                            <option selected value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                        </select>
                     </span>
                 </div>
                 <div>
-                    <button onClick={this.handleFindTable} className="sticky-button">Find a table</button>
+                    <div id="sticky-loader"></div>
+                    <button onClick={this.loaded} className="sticky-button">Find a table</button>
                 </div>
 
                 <div className="time-bomb-container">
                     <h6 className="sticky-select-time-label">Select a time:</h6>
                     <div className="sticky-time-buttons-container">
                         <button className="sticky-time-bombs">Time 1</button>
-                        <button className="sticky-time-bombs">Time 2</button>
+                        <button className="sticky-time-bombs">{this.state.time}</button>
                         <button className="sticky-time-bombs">Time 3</button>
                     </div>
                 </div>
