@@ -56,6 +56,58 @@ class ReservationShow extends React.Component {
                             <button>Modify</button>
                             <button>Cancel Reservation</button>
                         </div>
+
+                        <div>
+                            <div>
+                                <div>
+                                    <input type="date" />
+
+                                    <select>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option selected value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                        <option value="20:00">8:00 PM</option>
+                                        <option value="21:00">9:00 PM</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select>
+                                        <option value="1">1 person</option>
+                                        <option selected value="2">2 people</option>
+                                        <option value="3">3 people</option>
+                                        <option value="4">4 people</option>
+                                        <option value="5">5 people</option>
+                                        <option value="6">6 people</option>
+                                        <option value="7">7 people</option>
+                                        <option value="8">8 people</option>
+                                        <option value="9">9 people</option>
+                                        <option value="10">10 people</option>
+                                    </select>
+
+                                    <textarea>
+                                    </textarea>
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <button>Search</button>
+                                <button>Cancel</button>
+                            </div>
+
+                            <div>
+                                <button>Time1</button>
+                                <button>Time2</button>
+                                <button>Time3</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

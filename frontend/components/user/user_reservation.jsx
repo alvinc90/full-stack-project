@@ -32,7 +32,7 @@ class UserReservation extends React.Component {
                         {!Object.values(restaurants).length ? null : 
                         
                         reservations.map((reservation) => {
-                            if ( (reservation.restaurant_id === restaurants[reservation.restaurant_id].id) && (reservation.user_id === currentUser)) {
+                            if ( (reservation.restaurant_id === restaurants[reservation.restaurant_id].id) && (reservation.user_id === currentUser) && (reservation.reserved === true) ) {
                                 return (
                                        <UserReservationList
                                             reservation={reservation}
