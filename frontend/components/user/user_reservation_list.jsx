@@ -16,6 +16,12 @@ const UserReservationList = ({ reservation, restaurants, currentUser }) => {
                 <h3>{reservation.time}</h3>
                 <h3>{reservation.num_guests}</h3>
             </div>
+
+            <div>
+                <Link to={`/reservations/${reservation.id}`}>
+                    <button>Edit Reservation</button>
+                </Link>
+            </div>
         </div>
     )
 };

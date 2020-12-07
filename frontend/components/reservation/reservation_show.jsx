@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ReservationShow extends React.Component {
     constructor(props) {
@@ -12,10 +13,21 @@ class ReservationShow extends React.Component {
 
     render() {
         const { reservation, restaurants, currentUser } = this.props;
-        // if (!reservation) return null;
+        if (!reservation) return null;
+        if (!Object.values(restaurants).length) return null;
+        debugger
         return(
             <div>
                 <div>
+                    <div>
+                        <Link to="/">
+                            <button>Back To Home</button>
+                        </Link>
+                        <Link to="/my/reservations">
+                            <button>My Reservation</button>
+                        </Link>
+                    </div>
+
                     <div>
                         <h1>Thanks! Your reservation is confirmed.</h1>
                         <h1>Confirmation #some-randon-generated-num</h1>
@@ -23,18 +35,22 @@ class ReservationShow extends React.Component {
 
                     <div>
                         <div>
-                            <img src="" alt="restaurant image"/>
+                            <img 
+                                src={restaurants[reservation.restaurant_id].photoUrl }
+                                alt="restaurant picture"
+                                className="user-fav-image"
+                            />
                         </div>
 
                         <div>
-                            <h1>Restaurant name</h1>
+                            <h1>{ restaurants[reservation.restaurant_id].name }</h1>
                             <div>
-                                <span>{reservation ? reservation.date : null}</span>
-                                <span>{reservation ? reservation.time : null}</span>
-                                <span>{reservation ? reservation.num_guests : null}</span>
+                                <span>{ reservation.date }</span>
+                                <span>{ reservation.time }</span>
+                                <span>{ reservation.num_guests }</span>
                             </div>
                         </div>
-                        <p>{reservation ? reservation.special_request : null}</p>
+                        <p>{ reservation.special_request }</p>
 
                         <div>
                             <button>Modify</button>
