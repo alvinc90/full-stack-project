@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../footer';
+import { withRouter } from 'react-router-dom';
 
 class ReservationShow extends React.Component {
     constructor(props) {
@@ -9,11 +10,64 @@ class ReservationShow extends React.Component {
         this.handleCancel = this.handleCancel.bind(this);
         this.handleLoaded3 = this.handleLoaded3.bind(this);
         this.handleLoaded2 = this.handleLoaded2.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        // debugger
+        const { reservation } = this.props;
+        this.state = {
+            id: (reservation ? reservation.id : null),
+            num_guests: (reservation ? reservation.num_guests: null),
+            date: (reservation ? reservation.date: null),
+            time: (reservation ? reservation.time.slice(11, 16): null),
+            special_request: (reservation ? reservation.special_request: null),
+            reserved: (reservation ? reservation.reserved: null),
+            user_id: (reservation ? reservation.user_id: null),
+            restaurant_id: (reservation ? reservation.restaurant_id: null)
+            // cynthia: "i am the biggest cunt"
+        }
     }
 
     componentDidMount() {
         this.props.fetchAllRestaurants();
         this.props.fetchReservation(this.props.match.params.reservationId);
+    }
+
+    handleUpdate(e) {
+        e.preventDefault();
+        const timeBtn = document.getElementsByClassName("ninety-9-ranch")[0];
+        const editBtn = document.getElementsByClassName("edit-form-button-container")[0];
+        const inputS = document.getElementById("re256");
+        const updatedData = {
+            id: ( this.state.id ? this.state.id : this.props.reservation.id ),
+            num_guests: ( this.state.num_guests ? this.state.num_guests : this.props.reservation.num_guests ),
+            date: ( this.state.date ? this.state.date : this.props.reservation.date ),
+            time: ( this.state.time ? this.state.time : this.props.reservation.time ),
+            special_request: ( this.state.special_request ? this.state.special_request : this.props.reservation.special_request ),
+            reserved: true,
+            user_id: ( this.state.user_id ? this.state.user_id : this.props.reservation.user_id ),
+            restaurant_id: ( this.state.restaurant_id ? this.state.restaurant_id : this.props.reservation.restaurant_id ),
+        }
+        this.props.updateReservation(updatedData)
+            .then(this.props.history.push(`/reservations/${this.props.reservation.id}`));
+            // .then(this.props.history.push("/"));
+        timeBtn.style.display = "none";
+        inputS.style.display = "none";
+        editBtn.style.display = "block";
+        window.scrollTo(0, 0);
+
+    }
+
+    handleChange(type) {
+        // debugger
+        return(e) => {
+            const timeBtn = document.getElementsByClassName("ninety-9-ranch")[0];
+            const searchBtn = document.getElementsByClassName("re37")[0];
+            searchBtn.style.display = "block";
+            timeBtn.style.display = "none";
+            // debugger
+            this.setState({ [type]: e.currentTarget.value})
+
+        } 
     }
 
     handleCancel(e) {
@@ -50,8 +104,30 @@ class ReservationShow extends React.Component {
 
     render() {
         const { reservation, restaurants, currentUser } = this.props;
-        if (!reservation) return null;
         if (!Object.values(restaurants).length) return null;
+        if (!reservation) return null;
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const printDay = days[ new Date(reservation.date).getUTCDay()];
+        const printMonth = months[ new Date(reservation.date).getUTCMonth()];
+        const printDate = reservation.date.slice(8);
+        const printYear = reservation.date.slice(0, 4);
+        const time1 = {
+            "10:00": "10:00 AM",
+            "11:00": "11:00 AM",
+            "12:00": "12:00 PM",
+            "13:00": "1:00 PM",
+            "14:00": "2:00 PM",
+            "15:00": "3:00 PM",
+            "16:00": "4:00 PM",
+            "17:00": "5:00 PM",
+            "18:00": "6:00 PM",
+            "19:00": "7:00 PM",
+            "20:00": "8:00 PM",
+            "21:00": "9:00 PM",
+        };
+        const nowTime = reservation.time.slice(11, 16)
+        const timeFormat = time1[nowTime];
         // debugger
         return(
             <div>
@@ -84,9 +160,17 @@ class ReservationShow extends React.Component {
                             <div>
                                 <h1 className="rs3">{ restaurants[reservation.restaurant_id].name }</h1>
                                 <div className="re4">
-                                    <span>{ new Date(reservation.date).toDateString() }</span>
-                                    <span>{ reservation.time.slice(11, 16) }</span>
-                                    <span>{ reservation.num_guests } people</span>
+                                    <div className="re500">
+                                        <span>{printDay}</span>
+                                        <span className="rx7">{printMonth}</span>
+                                        <span className="rx7">{printDate}</span>
+                                        <span className="rx7">{printYear}</span>
+                                    </div>
+                                    {/* <span>{ new Date(reservation.date).toDateString() }</span> */}
+                                    <div className="re501">
+                                        <span>{ timeFormat }</span>
+                                        <span className="rx8">{ reservation.num_guests } people</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -101,10 +185,14 @@ class ReservationShow extends React.Component {
                         </div>
 
                         <div className="reservation-edit-form-outer-container">
-                            <div>
+                            <div id="re256">
                                 <div className="re100">
                                     <div>
-                                        <select className="re12">
+                                        <select 
+                                            className="re12" 
+                                            defaultValue={reservation.num_guests}
+                                            onChange={this.handleChange('num_guests')}
+                                        >
                                             <option value="1">1 person</option>
                                             <option selected value="2">2 people</option>
                                             <option value="3">3 people</option>
@@ -118,8 +206,13 @@ class ReservationShow extends React.Component {
                                         </select>
                                     </div>
 
+                                    {/* value={reservation.time.slice(11, 16)} */}
                                     <div>
-                                        <select className="re11">
+                                        <select 
+                                            className="re11" 
+                                            defaultValue= {reservation.time.slice(11, 16)}
+                                            onChange={this.handleChange('time')}
+                                        >
                                             <option value="10:00">10:00 AM</option>
                                             <option selected value="11:00">11:00 AM</option>
                                             <option value="12:00">12:00 PM</option>
@@ -138,14 +231,21 @@ class ReservationShow extends React.Component {
                                 <div className="re99">
 
                                     <div>
-                                        <input className="re10" type="date" />
+                                        <input 
+                                            className="re10" 
+                                            type="date"
+                                            defaultValue={reservation.date}
+                                            onChange={this.handleChange('date')}
+                                        />
                                     </div>
                                     
                                     <div>
                                         <textarea 
                                             className="re13"
                                             placeholder="Add a special request(optional)"
+                                            onChange={this.handleChange('special_request')}
                                         >
+                                        {reservation.special_request}
                                         </textarea>
                                     </div>
                                 </div>
@@ -161,7 +261,7 @@ class ReservationShow extends React.Component {
 
                             <div className="ninety-9-ranch">
                                 <button className="ranch99">Time1</button>
-                                <button className="ranch99">Time2</button>
+                                <button onClick={this.handleUpdate} className="ranch99">Time2</button>
                                 <button className="ranch99">Time3</button>
                             </div>
                         </div>
@@ -177,4 +277,4 @@ class ReservationShow extends React.Component {
     }
 };
 
-export default ReservationShow;
+export default withRouter(ReservationShow);

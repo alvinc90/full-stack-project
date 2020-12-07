@@ -71,10 +71,10 @@ class SignUpForm extends React.Component {
                         <label> 
                             <select className="selector" defaultValue="Dining Location">
                                 <option disabled value="Dining Location">Dining Location*</option>
-                                <option value={this.state.diningLocation}>San Francisco</option>
-                                <option value={this.state.diningLocation}>New York</option>
-                                <option value={this.state.diningLocation}>Chicago</option>
-                                <option value={this.state.diningLocation}>Los Angeles</option>
+                                <option value="San Francisco">San Francisco</option>
+                                <option value="New York">New York</option>
+                                <option value="Chicago">Chicago</option>
+                                <option value="Los Angeles">Los Angeles</option>
                             </select>
                         </label>
                     {/* </div> */}

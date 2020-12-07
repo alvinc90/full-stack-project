@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
     return({
         reservation: state.entities.reservations[ownProps.match.params.reservationId],
         restaurants: state.entities.restaurants,
-        currentUser: state.session.currentUserId
+        currentUser: state.session.currentUserId,
     })
 };
 
