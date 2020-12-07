@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ReservationFormSticky extends React.Component {
     constructor(props) {
         super(props)
         this.handleFindTable = this.handleFindTable.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.loaded = this.loaded.bind(this);
+        this.handleLoaded = this.handleLoaded.bind(this);
         const todayDay = new Date().toDateString().slice(8,10);
         const todayMonth = new Date().getMonth() + 1;
         const todayYear = new Date().toDateString().slice(11);
@@ -24,12 +25,16 @@ class ReservationFormSticky extends React.Component {
         loader.style.display = "none";
     }
 
-    loaded() {
+    handleLoaded() {
         const findTableBtn = document.getElementsByClassName("sticky-button")[0];
         const loader = document.getElementById("sticky-loader");
-        findTableBtn.style.display = "none";
-        loader.style.display = "block"
-        setTimeout(this.handleFindTable, 1400);
+        if (this.props.currentUser) {
+            findTableBtn.style.display = "none";
+            loader.style.display = "block"
+            setTimeout(this.handleFindTable, 1400);
+        } else {
+            this.props.openModal('login');
+        }
     }
 
     handleChange(type) {
@@ -116,15 +121,25 @@ class ReservationFormSticky extends React.Component {
                 </div>
                 <div>
                     <div id="sticky-loader"></div>
-                    <button onClick={this.loaded} className="sticky-button">Find a table</button>
+                    <button onClick={this.handleLoaded} className="sticky-button">Find a table</button>
                 </div>
 
                 <div className="time-bomb-container">
                     <h6 className="sticky-select-time-label">Select a time:</h6>
                     <div className="sticky-time-buttons-container">
                         <button className="sticky-time-bombs">Time 1</button>
-                        <button className="sticky-time-bombs">{time1[this.state.time]}</button>
-                        {/* <button className="sticky-time-bombs">{time1.this.state.time}</button> */}
+                        <Link to={{
+                            pathname: '/reservation/create/new',
+                            state: {
+                                num_guests: this.state.num_guests,
+                                date: this.state.date,
+                                time: this.state.time,
+                                restaurant: this.props.restaurant,
+                                currentUser: this.props.currentUser
+                            }
+                        }}>
+                            <button className="sticky-time-bombs">{time1[this.state.time]}</button>
+                        </Link>
                         <button className="sticky-time-bombs">Time 3</button>
                     </div>
                 </div>

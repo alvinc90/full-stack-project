@@ -10,7 +10,7 @@ import CityShowContainer from './city/city_show_container';
 import UserShowContainer from './user/user_show_container';
 import UserFavContainer from './user/user_fav_container';
 import UserReservationContainer from './user/user_reservation_container'
-// import ReviewEditContainer from './review/review_edit_container';
+import ReservationCreateFormContainer from './reservation/reservation_container';
 
 const App = () => {
     return (
@@ -20,10 +20,10 @@ const App = () => {
             {/* <Route path="/" component={NavBarContainer}/> */}
             <Switch>
                 <Route exact path="/" component={Home}/>
-                {/* <Route exact path ="/myprofile" component={UserShowContainer} /> */}
                 <ProtectedRoute exact path ="/my/profile" component={UserShowContainer} />
                 <ProtectedRoute exact path ="/my/favorites" component={UserFavContainer} />
                 <ProtectedRoute exact path ="/my/reservations" component={UserReservationContainer} />
+                <ProtectedRoute exact path ="/reservation/create/new" component={ReservationCreateFormContainer} />
                 <Route exact path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
                 {/* <Route exact path="/restaurants/:restaurantId" component={ReviewEditContainer} /> */}
                 <Route exact path="/cities/:cityId" component={CityShowContainer} />

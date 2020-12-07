@@ -5,7 +5,6 @@ import { FaStar } from 'react-icons/fa';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Footer from '../footer';
 import ReservationFormSticky from '../reservation/reservation_form_sticky';
-// import ReservationFormStickyContainer from '../reservation/reservation_container';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -29,11 +28,19 @@ class RestaurantShow extends React.Component {
     }
 
     handleCreateFavorite(e) {
-        this.props.createFavorite(this.state.favorite);
+        if(this.props.currentUser) {
+            this.props.createFavorite(this.state.favorite);
+        } else {
+            this.props.openModal('login')
+        }
     }
 
     handleDeleteFavorite(e) {
-        this.props.deleteFavorite(parseInt(e.currentTarget.id));
+        if(this.props.currentUser) {
+            this.props.deleteFavorite(parseInt(e.currentTarget.id));
+        } else {
+            this.props.openModal('login')
+        }
     }
 
     handleModal() {
@@ -57,7 +64,8 @@ class RestaurantShow extends React.Component {
                 currentUser,
                 clearReview,
                 fetchReview,
-                favorites } = this.props;
+                favorites,
+                openModal } = this.props;
         let reviewRes = restaurant ? this.props.reviews.filter((review) => review.restaurant_id === this.props.restaurant.id) : null
         let rating;
         if (restaurant) {
@@ -184,8 +192,11 @@ class RestaurantShow extends React.Component {
                     </div>
 
                     <div>
-                        <ReservationFormSticky/>
-                        {/* <ReservationFormStickyContainer /> */}
+                        <ReservationFormSticky 
+                            currentUser={currentUser}
+                            openModal={openModal}
+                            restaurant={restaurant}
+                        />
                     </div>
 
                 </div>

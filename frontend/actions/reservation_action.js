@@ -12,6 +12,7 @@ const receiveReservations = (reservations) => {
 };
 
 const receiveReservation = (reservation) => {
+    debugger
     return({
         type: RECEIVE_RESERVATION,
         reservation
@@ -44,9 +45,12 @@ export const fetchReservation = (reservationId) => {
 };
 
 export const createReservation = (reservation) => {
+    debugger
     return dispatch => {
+        debugger
         return ReservationAPIUtil.createReservation(reservation)
             .then((createdReservation) => {
+                debugger
                 return dispatch(receiveReservation(createdReservation))
             })
     }

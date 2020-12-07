@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
-import ReservationFormSticky from './reservation_form_sticky';
+import ReservationCreateForm from './reservation_create_form';
+import { createReservation } from '../../actions/reservation_action';
 
 const mapStateToProps = (state) => {
     return({
-
+        
     })
 };
 
 const mapDispatchToProps = (dispatch) => {
+    debugger
     return({
-    
+        createReservation: (reservation) => dispatch(createReservation(reservation))
     })
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReservationFormSticky);
+export default connect(mapStateToProps, mapDispatchToProps)(ReservationCreateForm);

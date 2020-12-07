@@ -7,6 +7,7 @@ import {
 const reservationsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState = Object.assign({}, oldState);
+    debugger
     switch(action.type) {
         case RECEIVE_RESERVATIONS:
             return action.reservations;
