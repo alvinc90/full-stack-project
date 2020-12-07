@@ -15,7 +15,7 @@ class ReservationShow extends React.Component {
         const { reservation, restaurants, currentUser } = this.props;
         if (!reservation) return null;
         if (!Object.values(restaurants).length) return null;
-        debugger
+        // debugger
         return(
             <div>
                 <div>
@@ -36,9 +36,9 @@ class ReservationShow extends React.Component {
                     <div>
                         <div>
                             <img 
-                                src={restaurants[reservation.restaurant_id].photoUrl }
+                                src={restaurants[reservation.restaurant_id].photourl }
                                 alt="restaurant picture"
-                                className="user-fav-image"
+                                className="reservation-image"
                             />
                         </div>
 
