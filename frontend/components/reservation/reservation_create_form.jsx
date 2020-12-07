@@ -18,17 +18,14 @@ class ReservationCreateForm extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         this.props.createReservation(this.state);
     }
 
     handleChange(e) {
-        // debugger
         this.setState({ special_request: e.currentTarget.value })
     }
 
     render() {
-        // debugger
         const { num_guests, date, time, restaurant } = this.props.location.state;
         return(
             <div>

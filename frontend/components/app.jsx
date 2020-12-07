@@ -11,6 +11,7 @@ import UserShowContainer from './user/user_show_container';
 import UserFavContainer from './user/user_fav_container';
 import UserReservationContainer from './user/user_reservation_container'
 import ReservationCreateFormContainer from './reservation/reservation_container';
+import ReservationShowContainer from './reservation/reservation_show_container';
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                 <ProtectedRoute exact path ="/my/favorites" component={UserFavContainer} />
                 <ProtectedRoute exact path ="/my/reservations" component={UserReservationContainer} />
                 <ProtectedRoute exact path ="/reservation/create/new" component={ReservationCreateFormContainer} />
+                <ProtectedRoute exact path ="/reservations/:reservationId" component={ReservationShowContainer} />
                 <Route exact path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
                 {/* <Route exact path="/restaurants/:restaurantId" component={ReviewEditContainer} /> */}
                 <Route exact path="/cities/:cityId" component={CityShowContainer} />

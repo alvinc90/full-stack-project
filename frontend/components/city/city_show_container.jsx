@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'; 
 import { fetchCity } from '../../actions/city_action';
-import CityShow from './city_show'; 
+import CityShow from './city_show';
 import { fetchAllRestaurants } from '../../actions/restaurant_action';
 import { fetchReviews } from '../../actions/review_action';
 

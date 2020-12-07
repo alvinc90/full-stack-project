@@ -50,7 +50,6 @@ class ReservationFormSticky extends React.Component {
     }
 
     render() {
-        // debugger
         const time1 = {
             "10:00": "10:00 AM",
             "11:00": "11:00 AM",

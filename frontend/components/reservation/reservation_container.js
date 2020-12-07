@@ -8,8 +8,7 @@ const mapStateToProps = (state) => {
     })
 };
 
-const mapDispatchToProps = (dispatch) => {
-    debugger
+const mapDispatchToProps = (dispatch) => { 
     return({
         createReservation: (reservation) => dispatch(createReservation(reservation))
     })
