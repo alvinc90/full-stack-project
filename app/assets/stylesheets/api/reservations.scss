@@ -157,10 +157,265 @@
   100% { transform: rotate(360deg); }
 }
 
+.reservation-top-line {
+    border-top: 2px solid lightgray;
+    margin-top: 5px;
+}
+
+.reservation-show-outer-container {
+    width: 60%;
+    border: 1px solid lightgray;
+    margin-left: 10%;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.reservation-show-button-container {
+    margin-top: 20px;
+    margin-left: 8%;
+}
+
+.reservation-show-top-button {
+    margin-left: 2%;
+    width: 144px;
+    height: 49px;
+    border-radius: 4px;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: #247f9e;
+    border: none;
+    position: relative;
+}
+
+.reservation-show-top-button:hover {
+    cursor: pointer;
+    top: -2px;
+    filter: brightness(120%);
+}
+
+.reservation-show-top-button:focus {
+    outline: none;
+}
+
+.reservation-show-heading-container {
+    width: 100%;
+    height: 170px;
+    background-color: #55b68d;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.rs1 {
+    color: white;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 30px;
+    margin-left: 7%;
+    padding-top: 39px;
+}
+
+.rs2 {
+    color: white;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 20px;
+    margin-left: 7%;
+    margin-top: 32px;
+}
+
+.reservation-show-main-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rs3 {
+    color: #247f9e;
+    font-size: 40px;
+    font-family: 'Commissioner', sans-serif;
+    margin-left: -15%;
+    margin-top: 30px;
+}
+
 .reservation-image {
     width: 120px;
     height:120px;
     object-fit: cover;
     border-radius: 5px;
-    position: relative;
+    margin-top: 50px;
+    margin-left: -32%;
 }
+
+.re4 > span {
+    padding-left: 70px;
+    margin-top: 15px;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+}
+
+.re4 {
+    margin-top: 20px;
+    margin-left: -29%;
+}
+
+.re5 {
+    width: 60%;
+    height: 54px;
+    background-color: whitesmoke;
+    margin-left: 23%;
+    margin-top: -40px;
+    border-radius: 8px;
+}
+
+.re6 {
+    width: 80%;
+    padding-top: 15px;
+    margin-left: 5%;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 15px;
+}
+
+.edit-form-button-container {
+    margin: 25px 0px 18px 2%;
+}
+
+.re7 {
+    margin-left: 2.5%;
+    width: 145px;
+    height: 51px;
+    border-radius: 4px;
+    color: white;
+    background-color: lightseagreen;
+    border: none;
+    position: relative;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+}
+
+.re8 {
+    margin-left: 2.5%;
+    width: 145px;
+    height: 51px;
+    border-radius: 4px;
+    color: white;
+    background-color: darkred;
+    border: none;
+    position: relative;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+    top: -10px;
+}
+
+.re7:hover, .re50:hover, .re52:hover {
+    cursor: pointer;
+    filter: brightness(110%);
+}
+
+ .re8:hover {
+    cursor: pointer;
+    filter: brightness(110%);
+ }
+
+.re7:focus, .re8:focus, .re50:focus, .re52:focus {
+    outline: none;
+}
+
+.reservation-edit-form-outer-container {
+    display: none;
+}
+
+.re10 {
+    width: 340px;
+    height: 50px;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.re11, .re12 {
+    width: 345px;
+    height: 55px;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.re11:hover, .re12:hover, .re10:hover {
+    cursor: pointer;
+    border: 1px solid crimson;
+}
+
+.re100 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.re99 {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.re13 {
+    width: 337px;
+    height: 46px;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+}
+
+.re10:focus, .re11:focus, .re12:focus, .re13:focus {
+    border: 1px solid crimson;
+    outline: none;
+}
+
+.re50 {
+    margin-left: 2.5%;
+    width: 135px;
+    height: 44px;
+    border-radius: 4px;
+    color: white;
+    background-color: lightseagreen;
+    border: none;
+    position: relative;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.re52 {
+    margin-left: 2.5%;
+    width: 135px;
+    height: 44px;
+    border-radius: 4px;
+    color: white;
+    background-color: darkred;
+    border: none;
+    position: relative;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.re37 {
+    margin-left: 3%;
+    margin-top: 25px;
+}
+
+.ranch99 {
+    margin-left: 6%;
+    margin-bottom: 25px;
+    font-family: 'Commissioner', sans-serif;
+    color: white;
+    background-color: crimson;
+    border-radius: 4px; 
+    font-size: 15px;
+    border: none;
+    width: 135px;
+    height: 44px;
+}
+
+.ninety-9-ranch {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
