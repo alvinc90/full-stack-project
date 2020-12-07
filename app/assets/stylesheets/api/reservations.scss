@@ -304,22 +304,24 @@
     top: -10px;
 }
 
-.re7:hover, .re50:hover, .re52:hover {
+.re7:hover, .re50:hover, .re52:hover, .re8:hover {
     cursor: pointer;
     filter: brightness(110%);
 }
 
- .re8:hover {
+ .ranch99:hover {
     cursor: pointer;
     filter: brightness(110%);
+    top: -2px;
  }
 
-.re7:focus, .re8:focus, .re50:focus, .re52:focus {
+.re7:focus, .re8:focus, .re50:focus, .re52:focus, .ranch99:focus {
     outline: none;
 }
 
 .reservation-edit-form-outer-container {
     display: none;
+    margin-top: 25px;
 }
 
 .re10 {
@@ -373,31 +375,34 @@
 
 .re50 {
     margin-left: 2.5%;
-    width: 135px;
-    height: 44px;
+    width: 145px;
+    height: 51px;
     border-radius: 4px;
     color: white;
     background-color: lightseagreen;
     border: none;
     position: relative;
     font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
 }
 
 .re52 {
     margin-left: 2.5%;
-    width: 135px;
-    height: 44px;
+    width: 145px;
+    height: 51px;
     border-radius: 4px;
     color: white;
     background-color: darkred;
     border: none;
     position: relative;
     font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
 }
 
 .re37 {
     margin-left: 3%;
     margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .ranch99 {
@@ -411,11 +416,26 @@
     border: none;
     width: 135px;
     height: 44px;
+    position :relative;
 }
 
 .ninety-9-ranch {
     margin-top: 25px;
     display: flex;
     justify-content: center;
+    display: none;
+}
+
+#sticky-loader2 {
+    display: none;
+    border: 8px solid lightgray;
+    border-radius: 100%;
+    border-top: 8px dashed crimson;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.6s linear infinite;
+    margin-left: 40%;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 

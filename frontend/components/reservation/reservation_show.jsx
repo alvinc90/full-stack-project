@@ -6,6 +6,9 @@ class ReservationShow extends React.Component {
     constructor(props) {
         super(props)
         this.handleModify = this.handleModify.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
+        this.handleLoaded3 = this.handleLoaded3.bind(this);
+        this.handleLoaded2 = this.handleLoaded2.bind(this);
     }
 
     componentDidMount() {
@@ -13,8 +16,36 @@ class ReservationShow extends React.Component {
         this.props.fetchReservation(this.props.match.params.reservationId);
     }
 
+    handleCancel(e) {
+        const bitter = document.getElementsByClassName("reservation-edit-form-outer-container ")[0];
+        const spicy = document.getElementsByClassName("edit-form-button-container")[0];
+        bitter.style.display = "none";
+        spicy.style.display = "block";
+    }
+
     handleModify(e) {
-        
+        const sweet = document.getElementsByClassName("reservation-edit-form-outer-container ")[0];
+        const sour = document.getElementsByClassName("edit-form-button-container")[0];
+        sweet.style.display = "block";
+        sour.style.display = "none";
+    }
+
+    handleLoaded2(e) {
+        const nineRanch = document.getElementsByClassName("ninety-9-ranch")[0];
+        const bBQ = document.getElementsByClassName("re37")[0];
+        const loader2 = document.getElementById("sticky-loader2");
+        bBQ.style.display = "none";
+        loader2.style.display = "none";
+        nineRanch.style.display = "block";
+    }
+
+    handleLoaded3(e) {
+        const nineRanch = document.getElementsByClassName("ninety-9-ranch")[0];
+        const bBQ = document.getElementsByClassName("re37")[0];
+        const loader2 = document.getElementById("sticky-loader2");
+        bBQ.style.display = "none";
+        loader2.style.display = "block";
+        setTimeout(this.handleLoaded2, 1400);
     }
 
     render() {
@@ -63,8 +94,6 @@ class ReservationShow extends React.Component {
                         <div className="re5">
                             <p className="re6">{ reservation.special_request }</p>
                         </div>
-
-                        {/* <div className="reservation-top-line"></div> */}
 
                         <div className="edit-form-button-container">
                             <button onClick={this.handleModify} className="re7">Modify</button>
@@ -124,9 +153,11 @@ class ReservationShow extends React.Component {
                             </div>
 
                             <div className="re37">
-                                <button className="re50">Search</button>
-                                <button className="re52">Cancel</button>
+                                <button onClick={this.handleLoaded3} className="re50">Search</button>
+                                <button onClick={this.handleCancel} className="re52">Cancel</button>
                             </div>
+
+                            <div id="sticky-loader2"></div>
 
                             <div className="ninety-9-ranch">
                                 <button className="ranch99">Time1</button>
