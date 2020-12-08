@@ -12,7 +12,7 @@
 
 .user-show-links-container {
     height: 203px;
-    width: 245px;
+    width: 276px;
     border: 1px solid whitesmoke;
     border-radius: 4px;
     background-color: whitesmoke;
@@ -247,4 +247,19 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 20px;
+}
+
+#abcd {
+    text-decoration: underline;
+    font-size: 24px;
+    // border-bottom: 1px solid #247f9e;
+}
+
+#dcba {
+    color: rgb(52, 47, 73);
+}
+
+.footer-for-user-show {
+    position: relative;
+    top: 173px;
 }
