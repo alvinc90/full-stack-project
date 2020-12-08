@@ -128,13 +128,18 @@ class ReservationFormSticky extends React.Component {
                             type="date"
                             className="sticky-date-time"
                             value={this.state.date}
+                            min={this.state.date}
                             onChange={this.handleChange('date')}
                         />
                     </span>
                     <span>
-                        <select className="sticky-date-time" onChange={this.handleChange('time')} >
+                        <select 
+                            className="sticky-date-time" 
+                            onChange={this.handleChange('time')}
+                            defaultValue="11:00"
+                        >
                             <option value="10:00">10:00 AM</option>
-                            <option selected value="11:00">11:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
                             <option value="12:00">12:00 PM</option>
                             <option value="13:00">1:00 PM</option>
                             <option value="14:00">2:00 PM</option>

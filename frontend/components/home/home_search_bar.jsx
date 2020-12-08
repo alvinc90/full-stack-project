@@ -27,12 +27,21 @@ class HomeSearchBar extends React.Component {
     }
 
     render() {
+        const todayDay = new Date().toDateString().slice(8,10);
+        const todayMonth = new Date().getMonth() + 1;
+        const todayYear = new Date().toDateString().slice(11);
+        const today = `${todayYear}-${todayMonth}-${todayDay}`
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="search-bar-outer-container">
                         
-                        <input type="date" className="search-bar-input-date"/>
+                        <input 
+                            type="date" 
+                            className="search-bar-input-date"
+                            defaultValue={today}
+                            min={today}
+                        />
                         <select className="search-bar-input-time" defaultValue="11:00">
                             <option value="10:00">10:00 AM</option>
                             <option value="11:00">11:00 AM</option>

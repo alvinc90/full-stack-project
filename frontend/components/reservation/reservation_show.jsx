@@ -163,6 +163,10 @@ class ReservationShow extends React.Component {
         const resTime3 = time2[findRightTime];
         const nowTime = reservation.time.slice(11, 16)
         const timeFormat = time2[nowTime];
+        const todayDay = new Date().toDateString().slice(8,10);
+        const todayMonth = new Date().getMonth() + 1;
+        const todayYear = new Date().toDateString().slice(11);
+        const today = `${todayYear}-${todayMonth}-${todayDay}`
         if ( (reservation.reserved) && (reservation.user_id === currentUser)) {
             return(
                 <div>
@@ -282,6 +286,7 @@ class ReservationShow extends React.Component {
                                                 className="re10" 
                                                 type="date"
                                                 defaultValue={reservation.date}
+                                                min={today}
                                                 onChange={this.handleChange('date')}
                                             />
                                         </div>
