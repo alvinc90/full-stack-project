@@ -16,6 +16,7 @@ class UserReservation extends React.Component {
     render() {
         const { restaurants, reservations, currentUser } = this.props;
         !Object.values(restaurants).length ? null : restaurants
+        if (!reservations.length) return null;
         return(
             <div className="user-reservation-outer-container">
                 <div className="user-show-inner-container">

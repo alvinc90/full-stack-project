@@ -359,12 +359,11 @@
     top: -2px;
  }
 
-//  .ranch98:hover {
-//     cursor: not-allowed;
-//     pointer-events: none;
-//  }
+ .ranch98:hover {
+    cursor: not-allowed;
+ }
 
-.re7:focus, .re8:focus, .re50:focus, .re52:focus, .ranch99:focus {
+.re7:focus, .re8:focus, .re50:focus, .re52:focus, .ranch99:focus, .ranch98:focus {
     outline: none;
 }
 
@@ -466,6 +465,19 @@
     width: 135px;
     height: 44px;
     position :relative;
+}
+
+.ranch98 {
+    margin-left: 6%;
+    margin-bottom: 25px;
+    font-family: 'Commissioner', sans-serif;
+    color: black;
+    background-color: gray;
+    border-radius: 4px; 
+    font-size: 15px;
+    border: none;
+    width: 135px;
+    height: 44px;
 }
 
 .ninety-9-ranch {

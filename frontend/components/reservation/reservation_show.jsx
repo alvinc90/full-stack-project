@@ -307,9 +307,17 @@ class ReservationShow extends React.Component {
                                 <div id="sticky-loader2"></div>
     
                                 <div className="ninety-9-ranch">
-                                    <button onClick={this.handleUpdate(resTime1)} className="ranch99">{resTime1 ? resTime1 : "Unavailable"}</button>
+                                    { resTime1 ?
+                                        <button onClick={this.handleUpdate(resTime1)} className="ranch99">{resTime1}</button>
+                                    : 
+                                        <button className="ranch98">Unavailable</button>
+                                    }
                                     <button onClick={this.handleUpdate(resTime2)} className="ranch99">{resTime2}</button>
-                                    <button onClick={this.handleUpdate(resTime3)} className="ranch99">{resTime3 ? resTime3 : "Unavailable"}</button>
+                                    { resTime3 ?
+                                        <button onClick={this.handleUpdate(resTime3)} className="ranch99">{resTime3}</button>
+                                    : 
+                                        <button className="ranch98">Unavailable</button>
+                                    }
                                 </div>
                             </div>
                         </div>
