@@ -35,8 +35,8 @@ class ReviewEditForm extends React.Component {
 
     render() {
         return(
-            <div className="modal-background" onClick={this.props.handleEditModal}>
-                <div className="modal-child" onClick={this.handlePropagation}>
+            <div className="modal-create-background" onClick={this.props.handleEditModal}>
+                <div className="modal-create-child" onClick={this.handlePropagation}>
                      <form onSubmit={this.handleSubmit}>
                         <h1 className="create-form-title">Tell us more...</h1>
                         <div className="rating-outer-container">
