@@ -30,10 +30,17 @@ class ReservationDeleteModal extends React.Component {
         return(
             <div className="modal-delete-background" onClick={toggleDeleteModal}>
                 <div className="modal-delete-inner" onClick={ (e) => e.stopPropagation()}>
-                    <h1>Are you sure you would like to cancel the reservation?</h1>
-    
-                    <button onClick={this.handleCancelRes}>Cancel Reservation</button>
-                    <button onClick={toggleDeleteModal}>No, keep this reservation</button>
+                    <h1 className="honda">Are you sure you would like to cancel the reservation?</h1>
+                    <div className="nissan">
+                        <button 
+                            onClick={toggleDeleteModal}
+                            className="toyota"
+                            >No, keep this reservation
+                        </button>
+                    </div>
+                    <div className="nissan">
+                        <button className="mazda" onClick={this.handleCancelRes}>Cancel Reservation</button>
+                    </div>
                 </div>
             </div>
         )

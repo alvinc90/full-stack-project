@@ -473,19 +473,71 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 10;
 }
 
 .modal-delete-inner {
-  background-color: white;
+//   background-color: rgb(49, 18, 18);
+  background-color: whitesmoke;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 600px;
-  width: 600px; 
-  border-radius: 5px;
+  height: 400px;
+  width: 400px; 
+  border-radius: 10px;
+}
+
+.honda {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 25px;;
+    text-align: center;
+    margin-top: 25%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: black;
+    line-height: 36px;
+}
+
+.toyota {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: seagreen;
+    border: none;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+    color: white;
+    position: relative;
+}
+
+.nissan {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.mazda {
+    width: 166px;
+    height: 35px;
+    border-radius: 4px;
+    background-color: crimson;
+    border: none;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 15px;
+    color: white;
+    position: relative;
+}
+
+.toyota:hover {
+    background-color: #55b68d;
+    cursor: pointer;
+}
+
+.mazda:hover {
+    background-color: darkred;
+    cursor: pointer;
 }
 
 .f1 {
