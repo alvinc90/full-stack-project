@@ -685,13 +685,31 @@ fav6 = Favorite.create!(
 )
 
 reservation1 = Reservation.create!(
-    num_guests: 2,
+    num_guests: 6,
     date: "10-12-2020",
-    time: "13:00",
-    special_request: "mayor breed birthday",
+    time: "17:00",
+    special_request: "Mama's birthday",
     reserved: true,
     user_id: 6,
     restaurant_id: 1
+)
+reservation2 = Reservation.create!(
+    num_guests: 2,
+    date: "15-12-2020",
+    time: "20:00",
+    special_request: "Anniversary",
+    reserved: true,
+    user_id: 6,
+    restaurant_id: 9
+)
+reservation3 = Reservation.create!(
+    num_guests: 4,
+    date: "29-12-2020",
+    time: "11:00",
+    special_request: "One wheelchair accessible",
+    reserved: true,
+    user_id: 6,
+    restaurant_id: 16
 )
 
 
