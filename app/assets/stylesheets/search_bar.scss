@@ -7,23 +7,20 @@
     height: 49px; 
     width: 153px; 
     border: 1px solid lightgray;
-    // border-top-right-radius: 5px;
-    // border-bottom-right-radius: 5px;
     font-family: 'Commissioner', sans-serif;
     font-size: 18px;
-    // position: relative;
-    // top: -1px;
+    padding-left: 32px;
 }
 .search-bar-city-dropdown {
     cursor: pointer;
     height: 49px; 
     width: 153px; 
     border: 1px solid lightgray;
-    // border-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     font-family: 'Commissioner', sans-serif;
     font-size: 18px;
+    padding-left: 25px;
 }
 
 .search-bar-people-dropdown:focus,
@@ -43,8 +40,7 @@
     border: 1px solid lightgray;
     font-family: 'Commissioner', sans-serif;
     font-size: 18px;
-    // border-top-left-radius: 5px;
-    // border-bottom-left-radius: 5px;
+    padding-left: 25px;
 }
 
 .search-bar-input-date {
@@ -55,12 +51,6 @@
     font-size: 18px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    // margin-right: 10px;
-    // border-radius: 5px;
-}
-
-.date-time-people-container {
-    // margin-right: 10px;
 }
 
 .search-bar-button {
