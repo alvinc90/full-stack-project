@@ -90,7 +90,11 @@ class RestaurantShow extends React.Component {
         return (
             <div className="outer-show-div">
                 <div><img className="dining" src={window.diningURL} alt="dining" /></div>
-                { findFavorite ? <button id={findFavorite.id} className="show-unfavorite-button" onClick={this.handleDeleteFavorite}>Unsafe this Restaurant</button> : <button className="show-favorite-button" onClick={this.handleCreateFavorite}>Save this Restaurant</button>}
+                { currentUser ? 
+                (findFavorite ? <button id={findFavorite.id} className="show-unfavorite-button" onClick={this.handleDeleteFavorite}>Unsafe this Restaurant</button> : <button className="show-favorite-button" onClick={this.handleCreateFavorite}>Save this Restaurant</button>)
+                :
+                null
+                }
 
                 <div className="outer-show-container">
                     <div className="inner-show-container">
