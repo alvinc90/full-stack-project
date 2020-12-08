@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../footer';
 import { withRouter } from 'react-router-dom';
+import ReservationDeleteModal from './reservation_delete_modal';
 
 class ReservationShow extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class ReservationShow extends React.Component {
         this.handleLoaded2 = this.handleLoaded2.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        // debugger
+        this.toggleDeleteModal = this.toggleDeleteModal.bind(this);
         const { reservation } = this.props;
         this.state = {
             id: (reservation ? reservation.id : null),
@@ -22,8 +23,8 @@ class ReservationShow extends React.Component {
             special_request: (reservation ? reservation.special_request: null),
             reserved: (reservation ? reservation.reserved: null),
             user_id: (reservation ? reservation.user_id: null),
-            restaurant_id: (reservation ? reservation.restaurant_id: null)
-            // cynthia: "i am the biggest cunt"
+            restaurant_id: (reservation ? reservation.restaurant_id: null),
+            showDeleteModal: false
         }
     }
 
@@ -58,13 +59,11 @@ class ReservationShow extends React.Component {
     }
 
     handleChange(type) {
-        // debugger
         return(e) => {
             const timeBtn = document.getElementsByClassName("ninety-9-ranch")[0];
             const searchBtn = document.getElementsByClassName("re37")[0];
             searchBtn.style.display = "block";
             timeBtn.style.display = "none";
-            // debugger
             this.setState({ [type]: e.currentTarget.value})
 
         } 
@@ -112,8 +111,14 @@ class ReservationShow extends React.Component {
         return conNum;
     }
 
+    toggleDeleteModal(e) {
+        debugger
+        this.setState({ showDeleteModal: !this.state.showDeleteModal})
+    }
+
     render() {
-        const { reservation, restaurants, currentUser } = this.props;
+        debugger
+        const { reservation, restaurants, currentUser, updateReservation } = this.props;
         if (!Object.values(restaurants).length) return null;
         if (!reservation) return null;
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -138,7 +143,6 @@ class ReservationShow extends React.Component {
         };
         const nowTime = reservation.time.slice(11, 16)
         const timeFormat = time1[nowTime];
-        // debugger
         if (reservation.reserved) {
             return(
                 <div>
@@ -195,7 +199,17 @@ class ReservationShow extends React.Component {
     
                             <div className="edit-form-button-container">
                                 <button onClick={this.handleModify} className="re7">Modify</button>
-                                <button onClick={} className="re8">Cancel Reservation</button>
+                                <button onClick={this.toggleDeleteModal} className="re8">Cancel Reservation</button>
+                            </div>
+
+                            <div>
+                                { this.state.showDeleteModal ? 
+                                    <ReservationDeleteModal
+                                        updateReservation={updateReservation}
+                                        reservation={reservation}
+                                        toggleDeleteModal={this.toggleDeleteModal}
+                                    />
+                                : null }
                             </div>
     
                             <div className="reservation-edit-form-outer-container">
