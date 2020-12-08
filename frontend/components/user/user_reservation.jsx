@@ -33,7 +33,7 @@ class UserReservation extends React.Component {
                         <div className="line-below-heading"></div>
                         {!Object.values(restaurants).length ? null : 
                         
-                        reservations.map((reservation) => {
+                        reservations.slice().reverse().map((reservation) => {
                             if ( (reservation.restaurant_id === restaurants[reservation.restaurant_id].id) && (reservation.user_id === currentUser) && (reservation.reserved === true) ) {
                                 return (
                                        <UserReservationList
