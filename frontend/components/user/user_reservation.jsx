@@ -29,6 +29,7 @@ class UserReservation extends React.Component {
                     </div>
                     <div className="user-show-info-container3">
                         <h1 className="profile-heading">My Reservations</h1>
+                        <div className="line-below-heading"></div>
                         {!Object.values(restaurants).length ? null : 
                         
                         reservations.map((reservation) => {
