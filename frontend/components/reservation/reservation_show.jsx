@@ -329,7 +329,7 @@ class ReservationShow extends React.Component {
         else {
             return(
                 <div>
-                    <div className="fart">I FART ON YOUR NOSE</div>
+                    <div className="f1">Cancel Reservation Page is under construction</div>
                     <footer>
                         <Footer />
                     </footer>

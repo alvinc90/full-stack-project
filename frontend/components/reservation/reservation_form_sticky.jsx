@@ -50,7 +50,7 @@ class ReservationFormSticky extends React.Component {
     }
 
     render() {
-        const time1 = {
+        const time2 = {
             "10:00": "10:00 AM",
             "11:00": "11:00 AM",
             "12:00": "12:00 PM",
@@ -64,6 +64,28 @@ class ReservationFormSticky extends React.Component {
             "20:00": "8:00 PM",
             "21:00": "9:00 PM",
         };
+        const resTime2 = time2[this.state.time];
+        const keyTime = Object.keys(time2);
+        let leftArr = [];
+        let rightArr = [];
+        let findLeftTimeIndex = keyTime.forEach((time, i) => {
+            if ( (time === this.state.time) && (i > 0) ) {
+                let leftIndex = i - 1;
+                leftArr.push(leftIndex);
+            }
+        });
+        let findRightTimeIndex = keyTime.forEach((time, i) => {
+            if ( (time === this.state.time) && (i < keyTime.length - 1) ) {
+                let rightIndex = i + 1;
+                rightArr.push(rightIndex);
+            }
+        });
+        const leftIndex = leftArr[leftArr.length - 1];
+        const rightIndex = rightArr[rightArr.length - 1];
+        const findLeftTime = keyTime[leftIndex];
+        const findRightTime = keyTime[rightIndex];
+        const resTime1 = time2[findLeftTime];
+        const resTime3 = time2[findRightTime];
         return(
             <div className="sticky-outer-container">
                 <div>
@@ -126,7 +148,20 @@ class ReservationFormSticky extends React.Component {
                 <div className="time-bomb-container">
                     <h6 className="sticky-select-time-label">Select a time:</h6>
                     <div className="sticky-time-buttons-container">
-                        <button className="sticky-time-bombs">Time 1</button>
+
+                        <Link to={{
+                            pathname: '/reservation/create/new',
+                            state: {
+                                num_guests: this.state.num_guests,
+                                date: this.state.date,
+                                time: resTime1,
+                                restaurant: this.props.restaurant,
+                                currentUser: this.props.currentUser
+                            }
+                        }}>
+                        <button className="sticky-time-bombs">{resTime1 ? resTime1 : "N/A"}</button>                            
+                        </Link>
+
                         <Link to={{
                             pathname: '/reservation/create/new',
                             state: {
@@ -137,9 +172,21 @@ class ReservationFormSticky extends React.Component {
                                 currentUser: this.props.currentUser
                             }
                         }}>
-                            <button className="sticky-time-bombs">{time1[this.state.time]}</button>
+                            <button className="sticky-time-bombs">{resTime2}</button>
                         </Link>
-                        <button className="sticky-time-bombs">Time 3</button>
+
+                        <Link to={{
+                            pathname: '/reservation/create/new',
+                            state: {
+                                num_guests: this.state.num_guests,
+                                date: this.state.date,
+                                time: resTime3,
+                                restaurant: this.props.restaurant,
+                                currentUser: this.props.currentUser
+                            }
+                        }}>
+                        <button className="sticky-time-bombs">{resTime3 ? resTime3 : "N/A"}</button>                           
+                        </Link>
                     </div>
                 </div>
 
