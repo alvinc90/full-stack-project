@@ -216,10 +216,6 @@ class ReservationShow extends React.Component {
                                 </div>
                             </div>
     
-                            {/* <div className="re5">
-                                <p className="re6">{ reservation.special_request }</p>
-                            </div> */}
-    
                             <div className="edit-form-button-container">
                                 <button onClick={this.handleModify} className="re7">Modify</button>
                                 <button onClick={this.toggleDeleteModal} className="re8">Cancel Reservation</button>

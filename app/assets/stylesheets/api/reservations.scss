@@ -238,7 +238,6 @@
     color: #247f9e;
     font-size: 35px;
     font-family: 'Commissioner', sans-serif;
-    // margin-left: -15%;
     margin-top: 30px;
 }
 
@@ -492,5 +491,170 @@
 .f1 {
     font-size: 200;
 }
+
+.a0 {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+}
+
+.a1 {
+    width: 50%;
+    border: 2px solid white;
+    margin-top: 25px;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 25px;
+}
+
+.a2 {
+    width: 25%;
+    border: 2px solid white;
+    margin-top: 25px;
+    border-radius: 10px;
+    margin-left: -85px;
+    background-color: white;
+    margin-bottom: 25px;
+}
+
+.a3 {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-left: 5%;
+}
+
+.a4 {
+    display: flex;
+    margin-left: 5%;
+    margin-top: 25px;
+}
+
+.a4-5 {
+    width: 120px;
+    height:120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.a5 {
+    color: #247f9e;
+    font-size: 28px;
+    font-family: 'Commissioner', sans-serif;
+    margin-top: 4px;
+    margin-left: 25%;
+}
+
+.a6 {
+    margin-top: 25px;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 18px;
+    margin-left: 25%;
+    width: 75%;
+}
+
+.b1 {
+    width: 70%;
+    margin-left: -55px;
+}
+
+.a7 {
+    margin-left: 17px;
+}
+
+.a8 {
+    width: 400px;
+    height: 40px;
+    resize: none;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-top: 25px;
+    font-size: 16px;
+    font-family: 'Commissioner', sans-serif;
+}
+
+.a8:focus {
+    border-color: #247f9e;
+    outline: none;
+}
+
+.a8:hover {
+    border-color: #247f9e;
+}
+
+.a9 {
+    margin-top: 25px;
+    margin-left: 5%;
+    color: white;
+    background-color: crimson;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Commissioner', sans-serif;
+    border: none;
+    width: 408px;
+    height: 44px;
+    position: relative;
+}
+
+.a9focus {
+    outline: none;
+}
+
+.a9:hover {
+    background-color: darkred;
+    top: -2px;
+    cursor: pointer;
+}
+
+.a10 {
+    font-size: 12px;
+    margin-left: 5%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: 'Commissioner', sans-serif;
+    line-height: 20px;
+    width: 90%;
+}
+
+.a11 {
+    color: crimson;
+}
+
+.a12 {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 23px;
+    margin-top: 25px;
+    margin-left: 5%;
+    color: #247f9e;
+}
+
+.a13 {
+    margin-top: 30px;
+}
+
+.a14 {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+.a14 ~ p {
+    font-size: 16px;
+    margin-left: 5%;
+    line-height: 20px;
+    width: 90%;
+    margin-top: 25px;
+    font-family: 'Commissioner', sans-serif;
+    color: rgb(64, 61, 100);
+}
+
+.a15 {
+    background-color: #5a6980;
+    height: 100px;
+    position: relative;
+}
+
+
 
 
