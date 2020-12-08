@@ -163,7 +163,7 @@ class ReservationShow extends React.Component {
         const resTime3 = time2[findRightTime];
         const nowTime = reservation.time.slice(11, 16)
         const timeFormat = time2[nowTime];
-        if (reservation.reserved) {
+        if ( (reservation.reserved) && (reservation.user_id === currentUser)) {
             return(
                 <div>
                     <div className="reservation-top-line"></div>
@@ -322,15 +322,57 @@ class ReservationShow extends React.Component {
                 </div>
             )  
         }
-        else {
+        else if ((!reservation.reserved) && (reservation.user_id === currentUser)) {
             return(
                 <div>
-                    <div className="f1">Cancel Reservation Page is under construction</div>
+                    <div className="reservation-show-outer-container">
+    
+                        <div className="reservation-show-heading-container2">
+                            <h1 className="rs1">This reservation has been cancelled!</h1>
+                            <h2 className="rs2">Please contact the restaurant for further inquiry...</h2>
+                        </div>
+    
+                        <div>
+                            <div className="reservation-show-main-container">
+                                <div>
+                                    <img 
+                                        src={restaurants[reservation.restaurant_id].photourl }
+                                        alt="restaurant picture"
+                                        className="reservation-image"
+                                    />
+                                </div>
+    
+                                <div className="xyz">
+                                    <h1 className="rs3">{ restaurants[reservation.restaurant_id].name }</h1>
+
+                                    <div className="re4">
+                                        <div className="re500">
+                                            <span>{printDay}</span>
+                                            <span className="rx7">{printMonth}</span>
+                                            <span className="rx7">{printDate}</span>
+                                            <span className="rx7">{printYear}</span>
+                                        </div>
+                                        <div className="re501">
+                                            <span>{ timeFormat }</span>
+                                            <span className="rx8">{ reservation.num_guests } people</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="re5">
+                                    <p className="re6">{ reservation.special_request }</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <footer>
                         <Footer />
                     </footer>
                 </div>
             )
+        } else {
+            return <div>Nothing here to see</div>
         }
     }
 };
