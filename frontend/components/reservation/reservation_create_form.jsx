@@ -25,15 +25,12 @@ class ReservationCreateForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         const { reservations } =  this.props;
         const n = reservations.length;
         const lastReservation = reservations[n - 1];
         const lastReservationId = lastReservation.id;
-        debugger
         this.props.createReservation(this.state)
             .then(this.props.history.push(`/reservations/${lastReservationId + 1}`));
-        debugger
     }
 
     handleChange(e) {
@@ -62,7 +59,6 @@ class ReservationCreateForm extends React.Component {
             "20:00": "8:00 PM",
             "21:00": "9:00 PM",
         };
-        debugger
         return(
             <div>
                 <div className="reservation-top-line"></div>

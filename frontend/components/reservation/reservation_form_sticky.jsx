@@ -48,6 +48,15 @@ class ReservationFormSticky extends React.Component {
         }
     }
 
+    disableSelect(str) {
+        return (e) => {
+            const time3Btn = document.getElementsByClassName("sticky-time-bombs")[2];
+            if (str === "N/A") {
+                time3Btn.style.cursor = "not-allowed"
+            }
+        }
+    }
+
     render() {
         const time2 = {
             "10:00": "10:00 AM",
@@ -148,18 +157,23 @@ class ReservationFormSticky extends React.Component {
                     <h6 className="sticky-select-time-label">Select a time:</h6>
                     <div className="sticky-time-buttons-container">
 
-                        <Link to={{
-                            pathname: '/reservation/create/new',
-                            state: {
-                                num_guests: this.state.num_guests,
-                                date: this.state.date,
-                                time: resTime1,
-                                restaurant: this.props.restaurant,
-                                currentUser: this.props.currentUser
-                            }
-                        }}>
-                        <button className="sticky-time-bombs">{resTime1 ? resTime1 : "N/A"}</button>                            
-                        </Link>
+                        { resTime1 ? 
+                            <Link to={{
+                                pathname: '/reservation/create/new',
+                                state: {
+                                    num_guests: this.state.num_guests,
+                                    date: this.state.date,
+                                    time: resTime1,
+                                    restaurant: this.props.restaurant,
+                                    currentUser: this.props.currentUser
+                                }
+                            }}>
+                            <button className="sticky-time-bombs">{resTime1}</button>
+                            </Link>
+                            :
+                            <button className="disabledBtn">"N/A"</button>
+                    
+                        }
 
                         <Link to={{
                             pathname: '/reservation/create/new',
@@ -173,19 +187,24 @@ class ReservationFormSticky extends React.Component {
                         }}>
                             <button className="sticky-time-bombs">{resTime2}</button>
                         </Link>
-
-                        <Link to={{
-                            pathname: '/reservation/create/new',
-                            state: {
-                                num_guests: this.state.num_guests,
-                                date: this.state.date,
-                                time: resTime3,
-                                restaurant: this.props.restaurant,
-                                currentUser: this.props.currentUser
-                            }
-                        }}>
-                        <button className="sticky-time-bombs">{resTime3 ? resTime3 : "N/A"}</button>                           
-                        </Link>
+                        
+                        { resTime3 ? 
+                            <Link to={{
+                                pathname: '/reservation/create/new',
+                                state: {
+                                    num_guests: this.state.num_guests,
+                                    date: this.state.date,
+                                    time: resTime3,
+                                    restaurant: this.props.restaurant,
+                                    currentUser: this.props.currentUser
+                                }
+                            }}>
+                            <button className="sticky-time-bombs">{resTime3}</button>
+                            </Link>
+                            :
+                            <button className="disabledBtn">"N/A"</button>
+                    
+                        }
                     </div>
                 </div>
 
