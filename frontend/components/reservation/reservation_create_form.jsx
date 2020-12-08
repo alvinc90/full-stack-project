@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../footer';
+import { withRouter } from 'react-router-dom';
 
 class ReservationCreateForm extends React.Component {
     constructor(props) {
@@ -17,9 +18,22 @@ class ReservationCreateForm extends React.Component {
             restaurant_id: restaurant.id
         }
     }
+
+    componentDidMount() {
+        this.props.fetchReservations();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createReservation(this.state);
+        debugger
+        const { reservations } =  this.props;
+        const n = reservations.length;
+        const lastReservation = reservations[n - 1];
+        const lastReservationId = lastReservation.id;
+        debugger
+        this.props.createReservation(this.state)
+            .then(this.props.history.push(`/reservations/${lastReservationId + 1}`));
+        debugger
     }
 
     handleChange(e) {
@@ -48,6 +62,7 @@ class ReservationCreateForm extends React.Component {
             "20:00": "8:00 PM",
             "21:00": "9:00 PM",
         };
+        debugger
         return(
             <div>
                 <div className="reservation-top-line"></div>
@@ -112,4 +127,4 @@ class ReservationCreateForm extends React.Component {
     }
 };
 
-export default ReservationCreateForm;
+export default withRouter(ReservationCreateForm);

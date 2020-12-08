@@ -10,7 +10,6 @@ class ReservationFormSticky extends React.Component {
         const todayDay = new Date().toDateString().slice(8,10);
         const todayMonth = new Date().getMonth() + 1;
         const todayYear = new Date().toDateString().slice(11);
-        // const nowTime = new Date().toTimeString().slice(0, 5);
         this.state = {
             num_guests: 2,
             date: `${todayYear}-${todayMonth}-${todayDay}`,
