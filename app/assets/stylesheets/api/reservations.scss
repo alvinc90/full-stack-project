@@ -225,13 +225,20 @@
 .reservation-show-main-container {
     display: flex;
     justify-content: space-evenly;
+    margin-left: 67px;
+    align-items: center;
+}
+
+.xyz {
+    width: 430px;
+    // border: 1px solid hotpink;
 }
 
 .rs3 {
     color: #247f9e;
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'Commissioner', sans-serif;
-    margin-left: -15%;
+    // margin-left: -15%;
     margin-top: 30px;
 }
 
@@ -259,16 +266,18 @@
 
 .re4 {
     display: flex;
-    margin-left: -75px;
+    // margin-left: -75px;
 }
 
 .re5 {
-    width: 60%;
-    height: 54px;
+    width: 260px;
+    height: 85px;
+    overflow: scroll;
     background-color: whitesmoke;
-    margin-left: 23%;
-    margin-top: -40px;
     border-radius: 8px;
+    position: relative;
+    right: 33px;
+    top: 22px;
 }
 
 .re6 {
@@ -277,6 +286,7 @@
     margin-left: 5%;
     font-family: 'Commissioner', sans-serif;
     font-size: 15px;
+    color: #247f9e;
 }
 
 .edit-form-button-container {
@@ -320,6 +330,11 @@
     filter: brightness(110%);
     top: -2px;
  }
+
+//  .ranch99:hover {
+//     cursor: not-allowed;
+//     pointer-events: none;
+//  }
 
 .re7:focus, .re8:focus, .re50:focus, .re52:focus, .ranch99:focus {
     outline: none;

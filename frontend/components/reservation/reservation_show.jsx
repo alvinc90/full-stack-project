@@ -33,28 +33,28 @@ class ReservationShow extends React.Component {
         this.props.fetchReservation(this.props.match.params.reservationId);
     }
 
-    handleUpdate(e) {
-        e.preventDefault();
-        const timeBtn = document.getElementsByClassName("ninety-9-ranch")[0];
-        const editBtn = document.getElementsByClassName("edit-form-button-container")[0];
-        const inputS = document.getElementById("re256");
-        const updatedData = {
-            id: ( this.state.id ? this.state.id : this.props.reservation.id ),
-            num_guests: ( this.state.num_guests ? this.state.num_guests : this.props.reservation.num_guests ),
-            date: ( this.state.date ? this.state.date : this.props.reservation.date ),
-            time: ( this.state.time ? this.state.time : this.props.reservation.time ),
-            special_request: ( this.state.special_request ? this.state.special_request : this.props.reservation.special_request ),
-            reserved: true,
-            user_id: ( this.state.user_id ? this.state.user_id : this.props.reservation.user_id ),
-            restaurant_id: ( this.state.restaurant_id ? this.state.restaurant_id : this.props.reservation.restaurant_id ),
+    handleUpdate(timer) {
+        return (e) => {
+            const timeBtn = document.getElementsByClassName("ninety-9-ranch")[0];
+            const editBtn = document.getElementsByClassName("edit-form-button-container")[0];
+            const inputS = document.getElementById("re256");
+            const updatedData = {
+                id: ( this.state.id ? this.state.id : this.props.reservation.id ),
+                num_guests: ( this.state.num_guests ? this.state.num_guests : this.props.reservation.num_guests ),
+                date: ( this.state.date ? this.state.date : this.props.reservation.date ),
+                time: ( this.state.time ? timer : this.props.reservation.time ),
+                special_request: ( this.state.special_request ? this.state.special_request : this.props.reservation.special_request ),
+                reserved: true,
+                user_id: ( this.state.user_id ? this.state.user_id : this.props.reservation.user_id ),
+                restaurant_id: ( this.state.restaurant_id ? this.state.restaurant_id : this.props.reservation.restaurant_id ),
+            }
+            this.props.updateReservation(updatedData)
+                .then(this.props.history.push(`/reservations/${this.props.reservation.id}`));
+            timeBtn.style.display = "none";
+            inputS.style.display = "none";
+            editBtn.style.display = "none";
+            window.scrollTo(0, 0);
         }
-        this.props.updateReservation(updatedData)
-            .then(this.props.history.push(`/reservations/${this.props.reservation.id}`));
-            // .then(this.props.history.push("/"));
-        timeBtn.style.display = "none";
-        inputS.style.display = "none";
-        editBtn.style.display = "none";
-        window.scrollTo(0, 0);
 
     }
 
@@ -112,12 +112,10 @@ class ReservationShow extends React.Component {
     }
 
     toggleDeleteModal(e) {
-        debugger
         this.setState({ showDeleteModal: !this.state.showDeleteModal})
     }
 
     render() {
-        debugger
         const { reservation, restaurants, currentUser, updateReservation } = this.props;
         if (!Object.values(restaurants).length) return null;
         if (!reservation) return null;
@@ -127,7 +125,7 @@ class ReservationShow extends React.Component {
         const printMonth = months[ new Date(reservation.date).getUTCMonth()];
         const printDate = reservation.date.slice(8);
         const printYear = reservation.date.slice(0, 4);
-        const time1 = {
+        const time2 = {
             "10:00": "10:00 AM",
             "11:00": "11:00 AM",
             "12:00": "12:00 PM",
@@ -141,8 +139,30 @@ class ReservationShow extends React.Component {
             "20:00": "8:00 PM",
             "21:00": "9:00 PM",
         };
+        const resTime2 = time2[this.state.time];
+        const keyTime = Object.keys(time2);
+        let leftArr = [];
+        let rightArr = [];
+        let findLeftTimeIndex = keyTime.forEach((time, i) => {
+            if ( (time === this.state.time) && (i > 0) ) {
+                let leftIndex = i - 1;
+                leftArr.push(leftIndex);
+            }
+        });
+        let findRightTimeIndex = keyTime.forEach((time, i) => {
+            if ( (time === this.state.time) && (i < keyTime.length - 1) ) {
+                let rightIndex = i + 1;
+                rightArr.push(rightIndex);
+            }
+        });
+        const leftIndex = leftArr[leftArr.length - 1];
+        const rightIndex = rightArr[rightArr.length - 1];
+        const findLeftTime = keyTime[leftIndex];
+        const findRightTime = keyTime[rightIndex];
+        const resTime1 = time2[findLeftTime];
+        const resTime3 = time2[findRightTime];
         const nowTime = reservation.time.slice(11, 16)
-        const timeFormat = time1[nowTime];
+        const timeFormat = time2[nowTime];
         if (reservation.reserved) {
             return(
                 <div>
@@ -162,7 +182,6 @@ class ReservationShow extends React.Component {
                         <div className="reservation-show-heading-container">
                             <h1 className="rs1">Thanks! Your reservation is confirmed.</h1>
                             <h2 className="rs2">Confirmation #{this.generateRandomNum(6)}</h2>
-                            {/* <h2 className="rs2">Confirmation #some-randon-generated-num</h2> */}
                         </div>
     
                         <div>
@@ -175,8 +194,9 @@ class ReservationShow extends React.Component {
                                     />
                                 </div>
     
-                                <div>
+                                <div className="xyz">
                                     <h1 className="rs3">{ restaurants[reservation.restaurant_id].name }</h1>
+
                                     <div className="re4">
                                         <div className="re500">
                                             <span>{printDay}</span>
@@ -184,18 +204,21 @@ class ReservationShow extends React.Component {
                                             <span className="rx7">{printDate}</span>
                                             <span className="rx7">{printYear}</span>
                                         </div>
-                                        {/* <span>{ new Date(reservation.date).toDateString() }</span> */}
                                         <div className="re501">
                                             <span>{ timeFormat }</span>
                                             <span className="rx8">{ reservation.num_guests } people</span>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div className="re5">
+                                    <p className="re6">{ reservation.special_request }</p>
+                                </div>
                             </div>
     
-                            <div className="re5">
+                            {/* <div className="re5">
                                 <p className="re6">{ reservation.special_request }</p>
-                            </div>
+                            </div> */}
     
                             <div className="edit-form-button-container">
                                 <button onClick={this.handleModify} className="re7">Modify</button>
@@ -288,9 +311,9 @@ class ReservationShow extends React.Component {
                                 <div id="sticky-loader2"></div>
     
                                 <div className="ninety-9-ranch">
-                                    <button className="ranch99">Time1</button>
-                                    <button onClick={this.handleUpdate} className="ranch99">Time2</button>
-                                    <button className="ranch99">Time3</button>
+                                    <button onClick={this.handleUpdate(resTime1)} className="ranch99">{resTime1 ? resTime1 : "Unavailable"}</button>
+                                    <button onClick={this.handleUpdate(resTime2)} className="ranch99">{resTime2}</button>
+                                    <button onClick={this.handleUpdate(resTime3)} className="ranch99">{resTime3 ? resTime3 : "Unavailable"}</button>
                                 </div>
                             </div>
                         </div>
