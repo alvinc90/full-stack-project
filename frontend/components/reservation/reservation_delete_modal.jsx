@@ -24,7 +24,7 @@ class ReservationDeleteModal extends React.Component {
         this.props.history.push(`/reservations/${reservation.id}`)
         this.props.toggleDeleteModal();
     }
-
+ 
     render() {
         const { toggleDeleteModal } = this.props;
         return(

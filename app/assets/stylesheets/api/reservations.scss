@@ -548,6 +548,10 @@
     cursor: pointer;
 }
 
+.mazda:focus, .toyota:focus {
+    outline: none;
+}
+
 .f1 {
     font-size: 200;
 }
