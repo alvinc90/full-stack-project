@@ -203,7 +203,7 @@ class CityShow extends React.Component {
                             const combineAllBooleanArr = priceValuesBooleanArr.concat(ratingValuesBooleanArr).concat(cuisineValuesBooleanArr)
                             const allFalseValues = combineAllBooleanArr.every((bool) => bool === false);
                             
-                            const { city, reviews, restaurants } = this.props;
+                            const { city, reviews } = this.props;
                             const { checkedPriceIds, checkedCuisineIds, checkedRatingIds } = this.state;
                             // debugger
                             const priceId = restaurant.price;
@@ -259,21 +259,21 @@ class CityShow extends React.Component {
                                 )
                             } 
                             // price, rating, cuisine, true
-                            // else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[restaurantId]) && (this.state.checkedPriceIds[cuisineId]) && (this.state.checkedPriceIds[ratingId]) ) {
-                            //     debugger
-                            //     return(
-                            //         <div className="city-list-outer-container">
-                            //             <CityShowRestaurantItem 
-                            //                 restaurant={restaurant} 
-                            //                 key={restaurant.id}
-                            //                 reviews={this.props.reviews}
-                            //                 city={this.props.city}
-                            //             />
-                            //         </div>
-                            //     )
-                            // }
+                            else if ( (city.id === restaurant.city_id) && (checkedPriceIds[priceId]) && (checkedCuisineIds[cuisineId]) && (checkedRatingIds[ratingId]) ) {
+                                debugger
+                                return(
+                                    <div className="city-list-outer-container">
+                                        <CityShowRestaurantItem 
+                                            restaurant={restaurant} 
+                                            key={restaurant.id}
+                                            reviews={this.props.reviews}
+                                            city={this.props.city}
+                                        />
+                                    </div>
+                                )
+                            }
                             // price, rating, true... cuisine: false
-                            else if ( (city.id === restaurant.city_id) && (checkedPriceIds[priceId] && checkedRatingIds[ratingId] && (!checkedCuisineIds[cuisineId])) ) {
+                            else if ( (city.id === restaurant.city_id) && (checkedPriceIds[priceId] && checkedRatingIds[ratingId] ) && ( allCuisineFalse ) ) {
                                 debugger
                                 return(
                                     <div className="city-list-outer-container">
@@ -287,7 +287,7 @@ class CityShow extends React.Component {
                                 )
                             }
                             // price, cuisine, true.... rating: false
-                            else if ( (city.id === restaurant.city_id) && ( checkedPriceIds[priceId] && checkedCuisineIds[cuisineId] ) && ( !checkedRatingIds[ratingId]  )) {
+                            else if ( (city.id === restaurant.city_id) && ( checkedPriceIds[priceId] && checkedCuisineIds[cuisineId] ) && ( allRatingFalse  )) {
                                 debugger
                                 return(
                                     <div className="city-list-outer-container">
@@ -301,7 +301,7 @@ class CityShow extends React.Component {
                                 )
                             }
                             // rating, cuisine, true.... price : false
-                            else if ( (city.id === restaurant.city_id) && ( checkedRatingIds[ratingId] && checkedCuisineIds[cuisineId] ) && (!checkedPriceIds[priceId]) ) {
+                            else if ( (city.id === restaurant.city_id) && ( checkedRatingIds[ratingId] && checkedCuisineIds[cuisineId] ) && ( allPriceFalse ) ) {
                                 debugger
                                 return(
                                     <div className="city-list-outer-container">
