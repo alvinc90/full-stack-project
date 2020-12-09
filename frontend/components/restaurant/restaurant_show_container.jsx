@@ -6,6 +6,7 @@ import { fetchReviews, createReview, updateReview, deleteReview, clearReview, fe
 import { fetchAllUsers } from '../../actions/user_action';
 import { openModal } from '../../actions/modal_action';
 import { fetchFavorites, deleteFavorite, createFavorite } from '../../actions/favorite_action';
+import { fetchMenus } from '../../actions/menu_action';
 
 const mapStateToProps = (state, ownProps) => {
     return({
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
         reviews: Object.values(state.entities.reviews),
         allUsers: Object.values(state.entities.allUsers),
         currentUser: state.session.currentUserId,
-        favorites: Object.values(state.entities.favorites)
+        favorites: Object.values(state.entities.favorites),
+        menus: Object.values(state.entities.menus)
     })
 }; 
 
@@ -31,7 +33,8 @@ const mapDispatchToProps = (dispatch) => {
         fetchFavorites: () => dispatch(fetchFavorites()),
         deleteFavorite: (favoriteId) => dispatch(deleteFavorite(favoriteId)),
         createFavorite: (favorite) => dispatch(createFavorite(favorite)),
-        fetchAllRestaurants: () => dispatch(fetchAllRestaurants())
+        fetchAllRestaurants: () => dispatch(fetchAllRestaurants()),
+        fetchMenus: () => dispatch(fetchMenus())
     })
 }; 
 

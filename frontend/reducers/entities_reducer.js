@@ -6,6 +6,7 @@ import reviewsReducer from './review_reducer';
 import allUsersReducer from './all_users_reducer';
 import favoriteReducer from './favorite_reducer';
 import reservationsReducer from './reservation_reducer';
+import menuReducer from './menu_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer, 
@@ -14,7 +15,8 @@ const entitiesReducer = combineReducers({
     reviews: reviewsReducer,
     allUsers: allUsersReducer,
     favorites: favoriteReducer,
-    reservations: reservationsReducer
+    reservations: reservationsReducer,
+    menus: menuReducer
 }); 
 
 export default entitiesReducer;

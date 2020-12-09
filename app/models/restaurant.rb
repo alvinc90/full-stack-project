@@ -48,4 +48,8 @@ class Restaurant < ApplicationRecord
     has_many :customer_reservations,
         through: :reservations,
         source: :user
+
+    has_many :menus,
+        foreign_key: :restaurant_id,
+        class_name: :Menu
 end 

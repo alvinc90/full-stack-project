@@ -5,6 +5,7 @@ import { FaStar } from 'react-icons/fa';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Footer from '../footer';
 import ReservationFormSticky from '../reservation/reservation_form_sticky';
+import MenuIndex from '../menu/menu_index';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -66,7 +67,9 @@ class RestaurantShow extends React.Component {
                 clearReview,
                 fetchReview,
                 favorites,
-                openModal } = this.props;
+                openModal,
+                menus,
+                fetchMenus } = this.props;
         let reviewRes = restaurant ? this.props.reviews.filter((review) => review.restaurant_id === this.props.restaurant.id) : null
         let rating;
         if (restaurant) {
@@ -127,11 +130,21 @@ class RestaurantShow extends React.Component {
                         <div className="show-content-container">
                             <h3 className="show-heading-list" id="to-photos">Photos</h3>
                             <div className="div1"></div>
+                            <div>
+                                Coming soon!
+                            </div>
                         </div>
 
                         <div className="show-content-container">
                             <h3 className="show-heading-list" id="to-menu">Menu</h3>
                             <div className="div1"></div>
+                            <div>
+                                <MenuIndex 
+                                    restaurant={restaurant}
+                                    menus={menus}
+                                    fetchMenus={fetchMenus}
+                                />
+                            </div>
                         </div>
 
 

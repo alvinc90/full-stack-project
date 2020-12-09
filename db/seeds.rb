@@ -14,6 +14,7 @@ Restaurant.delete_all
 Review.delete_all
 Favorite.delete_all
 Reservation.delete_all
+Menu.delete_all
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
@@ -693,6 +694,7 @@ reservation1 = Reservation.create!(
     user_id: 6,
     restaurant_id: 1
 )
+
 reservation2 = Reservation.create!(
     num_guests: 2,
     date: "15-12-2020",
@@ -702,6 +704,7 @@ reservation2 = Reservation.create!(
     user_id: 6,
     restaurant_id: 9
 )
+
 reservation3 = Reservation.create!(
     num_guests: 4,
     date: "29-12-2020",
@@ -710,6 +713,166 @@ reservation3 = Reservation.create!(
     reserved: true,
     user_id: 6,
     restaurant_id: 16
+)
+
+m1 = Menu.create!(
+    restaurant_id: 1,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m2 = Menu.create!(
+    restaurant_id: 2,
+    dish_1: "12 piece omakase",
+    description_1: "#{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}",
+    dish_2: "8 piece omakase",
+    description_2: "#{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, ",
+    dish_3: "5 piece omakase",
+    description_3: "#{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}, #{Faker::Food.sushi}"
+)
+
+m3 = Menu.create!(
+    restaurant_id: 3,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m4 = Menu.create!(
+    restaurant_id: 4,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m5 = Menu.create!(
+    restaurant_id: 5,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m6 = Menu.create!(
+    restaurant_id: 6,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m7 = Menu.create!(
+    restaurant_id: 7,
+   dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m8 = Menu.create!(
+    restaurant_id: 8,
+    dish_1: "Chicken Liver Terrine",
+    description_1: "Fried à l’Anglaise, Homemade Ham, Gruyère, Mushrooms, Sauce Suprême",
+    dish_2: "Duck Leg Confit ",
+    description_2: "Le Puy Lentils, Haricots Verts, Potato Purée, Green Peppercorn Jus",
+    dish_3: "Gulf Flounder Stuffed with Spinach	",
+    description_3: "Potato Confit, Melted Onions, Sorrel Beurre Blanc"
+)
+
+m9 = Menu.create!(
+    restaurant_id: 9,
+    dish_1: "Oysters And Pearls",
+    description_1: "Sabayon of Pearl Tapioca with Island Creek Oysters and Regiis Ova Caviar",
+    dish_2: "Celeriac Rémoulade",
+    description_2: "Hen-of-the-Woods Mushrooms, Bitter Greens, Piedmont Hazelnut Vinaigrette, and Ginger Créme Fraîche",
+    dish_3: "Berkshire Pork Belly",
+    description_3: "Tokyo Turnips, Wilted Bok Choy, Toasted Cashews, and 'Sauce Périgourdine'"
+)
+
+m10 = Menu.create!(
+    restaurant_id: 10,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m11 = Menu.create!(
+    restaurant_id: 11,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m12 = Menu.create!(
+    restaurant_id: 12,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m13 = Menu.create!(
+    restaurant_id: 13,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m14 = Menu.create!(
+    restaurant_id: 14,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m15 = Menu.create!(
+    restaurant_id: 15,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
+)
+
+m16 = Menu.create!(
+    restaurant_id: 16,
+    dish_1: Faker::Food.dish,
+    description_1: Faker::Food.description,
+    dish_2: Faker::Food.dish,
+    description_2: Faker::Food.description,
+    dish_3: Faker::Food.dish,
+    description_3: Faker::Food.description
 )
 
 
