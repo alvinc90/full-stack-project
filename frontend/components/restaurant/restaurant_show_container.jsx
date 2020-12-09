@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'; 
-import { fetchRestaurant, fetchAllRestaurants } from '../../actions/restaurant_action';
+import { fetchRestaurant } from '../../actions/restaurant_action';
+import { fetchAllRestaurants } from '../../actions/restaurant_action';
 import RestaurantShow from './restaurant_show'; 
 import { fetchReviews, createReview, updateReview, deleteReview, clearReview, fetchReview } from '../../actions/review_action'; 
 import { fetchAllUsers } from '../../actions/user_action';
@@ -12,8 +13,7 @@ const mapStateToProps = (state, ownProps) => {
         reviews: Object.values(state.entities.reviews),
         allUsers: Object.values(state.entities.allUsers),
         currentUser: state.session.currentUserId,
-        favorites: Object.values(state.entities.favorites),
-        allRestaurants: state.entities.restaurants
+        favorites: Object.values(state.entities.favorites)
     })
 }; 
 

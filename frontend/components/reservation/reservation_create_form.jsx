@@ -68,7 +68,7 @@ class ReservationCreateForm extends React.Component {
                         <div className="a4">
                             <div>
                                 <img 
-                                    src={restaurant.photoUrl} 
+                                    src={restaurant.photourl}
                                     alt="restaurant picture"
                                     className="a4-5"
                                 />
