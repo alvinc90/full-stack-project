@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'; 
-import { fetchRestaurant } from '../../actions/restaurant_action';
+import { fetchRestaurant, fetchAllRestaurants } from '../../actions/restaurant_action';
 import RestaurantShow from './restaurant_show'; 
 import { fetchReviews, createReview, updateReview, deleteReview, clearReview, fetchReview } from '../../actions/review_action'; 
 import { fetchAllUsers } from '../../actions/user_action';
@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
         reviews: Object.values(state.entities.reviews),
         allUsers: Object.values(state.entities.allUsers),
         currentUser: state.session.currentUserId,
-        favorites: Object.values(state.entities.favorites)
+        favorites: Object.values(state.entities.favorites),
+        allRestaurants: state.entities.restaurants
     })
 }; 
 
@@ -29,7 +30,8 @@ const mapDispatchToProps = (dispatch) => {
         fetchReview: (reviewId) => dispatch(fetchReview(reviewId)),
         fetchFavorites: () => dispatch(fetchFavorites()),
         deleteFavorite: (favoriteId) => dispatch(deleteFavorite(favoriteId)),
-        createFavorite: (favorite) => dispatch(createFavorite(favorite))
+        createFavorite: (favorite) => dispatch(createFavorite(favorite)),
+        fetchAllRestaurants: () => dispatch(fetchAllRestaurants())
     })
 }; 
 

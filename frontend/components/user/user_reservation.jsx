@@ -17,6 +17,7 @@ class UserReservation extends React.Component {
         const { restaurants, reservations, currentUser } = this.props;
         !Object.values(restaurants).length ? null : restaurants
         if (!reservations.length) return null;
+        debugger
         return(
             <div className="user-reservation-outer-container">
                 <div className="user-show-inner-container">
@@ -34,7 +35,9 @@ class UserReservation extends React.Component {
                         {!Object.values(restaurants).length ? null : 
                         
                         reservations.slice().reverse().map((reservation) => {
+                            debugger
                             if ( (reservation.restaurant_id === restaurants[reservation.restaurant_id].id) && (reservation.user_id === currentUser) && (reservation.reserved === true) ) {
+                                debugger
                                 return (
                                        <UserReservationList
                                             reservation={reservation}

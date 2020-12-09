@@ -23,6 +23,7 @@ class RestaurantShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchRestaurant(this.props.match.params.restaurantId);
+        this.props.fetchAllRestaurants();
         this.props.fetchFavorites();
         window.scrollTo(0, 0);
     }
@@ -87,6 +88,7 @@ class RestaurantShow extends React.Component {
             return null;
         }
         const findFavorite = favorites.find((favorite) => (favorite.user_id === this.state.favorite.user_id) && (favorite.restaurant_id === this.state.favorite.restaurant_id))
+        debugger
         return (
             <div className="outer-show-div">
                 <div><img className="dining" src={window.diningURL} alt="dining" /></div>
