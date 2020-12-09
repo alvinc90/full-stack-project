@@ -78,7 +78,7 @@ class ReservationCreateForm extends React.Component {
                                 <h1 className="a5">{restaurant.name}</h1>
                                 <div className="a6">
                                     <span>{printDay}, {printMonth} {printDate} {printYear}</span>
-                                    <span className="a7">{time2[time.slice(0, 5)]}</span>
+                                    <span className="a7">{time2[time]}</span>
                                     <span className="a7">Table for {num_guests}</span>
                                 </div>
                             </div>

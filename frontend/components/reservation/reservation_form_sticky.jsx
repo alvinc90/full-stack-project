@@ -168,7 +168,7 @@ class ReservationFormSticky extends React.Component {
                                 state: {
                                     num_guests: this.state.num_guests,
                                     date: this.state.date,
-                                    time: resTime1,
+                                    time: findLeftTime,
                                     restaurant: this.props.restaurant,
                                     currentUser: this.props.currentUser
                                 }
@@ -199,7 +199,7 @@ class ReservationFormSticky extends React.Component {
                                 state: {
                                     num_guests: this.state.num_guests,
                                     date: this.state.date,
-                                    time: resTime3,
+                                    time: findRightTime,
                                     restaurant: this.props.restaurant,
                                     currentUser: this.props.currentUser
                                 }
