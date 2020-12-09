@@ -9,9 +9,13 @@ import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 class CityShow extends React.Component {
     constructor(props) {
         super(props)
-        this.handleCheckedValues = this.handleCheckedValues.bind(this);
+        this.handleCheckedPrice = this.handleCheckedPrice.bind(this);
+        this.handleCheckedRating = this.handleCheckedRating.bind(this);
+        this.handleCheckedCuisine = this.handleCheckedCuisine.bind(this);
         this.state = {
-            checkedPriceIds: {}
+            checkedPriceIds: {},
+            checkedRatingIds: {},
+            checkedCuisineIds: {},
         }
     }
 
@@ -22,11 +26,25 @@ class CityShow extends React.Component {
         window.scrollTo(0, 0);
     };
 
-    handleCheckedValues(e) {
+    handleCheckedPrice(e) {
         const checkedPriceIds = {...this.state.checkedPriceIds}
         const priceId = e.currentTarget.id
         checkedPriceIds[priceId] = e.currentTarget.checked
         this.setState({checkedPriceIds})
+    };
+
+    handleCheckedRating(e) {
+        const checkedRatingIds = {...this.state.checkedRatingIds}
+        const ratingId = e.currentTarget.id
+        checkedRatingIds[ratingId] = e.currentTarget.checked
+        this.setState({checkedRatingIds})
+    };
+
+    handleCheckedCuisine(e) {
+        const checkedCuisineIds = {...this.state.checkedCuisineIds}
+        const cuisineId = e.currentTarget.id
+        checkedCuisineIds[cuisineId] = e.currentTarget.checked
+        this.setState({checkedCuisineIds})
     };
 
     render() {
@@ -56,7 +74,7 @@ class CityShow extends React.Component {
                                     type="checkbox" 
                                     id="4"
                                     value=""
-                                    onClick={this.handleCheckedValues}
+                                    onClick={this.handleCheckedPrice}
                                 />
                                 <label>$$$$</label>
                             </div>
@@ -65,7 +83,7 @@ class CityShow extends React.Component {
                                     type="checkbox" 
                                     id="3"
                                     value=""
-                                    onClick={this.handleCheckedValues}
+                                    onClick={this.handleCheckedPrice}
                                 />
                                 <label>$$$</label>
                             </div>
@@ -74,7 +92,7 @@ class CityShow extends React.Component {
                                     type="checkbox" 
                                     id="2"
                                     value=""
-                                    onClick={this.handleCheckedValues}
+                                    onClick={this.handleCheckedPrice}
                                 />
                                 <label>$$</label>    
                             </div>
@@ -82,7 +100,7 @@ class CityShow extends React.Component {
                         <div className="m2">
                             <h2 className="n1">Rating</h2>
                             <div>
-                                <input type="checkbox" id="25" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="25" onClick={this.handleCheckedRating}/>
                                 <label>
                                     {[...Array(5)].map((star) => {
                                         return <FaStar color="crimson" />
@@ -91,7 +109,7 @@ class CityShow extends React.Component {
                             </div>
                             <div>
                                 <label>
-                                    <input type="checkbox" id="24" onClick={this.handleCheckedValues}/>
+                                    <input type="checkbox" id="24" onClick={this.handleCheckedRating}/>
                                     {[...Array(4)].map((star) => {
                                         return <FaStar color="crimson" />
                                     })}
@@ -99,7 +117,7 @@ class CityShow extends React.Component {
                             </div>
                             <div>
                                 <label>
-                                    <input type="checkbox" id="23" onClick={this.handleCheckedValues}/>
+                                    <input type="checkbox" id="23" onClick={this.handleCheckedRating}/>
                                     {[...Array(3)].map((star) => {
                                         return <FaStar color="crimson" />
                                     })}
@@ -109,59 +127,59 @@ class CityShow extends React.Component {
                         <div className="m3">
                            <h2 className="n1">Cuisine</h2>
                             <div>
-                                <input type="checkbox" id="5" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="5" onClick={this.handleCheckedCuisine}/>
                                 <label>Peruvian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="6" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="6" onClick={this.handleCheckedCuisine}/>
                                 <label>Japanese</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="7" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="7" onClick={this.handleCheckedCuisine}/>
                                 <label>American</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="8" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="8" onClick={this.handleCheckedCuisine}/>
                                 <label>Brazillian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="9" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="9" onClick={this.handleCheckedCuisine}/>
                                 <label>Chinese</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="10" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="10" onClick={this.handleCheckedCuisine}/>
                                 <label>Italian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="11" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="11" onClick={this.handleCheckedCuisine}/>
                                 <label>Turkish</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="12" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="12" onClick={this.handleCheckedCuisine}/>
                                 <label>Pizzeria</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="13" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="13" onClick={this.handleCheckedCuisine}/>
                                 <label>Fine Dining</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="14" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="14" onClick={this.handleCheckedCuisine}/>
                                 <label>Indian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="15" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="15" onClick={this.handleCheckedCuisine}/>
                                 <label>Mediterranean</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="16" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="16" onClick={this.handleCheckedCuisine}/>
                                 <label>Korean</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="17" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="17" onClick={this.handleCheckedCuisine}/>
                                 <label>Southeast Asian</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="18" onClick={this.handleCheckedValues}/>
+                                <input type="checkbox" id="18" onClick={this.handleCheckedCuisine}/>
                                 <label>Seafood</label>
                             </div>
                         </div>
@@ -169,12 +187,27 @@ class CityShow extends React.Component {
 
                     <div className="city-show-inner-cont">
                         {this.props.city ? <h1 className="city-show-heading"> {this.props.city.name}</h1> : null}
-                        {this.props.restaurants.map((restaurant, i) => {
-                            const priceKeys = Object.keys(this.state.checkedPriceIds);
-                            const priceValues = Object.values(this.state.checkedPriceIds);
-                            const allFalseValues = priceValues.every((bool) => bool === false);
+                        {this.props.restaurants.map((restaurant) => {
+                            const priceKeysIdsArr = Object.keys(this.state.checkedPriceIds);
+                            const ratingKeysIdsArr = Object.keys(this.state.checkedRatingIds);
+                            const cuisineKeysIdsArr = Object.keys(this.state.checkedCuisineIds);
 
-                            const restaurantId = restaurant.price;
+                            const priceValuesBooleanArr = Object.values(this.state.checkedPriceIds);
+                            const ratingValuesBooleanArr = Object.values(this.state.checkedRatingIds);
+                            const cuisineValuesBooleanArr = Object.values(this.state.checkedCuisineIds);
+
+                            const allPriceFalse = priceValuesBooleanArr.every((bool) => bool === false);
+                            const allRatingFalse = ratingValuesBooleanArr.every((bool) => bool === false);
+                            const allCuisineFalse = cuisineValuesBooleanArr.every((bool) => bool === false);
+
+                            const combineAllBooleanArr = priceValuesBooleanArr.concat(ratingValuesBooleanArr).concat(cuisineValuesBooleanArr)
+                            const allFalseValues = combineAllBooleanArr.every((bool) => bool === false);
+                            
+                            const { city, reviews, restaurants } = this.props;
+                            const { checkedPriceIds, checkedCuisineIds, checkedRatingIds } = this.state;
+                            // debugger
+                            const priceId = restaurant.price;
+
                             const cuisineIds = {
                                 Peruvian: 5,
                                 Japanese: 6,
@@ -194,10 +227,10 @@ class CityShow extends React.Component {
                             const cuisine = restaurant.cuisine;
                             const cuisineId = cuisineIds[cuisine]
 
-                            let reviewRes = this.props.reviews.filter((review) => review.restaurant_id === restaurant.id);
+                            let findReview = reviews.filter((review) => review.restaurant_id === restaurant.id);
                             let total = 0;
-                            reviewRes.forEach((rev) => total += rev.overall)
-                            let avg = total / reviewRes.length
+                            findReview.forEach((rev) => total += rev.overall)
+                            let avg = total / findReview.length
                             let ratingId;
                             if (avg >= 4.5) {
                                 ratingId = 25
@@ -210,23 +243,9 @@ class CityShow extends React.Component {
                             } else {
                                 ratingId = 21
                             }
-                            debugger
                             // only good for initial render
-                            // render the restaurant when the state is empty
-                            if((this.props.city.id === restaurant.city_id) && (!priceKeys.length)) {
-                                // debugger
-                                return (
-                                    <div className="city-list-outer-container">
-                                        <CityShowRestaurantItem 
-                                            restaurant={restaurant} 
-                                            key={restaurant.id}
-                                            reviews={this.props.reviews}
-                                            city={this.props.city}
-                                        />
-                                    </div>
-                                )
-                                // render the restaurant when ALL check marks are false
-                            } else if ( (this.props.city.id === restaurant.city_id) && (allFalseValues)) {
+                            // render the restaurant when ALL check marks are false
+                            if ( (city.id === restaurant.city_id) && (allFalseValues)) {
                                 debugger
                                 return(
                                     <div className="city-list-outer-container">
@@ -254,7 +273,7 @@ class CityShow extends React.Component {
                             //     )
                             // }
                             // price, rating, true... cuisine: false
-                            else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[restaurantId] && this.state.checkedPriceIds[ratingId] && (!this.state.checkedPriceIds[cuisineId])) ) {
+                            else if ( (city.id === restaurant.city_id) && (checkedPriceIds[priceId] && checkedRatingIds[ratingId] && (!checkedCuisineIds[cuisineId])) ) {
                                 debugger
                                 return(
                                     <div className="city-list-outer-container">
@@ -268,7 +287,7 @@ class CityShow extends React.Component {
                                 )
                             }
                             // price, cuisine, true.... rating: false
-                            else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[restaurantId] && this.state.checkedPriceIds[cuisineId]) && (!this.state.checkedPriceIds[ratingId]) ) {
+                            else if ( (city.id === restaurant.city_id) && ( checkedPriceIds[priceId] && checkedCuisineIds[cuisineId] ) && ( !checkedRatingIds[ratingId]  )) {
                                 debugger
                                 return(
                                     <div className="city-list-outer-container">
@@ -282,7 +301,7 @@ class CityShow extends React.Component {
                                 )
                             }
                             // rating, cuisine, true.... price : false
-                            else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[cuisineId] && this.state.checkedPriceIds[ratingId]) && (!this.state.checkedPriceIds[restaurantId]) ) {
+                            else if ( (city.id === restaurant.city_id) && ( checkedRatingIds[ratingId] && checkedCuisineIds[cuisineId] ) && (!checkedPriceIds[priceId]) ) {
                                 debugger
                                 return(
                                     <div className="city-list-outer-container">
@@ -296,46 +315,45 @@ class CityShow extends React.Component {
                                 )
                             }
                             // render the restaurant when the checkmark is true for price ONLY
-                            // else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[restaurantId]) && ( (!this.state.checkedPriceIds[cuisineId]) && (!this.state.checkedPriceIds[ratingId]) ) ) {
-                            //     return(
-                            //         <div className="city-list-outer-container">
-                            //             <CityShowRestaurantItem 
-                            //                 restaurant={restaurant} 
-                            //                 key={restaurant.id}
-                            //                 reviews={this.props.reviews}
-                            //                 city={this.props.city}
-                            //             />
-                            //         </div>
-                            //     )
-                            // } 
+                            else if ( (city.id === restaurant.city_id) && (checkedPriceIds[priceId]) && ( allRatingFalse && allCuisineFalse ) ) {
+                                debugger
+                                return(
+                                    <div className="city-list-outer-container">
+                                        <CityShowRestaurantItem 
+                                            restaurant={restaurant} 
+                                            key={restaurant.id}
+                                            reviews={this.props.reviews}
+                                            city={this.props.city}
+                                        />
+                                    </div>
+                                )
+                            } 
                              // render the restaurant when the checkmark is true for cuisine ONLY
-                            // else if ( (this.props.city.id === this.props.restaurants[i].city_id) && this.state.checkedPriceIds[cuisineId] && (!this.state.checkedPriceIds[restaurantId] && !this.state.checkedPriceIds[ratingId]) ) {
-                            //     debugger    
-                            //     return(
-                            //         <div className="city-list-outer-container">
-                            //             <CityShowRestaurantItem 
-                            //                 restaurant={restaurant} 
-                            //                 key={restaurant.id}
-                            //                 reviews={this.props.reviews}
-                            //                 city={this.props.city}
-                            //             />
-                            //         </div>
-                            //     )
-                            // }
+                            else if ( (city.id === restaurant.city_id) && (checkedCuisineIds[cuisineId]) && ( allPriceFalse && allRatingFalse ) ) {
+                                return(
+                                    <div className="city-list-outer-container">
+                                        <CityShowRestaurantItem 
+                                            restaurant={restaurant} 
+                                            key={restaurant.id}
+                                            reviews={this.props.reviews}
+                                            city={this.props.city}
+                                        />
+                                    </div>
+                                )
+                            }
                             // render the restaurant when the checkmark is true for rating ONLY
-                            // else if ( (this.props.city.id === this.props.restaurants[i].city_id) && this.state.checkedPriceIds[ratingId] && (!this.state.checkedPriceIds[restaurantId] && !this.state.checkedPriceIds[cuisineId]) ) {
-                            //     debugger
-                            //     return(
-                            //         <div className="city-list-outer-container">
-                            //             <CityShowRestaurantItem 
-                            //                 restaurant={restaurant} 
-                            //                 key={restaurant.id}
-                            //                 reviews={this.props.reviews}
-                            //                 city={this.props.city}
-                            //             />
-                            //         </div>
-                            //     )
-                            // } 
+                            else if ( (city.id === restaurant.city_id) && (checkedRatingIds[ratingId]) && ( allPriceFalse && allCuisineFalse ) ) {
+                                return(
+                                    <div className="city-list-outer-container">
+                                        <CityShowRestaurantItem 
+                                            restaurant={restaurant} 
+                                            key={restaurant.id}
+                                            reviews={this.props.reviews}
+                                            city={this.props.city}
+                                        />
+                                    </div>
+                                )
+                            } 
                         })}
                     </div>
                  </div>
