@@ -19,6 +19,15 @@ const CityShowRestaurantItem = ({ restaurant, reviews, city }) => {
         } else {
             rating = 1
         }
+
+        let dollarSign;
+        if (restaurant.price === 2) {
+            dollarSign = "$$"
+        } else if (restaurant.price === 3) {
+            dollarSign = "$$$"
+        } else if (restaurant.price ===4) {
+            dollarSign = "$$$$"
+        }
     return(
         <div className="city-show-item-container">
 
@@ -31,11 +40,11 @@ const CityShowRestaurantItem = ({ restaurant, reviews, city }) => {
                     <h1 className="city-show-item-heading">{restaurant.name}</h1>
                 </Link>
                 {[...Array(rating)].map((star) => {
-                    return <FaStar color="crimson" />
+                    return <FaStar className="y2" color="crimson" size={22} />
                 })}
-                <h6>{restaurant.cuisine}</h6>
-                <h6><span>price:</span><span>{restaurant.price}</span></h6>
-                <h6>{city.name}</h6>
+                <h6 className="y6">{restaurant.cuisine}</h6>
+                <h6 className="y1">{dollarSign}</h6>
+                <h6 className="y5">{city.name}</h6>
             </div>
         </div>
     )

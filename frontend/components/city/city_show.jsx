@@ -173,8 +173,9 @@ class CityShow extends React.Component {
                             const priceKeys = Object.keys(this.state.checkedPriceIds);
                             const priceValues = Object.values(this.state.checkedPriceIds);
                             const allFalseValues = priceValues.every((bool) => bool === false);
-                            const resPrice = restaurant.price;
-                            const cuisineId = {
+
+                            const restaurantId = restaurant.price;
+                            const cuisineIds = {
                                 Peruvian: 5,
                                 Japanese: 6,
                                 American: 7,
@@ -190,29 +191,30 @@ class CityShow extends React.Component {
                                 "Southeast Asian": 17,
                                 Seafood: 18
                             };
-                            let cuisine = this.props.restaurants[i].cuisine;
-                            let c1 = cuisineId[cuisine]
+                            const cuisine = restaurant.cuisine;
+                            const cuisineId = cuisineIds[cuisine]
 
                             let reviewRes = this.props.reviews.filter((review) => review.restaurant_id === restaurant.id);
                             let total = 0;
                             reviewRes.forEach((rev) => total += rev.overall)
                             let avg = total / reviewRes.length
-                            let rating;
+                            let ratingId;
                             if (avg >= 4.5) {
-                                rating = 25
+                                ratingId = 25
                             } else if (avg >= 3.5 && avg < 4.5) {
-                                rating = 24
+                                ratingId = 24
                             } else if (avg >= 2.5 && avg < 3.5) {
-                                rating = 23
+                                ratingId = 23
                             } else if (avg >= 1.5 && avg < 2.5) {
-                                rating = 22
+                                ratingId = 22
                             } else {
-                                rating = 21
+                                ratingId = 21
                             }
-
+                            debugger
                             // only good for initial render
                             // render the restaurant when the state is empty
-                            if((this.props.city.id === this.props.restaurants[i].city_id) && (!priceKeys.length)) {
+                            if((this.props.city.id === restaurant.city_id) && (!priceKeys.length)) {
+                                // debugger
                                 return (
                                     <div className="city-list-outer-container">
                                         <CityShowRestaurantItem 
@@ -224,43 +226,8 @@ class CityShow extends React.Component {
                                     </div>
                                 )
                                 // render the restaurant when ALL check marks are false
-                            } else if ( (this.props.city.id === this.props.restaurants[i].city_id) && (allFalseValues)) {
-                                return(
-                                    <div className="city-list-outer-container">
-                                        <CityShowRestaurantItem 
-                                            restaurant={restaurant} 
-                                            key={restaurant.id}
-                                            reviews={this.props.reviews}
-                                            city={this.props.city}
-                                        />
-                                    </div>
-                                )
-                                // render the restaurant when the checkmark is true for price
-                            } else if ( (this.props.city.id === this.props.restaurants[i].city_id) && (this.state.checkedPriceIds[resPrice]) ) {
-                                return(
-                                    <div className="city-list-outer-container">
-                                        <CityShowRestaurantItem 
-                                            restaurant={restaurant} 
-                                            key={restaurant.id}
-                                            reviews={this.props.reviews}
-                                            city={this.props.city}
-                                        />
-                                    </div>
-                                )
-                                // render the restaurant when the checkmark is true for cuisine
-                            } else if ( (this.props.city.id === this.props.restaurants[i].city_id) && this.state.checkedPriceIds[c1] ) {
-                                return(
-                                    <div className="city-list-outer-container">
-                                        <CityShowRestaurantItem 
-                                            restaurant={restaurant} 
-                                            key={restaurant.id}
-                                            reviews={this.props.reviews}
-                                            city={this.props.city}
-                                        />
-                                    </div>
-                                )
-                                // render the restaurant when the checkmark is true for rating
-                            } else if ( (this.props.city.id === this.props.restaurants[i].city_id) && this.state.checkedPriceIds[rating] ) {
+                            } else if ( (this.props.city.id === restaurant.city_id) && (allFalseValues)) {
+                                debugger
                                 return(
                                     <div className="city-list-outer-container">
                                         <CityShowRestaurantItem 
@@ -272,8 +239,9 @@ class CityShow extends React.Component {
                                     </div>
                                 )
                             } 
-                            // renders for price and cuisine but does not work at the moment
-                            // else if ( (this.props.city.id === this.props.restaurants[i].city_id) && ( (this.state.checkedPriceIds[resPrice]) && (this.state.checkedPriceIds[c1]) ) ) {
+                            // price, rating, cuisine, true
+                            // else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[restaurantId]) && (this.state.checkedPriceIds[cuisineId]) && (this.state.checkedPriceIds[ratingId]) ) {
+                            //     debugger
                             //     return(
                             //         <div className="city-list-outer-container">
                             //             <CityShowRestaurantItem 
@@ -285,6 +253,89 @@ class CityShow extends React.Component {
                             //         </div>
                             //     )
                             // }
+                            // price, rating, true... cuisine: false
+                            else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[restaurantId] && this.state.checkedPriceIds[ratingId] && (!this.state.checkedPriceIds[cuisineId])) ) {
+                                debugger
+                                return(
+                                    <div className="city-list-outer-container">
+                                        <CityShowRestaurantItem 
+                                            restaurant={restaurant} 
+                                            key={restaurant.id}
+                                            reviews={this.props.reviews}
+                                            city={this.props.city}
+                                        />
+                                    </div>
+                                )
+                            }
+                            // price, cuisine, true.... rating: false
+                            else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[restaurantId] && this.state.checkedPriceIds[cuisineId]) && (!this.state.checkedPriceIds[ratingId]) ) {
+                                debugger
+                                return(
+                                    <div className="city-list-outer-container">
+                                        <CityShowRestaurantItem 
+                                            restaurant={restaurant} 
+                                            key={restaurant.id}
+                                            reviews={this.props.reviews}
+                                            city={this.props.city}
+                                        />
+                                    </div>
+                                )
+                            }
+                            // rating, cuisine, true.... price : false
+                            else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[cuisineId] && this.state.checkedPriceIds[ratingId]) && (!this.state.checkedPriceIds[restaurantId]) ) {
+                                debugger
+                                return(
+                                    <div className="city-list-outer-container">
+                                        <CityShowRestaurantItem 
+                                            restaurant={restaurant} 
+                                            key={restaurant.id}
+                                            reviews={this.props.reviews}
+                                            city={this.props.city}
+                                        />
+                                    </div>
+                                )
+                            }
+                            // render the restaurant when the checkmark is true for price ONLY
+                            // else if ( (this.props.city.id === restaurant.city_id) && (this.state.checkedPriceIds[restaurantId]) && ( (!this.state.checkedPriceIds[cuisineId]) && (!this.state.checkedPriceIds[ratingId]) ) ) {
+                            //     return(
+                            //         <div className="city-list-outer-container">
+                            //             <CityShowRestaurantItem 
+                            //                 restaurant={restaurant} 
+                            //                 key={restaurant.id}
+                            //                 reviews={this.props.reviews}
+                            //                 city={this.props.city}
+                            //             />
+                            //         </div>
+                            //     )
+                            // } 
+                             // render the restaurant when the checkmark is true for cuisine ONLY
+                            // else if ( (this.props.city.id === this.props.restaurants[i].city_id) && this.state.checkedPriceIds[cuisineId] && (!this.state.checkedPriceIds[restaurantId] && !this.state.checkedPriceIds[ratingId]) ) {
+                            //     debugger    
+                            //     return(
+                            //         <div className="city-list-outer-container">
+                            //             <CityShowRestaurantItem 
+                            //                 restaurant={restaurant} 
+                            //                 key={restaurant.id}
+                            //                 reviews={this.props.reviews}
+                            //                 city={this.props.city}
+                            //             />
+                            //         </div>
+                            //     )
+                            // }
+                            // render the restaurant when the checkmark is true for rating ONLY
+                            // else if ( (this.props.city.id === this.props.restaurants[i].city_id) && this.state.checkedPriceIds[ratingId] && (!this.state.checkedPriceIds[restaurantId] && !this.state.checkedPriceIds[cuisineId]) ) {
+                            //     debugger
+                            //     return(
+                            //         <div className="city-list-outer-container">
+                            //             <CityShowRestaurantItem 
+                            //                 restaurant={restaurant} 
+                            //                 key={restaurant.id}
+                            //                 reviews={this.props.reviews}
+                            //                 city={this.props.city}
+                            //             />
+                            //         </div>
+                            //     )
+                            // } 
                         })}
                     </div>
                  </div>
