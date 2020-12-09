@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
         reservation: state.entities.reservations[ownProps.match.params.reservationId],
         restaurants: state.entities.restaurants,
         currentUser: state.session.currentUserId,
+        randNum: `${Math.floor( Math.random() * 1000000)}`
     })
 };
 

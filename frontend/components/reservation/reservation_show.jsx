@@ -101,15 +101,9 @@ class ReservationShow extends React.Component {
         setTimeout(this.handleLoaded2, 1400);
     }
 
-    generateRandomNum(length) {
-        let arr = [];
-        for(let i = 0; i <= length; i++) {
-            let rand = Math.floor( Math.random() * 9);
-            arr.push(rand);
-        }
-        let conNum = arr.join("")
-        return conNum;
-    }
+    // generateRandomNum() {
+    //     Math.floor( Math.random() * 10000)
+    // }
 
     toggleDeleteModal(e) {
         this.setState({ showDeleteModal: !this.state.showDeleteModal})
@@ -167,6 +161,7 @@ class ReservationShow extends React.Component {
         const todayMonth = new Date().getMonth() + 1;
         const todayYear = new Date().toDateString().slice(11);
         const today = `${todayYear}-${todayMonth}-${todayDay}`
+        const randNum = Math.floor( Math.random() * 10000)
         if ( (reservation.reserved) && (reservation.user_id === currentUser)) {
             return(
                 <div>
@@ -185,7 +180,7 @@ class ReservationShow extends React.Component {
     
                         <div className="reservation-show-heading-container">
                             <h1 className="rs1">Thanks! Your reservation is confirmed.</h1>
-                            <h2 className="rs2">Confirmation #{this.generateRandomNum(6)}</h2>
+                            <h2 className="rs2">Confirmation #{this.props.randNum}</h2>
                         </div>
     
                         <div>
