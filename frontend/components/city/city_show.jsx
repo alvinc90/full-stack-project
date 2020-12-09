@@ -73,7 +73,6 @@ class CityShow extends React.Component {
                                 <input 
                                     type="checkbox" 
                                     id="4"
-                                    value=""
                                     onClick={this.handleCheckedPrice}
                                 />
                                 <label>$$$$</label>
@@ -82,7 +81,6 @@ class CityShow extends React.Component {
                                 <input 
                                     type="checkbox" 
                                     id="3"
-                                    value=""
                                     onClick={this.handleCheckedPrice}
                                 />
                                 <label>$$$</label>
@@ -91,7 +89,6 @@ class CityShow extends React.Component {
                                 <input 
                                     type="checkbox" 
                                     id="2"
-                                    value=""
                                     onClick={this.handleCheckedPrice}
                                 />
                                 <label>$$</label>    
@@ -243,7 +240,7 @@ class CityShow extends React.Component {
                             } else {
                                 ratingId = 21
                             }
-                            // only good for initial render
+
                             // render the restaurant when ALL check marks are false
                             if ( (city.id === restaurant.city_id) && (allFalseValues)) {
                                 debugger
