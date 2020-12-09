@@ -317,7 +317,11 @@ class ReservationShow extends React.Component {
                                     : 
                                         <button className="ranch98">Unavailable</button>
                                     }
-                                    <button onClick={this.handleUpdate(resTime2)} className="ranch99">{resTime2}</button>
+                                    { resTime2 ?
+                                        <button onClick={this.handleUpdate(resTime2)} className="ranch99">{resTime2}</button>
+                                    : 
+                                        <button className="ranch98">Unavailable</button>
+                                    }
                                     { resTime3 ?
                                         <button onClick={this.handleUpdate(resTime3)} className="ranch99">{resTime3}</button>
                                     : 
