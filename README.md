@@ -11,6 +11,30 @@ OpenStreetTable is a clone of OpenTable where users can make and change reservat
 * Postgresql - database
 * HTML/SCSS - styling 
 
+## Installation
+### Pre-requisites
+PostgreSQL Database is required for OpenStreetTable to operate correctly
+
+### Setting Up
+Please run the following commands:
+
+```
+bundle install
+npm install
+bundle exec rails db:create
+bundle exec rails db:migrate
+bundle exec rails db:seed
+```
+
+### Running the app
+please run the following commands in separate terminals:
+
+```
+rails server
+npm run webpack
+```
+
+
 ## Features 
 ### 1. User Authentication
    * Users can Sign Up, Sign in and Sign Out
