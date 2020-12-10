@@ -42,11 +42,23 @@ npm run webpack
    * Users can't use certain features without logging in( e.g. making reservation & rating restaurants)
    
 ### 2. Restaurants and Search 
-   * Users can look up restaurants on the splash page or by clicking a city of their choice. 
+   * Users can look up restaurants on the splash page or by clicking a city of their choice.
+   * In the City show page, Users have acess to sidebar filter to narrow down the search choices.
+   
+### 3. Ratings/Reviews
+   * Signed in Users can leave a review, update and delete own reviews.
+   * Users and non-users can view all reviews on the restaurant show page.
+   
+### 4. Favorites
+   * Signed in Users can "favorite"/bookmark restaurants of their choices.
+   * Users can view lists of favorites at their bio page.
+   
+### 5. Reservations
+   * Signed in users are allowed to make, cancel and update reservations
+   * Users can view lists of upcoming reservations at their bio page.
+   * Require Signed in when making reservations
    
 ## Upcoming Features 
-* Creating a Search Bar to look up restaurants
-* Allowing Users to post reviews on any restaurants 
-* Favorite/Save functionality that allows users to quickly look up their favorite restaurants. 
+* Icons! 
 * Incorporating Google Maps API 
-  
+* Building a Carousel for viewwing images
