@@ -6,6 +6,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Footer from '../footer';
 import ReservationFormSticky from '../reservation/reservation_form_sticky';
 import MenuIndex from '../menu/menu_index';
+import Photos from './photo';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -131,7 +132,7 @@ class RestaurantShow extends React.Component {
                             <h3 className="show-heading-list" id="to-photos">Photos</h3>
                             <div className="div1"></div>
                             <div className="photo-sample">
-                                Coming soon!
+                                <Photos restaurant={restaurant}/>
                             </div>
                         </div>
 

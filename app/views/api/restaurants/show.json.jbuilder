@@ -4,3 +4,8 @@ if @restaurant.photo.attached?
 else
     json.photoUrl ""
 end
+if @restaurant.photos.attached?
+    json.photoUrls @restaurant.photos.map { |file| url_for(file) }
+else 
+    json.photoUrls ""
+end

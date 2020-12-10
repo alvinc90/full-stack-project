@@ -6,5 +6,6 @@ json.set! restaurant.id do
         else
             json.photourl ""
         end
+        json.photoUrls restaurant.photos.map { |file| url_for(file) }
     end
 end

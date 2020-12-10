@@ -342,6 +342,17 @@
 }
 
 .photo-sample {
-    font-size: 40px;
+    // font-size: 40px;
     margin-left: 25px;
+}
+
+.photo-container {
+    overflow: scroll;
+}
+
+.photo-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    padding-left: 20px;
 }

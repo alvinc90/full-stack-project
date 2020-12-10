@@ -272,10 +272,22 @@ r16 = Restaurant.create!(
 )
 
 f1 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/lamar1.jpg")
+g1 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/lamar2.jpg")
+g2 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/lamar3.jpg")
+g3 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/lamar4.jpg")
 r1.photo.attach(io: f1, filename: "lamar1.jpg")
+r1.photos.attach(io: g1, filename: 'lamar2.jpg')
+r1.photos.attach(io: g2, filename: 'lamar3.jpg')
+r1.photos.attach(io: g3, filename: 'lamar4.jpg')
 
 f2 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/ozumo.jpg")
+g4 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/ozumo2.jpg")
+g5 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/ozumo3.jpg")
+g6 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/ozumo4.jpg")
 r2.photo.attach(io: f2, filename: "ozumo.jpg")
+r2.photos.attach(io: g4, filename: "ozumo2.jpg")
+r2.photos.attach(io: g5, filename: "ozumo3.jpg")
+r2.photos.attach(io: g6, filename: "ozumo4.jpg")
 
 f3 = open("https://open-street-seed.s3-us-west-1.amazonaws.com/angler.jpg")
 r3.photo.attach(io: f3, filename: "angler.jpg")

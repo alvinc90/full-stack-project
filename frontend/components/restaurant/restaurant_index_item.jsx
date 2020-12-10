@@ -19,7 +19,7 @@ const RestaurantIndexItem = ({ restaurant, reviews }) => {
         } else {
             rating = 1
         }
-    
+    debugger
     return (
         <div>
             <Link id="link1" to={`/restaurants/${restaurant.id}`}><div className="restaurant-index-container">
