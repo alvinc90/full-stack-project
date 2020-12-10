@@ -61,7 +61,7 @@ class SignUpForm extends React.Component {
                             <div className="error-form">{this.renderErrors().username}</div>
                         </label>
                         <label className="labels">
-                            <input className="input-email" type="text" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email*"/>
+                            <input className="input-email" type="email" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email*"/>
                             <div className="error-form">{this.renderErrors().email}</div>
                         </label>
                         <label className="labels">
