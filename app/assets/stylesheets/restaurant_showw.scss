@@ -73,6 +73,7 @@
     line-height: 30px;
     color: gray;
     margin-left: 2%;
+    word-spacing: 2px;
 }
 
 .show-aside-container {
@@ -338,4 +339,9 @@
 
 .show-unfavorite-button:hover {
     filter: brightness(125%);
+}
+
+.photo-sample {
+    font-size: 40px;
+    margin-left: 25px;
 }

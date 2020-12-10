@@ -130,7 +130,7 @@ class RestaurantShow extends React.Component {
                         <div className="show-content-container">
                             <h3 className="show-heading-list" id="to-photos">Photos</h3>
                             <div className="div1"></div>
-                            <div>
+                            <div className="photo-sample">
                                 Coming soon!
                             </div>
                         </div>
