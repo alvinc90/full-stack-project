@@ -24,6 +24,7 @@ class ReviewCreateModal extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createReview(this.state);
+        debugger
         this.setState({
             body: "",
             overall: 5,

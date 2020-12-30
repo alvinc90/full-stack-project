@@ -16,7 +16,6 @@
 #  price          :integer          not null
 #
 class Restaurant < ApplicationRecord
-
     validates :name, :address, :phone_num, :hours, :payment_option, :cuisine, :city_id, :description, presence: true 
 
     has_one_attached :photo

@@ -18,7 +18,7 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = current_user.reviews.new(review_params)
-        
+        debugger
         if @review and @review.save
             render :show
         else
