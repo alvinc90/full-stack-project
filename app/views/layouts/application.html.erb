@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Open Street Table" />
-    <meta property="og:image" content="../../assets/images/open_table.png" />
-    <meta property="og:description" content="a fullstack clone of OpenTable" />
-    <meta property="og:url" content="https://fullsteakproject.herokuapp.com/" />
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
     <title>OpenStreetTable</title>
     <%= csrf_meta_tags %>
