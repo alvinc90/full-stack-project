@@ -24,9 +24,4 @@ class ApplicationController < ActionController::Base
         session[:session_token] = nil 
     end
 
-    def default_url_options
-        { host: ENV["DOMAIN"] || "localhost:3000" }
-    end
-
-
 end

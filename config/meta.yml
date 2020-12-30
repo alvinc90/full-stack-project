@@ -1,5 +1,0 @@
-meta_product_name: "Open Street Table"
-meta_title: "Open Street Table - #openstreettable"
-meta_description: "A clone of OpenTable by Alvin Chong"
-meta_image: "app/assets/images/open_table.png" # should exist in `app/assets/images/`
-# twitter_account: "@product_twitter_account"   # required for Twitter Cards
