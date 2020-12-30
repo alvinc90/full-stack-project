@@ -14,7 +14,6 @@
 #  updated_at    :datetime         not null
 #
 class Review < ApplicationRecord
-    debugger
     validates :body, :overall, :food, :service, :ambience, :user_id, :restaurant_id, presence: true
 
     belongs_to :reviewer, 

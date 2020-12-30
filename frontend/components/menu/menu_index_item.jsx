@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MenuIndexItem = ({ menu }) => {
-    // debugger
     return(
         <div>
             <div className="container-of-container">

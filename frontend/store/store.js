@@ -9,7 +9,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const configureStore = (preloadedState = {}) => {
-    debugger
     return createStore(rootReducer, preloadedState, applyMiddleware(...middlewares))
 }; 
 

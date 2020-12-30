@@ -202,7 +202,6 @@ class CityShow extends React.Component {
                             
                             const { city, reviews } = this.props;
                             const { checkedPriceIds, checkedCuisineIds, checkedRatingIds } = this.state;
-                            // debugger
                             const priceId = restaurant.price;
 
                             const cuisineIds = {
@@ -243,7 +242,6 @@ class CityShow extends React.Component {
 
                             // render the restaurant when ALL check marks are false
                             if ( (city.id === restaurant.city_id) && (allFalseValues)) {
-                                debugger
                                 return(
                                     <div className="city-list-outer-container">
                                         <CityShowRestaurantItem 
@@ -257,7 +255,6 @@ class CityShow extends React.Component {
                             } 
                             // price, rating, cuisine, true
                             else if ( (city.id === restaurant.city_id) && (checkedPriceIds[priceId]) && (checkedCuisineIds[cuisineId]) && (checkedRatingIds[ratingId]) ) {
-                                debugger
                                 return(
                                     <div className="city-list-outer-container">
                                         <CityShowRestaurantItem 
@@ -271,7 +268,6 @@ class CityShow extends React.Component {
                             }
                             // price, rating, true... cuisine: false
                             else if ( (city.id === restaurant.city_id) && (checkedPriceIds[priceId] && checkedRatingIds[ratingId] ) && ( allCuisineFalse ) ) {
-                                debugger
                                 return(
                                     <div className="city-list-outer-container">
                                         <CityShowRestaurantItem 
@@ -285,7 +281,6 @@ class CityShow extends React.Component {
                             }
                             // price, cuisine, true.... rating: false
                             else if ( (city.id === restaurant.city_id) && ( checkedPriceIds[priceId] && checkedCuisineIds[cuisineId] ) && ( allRatingFalse  )) {
-                                debugger
                                 return(
                                     <div className="city-list-outer-container">
                                         <CityShowRestaurantItem 
@@ -299,7 +294,6 @@ class CityShow extends React.Component {
                             }
                             // rating, cuisine, true.... price : false
                             else if ( (city.id === restaurant.city_id) && ( checkedRatingIds[ratingId] && checkedCuisineIds[cuisineId] ) && ( allPriceFalse ) ) {
-                                debugger
                                 return(
                                     <div className="city-list-outer-container">
                                         <CityShowRestaurantItem 
@@ -313,7 +307,6 @@ class CityShow extends React.Component {
                             }
                             // render the restaurant when the checkmark is true for price ONLY
                             else if ( (city.id === restaurant.city_id) && (checkedPriceIds[priceId]) && ( allRatingFalse && allCuisineFalse ) ) {
-                                debugger
                                 return(
                                     <div className="city-list-outer-container">
                                         <CityShowRestaurantItem 

@@ -3,7 +3,6 @@ import React from 'react';
 const Photos = ({ restaurant }) => {
     if(restaurant.id) {
         console.log("porkchop")
-        debugger
         return(
             <div className="photo-container">
                 {/* {restaurant.photoUrls.map((url) => {
@@ -16,7 +15,6 @@ const Photos = ({ restaurant }) => {
         )
     } else {
         console.log("pizza")
-        debugger
         return null
     }
 };

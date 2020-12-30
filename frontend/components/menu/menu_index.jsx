@@ -7,19 +7,16 @@ class MenuIndex extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchMenus();
         // this.props.fetchAllRestaurants();
     }
 
     render() {
         const { restaurant, menus } = this.props;
-        // debugger
         if (menus) {
             return(
                 <div>
                     {menus.map((menu) => {
-                        // debugger
                         if(menu.restaurant_id === restaurant.id) {
                             return(
                                 <MenuIndexItem 

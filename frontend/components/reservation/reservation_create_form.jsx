@@ -59,7 +59,6 @@ class ReservationCreateForm extends React.Component {
             "20:00": "8:00 PM",
             "21:00": "9:00 PM",
         };
-        debugger
         return(
             <div>
                 <div className="reservation-top-line"></div>
