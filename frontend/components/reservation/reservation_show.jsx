@@ -133,6 +133,20 @@ class ReservationShow extends React.Component {
             "20:00": "8:00 PM",
             "21:00": "9:00 PM",
         };
+        var hashMonth = {
+            '1' : '01',
+            '2' : '02',
+            '3' : '03',
+            '4' : '04',
+            '5' : '05',
+            '6' : '06',
+            '7' : '07',
+            '8' : '08',
+            '9' : '09',
+            '10' : '10',
+            '11' : '11',
+            '12' : '12'
+        }
         const resTime2 = time2[this.state.time];
         const keyTime = Object.keys(time2);
         let leftArr = [];
@@ -160,7 +174,7 @@ class ReservationShow extends React.Component {
         const todayDay = new Date().toDateString().slice(8,10);
         const todayMonth = new Date().getMonth() + 1;
         const todayYear = new Date().toDateString().slice(11);
-        const today = `${todayYear}-${todayMonth}-${todayDay}`
+        const today = `${todayYear}-${hashMonth[todayMonth]}-${todayDay}`
         const randNum = Math.floor( Math.random() * 10000)
         if ( (reservation.reserved) && (reservation.user_id === currentUser)) {
             return(

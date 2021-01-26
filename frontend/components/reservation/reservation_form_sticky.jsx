@@ -4,6 +4,20 @@ import { Link } from 'react-router-dom';
 class ReservationFormSticky extends React.Component {
     constructor(props) {
         super(props)
+        var hashMonth = {
+            '1' : '01',
+            '2' : '02',
+            '3' : '03',
+            '4' : '04',
+            '5' : '05',
+            '6' : '06',
+            '7' : '07',
+            '8' : '08',
+            '9' : '09',
+            '10' : '10',
+            '11' : '11',
+            '12' : '12'
+        }
         this.handleFindTable = this.handleFindTable.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleLoaded = this.handleLoaded.bind(this);
@@ -12,7 +26,7 @@ class ReservationFormSticky extends React.Component {
         const todayYear = new Date().toDateString().slice(11);
         this.state = {
             num_guests: 2,
-            date: `${todayYear}-${todayMonth}-${todayDay}`,
+            date: `${todayYear}-${hashMonth[todayMonth]}-${todayDay}`,
             time: "11:00"
         }
     };
@@ -72,6 +86,24 @@ class ReservationFormSticky extends React.Component {
             "20:00": "8:00 PM",
             "21:00": "9:00 PM",
         };
+        var hashMonth = {
+            '1' : '01',
+            '2' : '02',
+            '3' : '03',
+            '4' : '04',
+            '5' : '05',
+            '6' : '06',
+            '7' : '07',
+            '8' : '08',
+            '9' : '09',
+            '10' : '10',
+            '11' : '11',
+            '12' : '12'
+        }
+        const todayDay = new Date().toDateString().slice(8,10);
+        const todayMonth = new Date().getMonth() + 1;
+        const todayYear = new Date().toDateString().slice(11);
+
         const resTime2 = time2[this.state.time];
         const keyTime = Object.keys(time2);
         let leftArr = [];
@@ -128,7 +160,8 @@ class ReservationFormSticky extends React.Component {
                             type="date"
                             className="sticky-date-time"
                             value={this.state.date}
-                            min={this.state.date}
+                            // min={this.state.date}
+                            min={`${todayYear}-${hashMonth[todayMonth]}-${todayDay}`}
                             onChange={this.handleChange('date')}
                         />
                     </span>
