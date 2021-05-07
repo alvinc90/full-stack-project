@@ -22,9 +22,11 @@ class UserFav extends React.Component {
     }
 
     render() {
-        const { currentUser, restaurants, favorites, reviews } = this.props;
-        const favResId = [];
+        const { restaurants, favorites, reviews } = this.props;
+        if(!favorites.length) return null;
+        if(!Object.values(restaurants).length) return null;
         const favRes = [];
+        // debugger
         return(
             <div>
                 <div className="user-show-outer-container">
@@ -40,15 +42,10 @@ class UserFav extends React.Component {
                         <div className="user-show-info-container2">
                             <h1 className="profile-heading">My favorites</h1>
                             <div className="line-below-heading"></div>
-                            { favorites.map((favorite) => {
-                                if(favorite.user_id === currentUser) {
-                                    favResId.push(favorite.restaurant_id)
-                                }
-                            })}
 
-                            {favResId.forEach((resId) => {
-                                const findRestaurant = restaurants.find((restaurant) => restaurant.id === resId);
-                                if(findRestaurant) favRes.push(findRestaurant)
+                            {favorites.forEach((favorite) => {
+                                let findRestaurant = restaurants[favorite.restaurant_id];
+                                favRes.push(findRestaurant);
                             })}
 
                             {favRes.map((favRe) => {
